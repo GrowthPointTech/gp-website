@@ -83,18 +83,18 @@ All design decisions must follow the [GrowthPoint Brand Guide](https://www.figma
 
 | Environment | Branch | URL | Password |
 |-------------|--------|-----|----------|
-| **Preview / Staging** | `preview` | [preview.d3t25f13f2ifsh.amplifyapp.com](https://preview.d3t25f13f2ifsh.amplifyapp.com) | Yes |
+| **Preview / Staging** | `preview` | [preview.gptechadvisors.com](https://preview.gptechadvisors.com) | `growthpoint` / `millie bae` |
 | **Production** | `main` | [main.d3t25f13f2ifsh.amplifyapp.com](https://main.d3t25f13f2ifsh.amplifyapp.com) | No |
 
 **Amplify App ID:** `d3t25f13f2ifsh`
 
-Custom domain DNS (Route 53 — pending setup):
+Custom domain DNS (Route 53 — active):
 
 | Record | Type | Value |
 |--------|------|-------|
-| `preview.gptechadvisors.com` | CNAME | `preview.d3t25f13f2ifsh.amplifyapp.com` |
-| `gptechadvisors.com` | CNAME/ALIAS | `main.d3t25f13f2ifsh.amplifyapp.com` |
-| `www.gptechadvisors.com` | CNAME | `main.d3t25f13f2ifsh.amplifyapp.com` |
+| `preview.gptechadvisors.com` | CNAME | `d76c94awsonva.cloudfront.net` |
+| `gptechadvisors.com` | CNAME/ALIAS | `main.d3t25f13f2ifsh.amplifyapp.com` (pending) |
+| `www.gptechadvisors.com` | CNAME | `main.d3t25f13f2ifsh.amplifyapp.com` (pending) |
 
 ## Branch Strategy
 
