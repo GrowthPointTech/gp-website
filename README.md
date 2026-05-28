@@ -79,6 +79,23 @@ All design decisions must follow the [GrowthPoint Brand Guide](https://www.figma
 | Lime | `#A4E322` | Success, growth indicators |
 | Light Gray | `#EDF2F4` | Page backgrounds |
 
+## Hosting — AWS Amplify
+
+| Environment | Branch | URL | Password |
+|-------------|--------|-----|----------|
+| **Preview / Staging** | `preview` | [preview.d3t25f13f2ifsh.amplifyapp.com](https://preview.d3t25f13f2ifsh.amplifyapp.com) | Yes |
+| **Production** | `main` | [main.d3t25f13f2ifsh.amplifyapp.com](https://main.d3t25f13f2ifsh.amplifyapp.com) | No |
+
+**Amplify App ID:** `d3t25f13f2ifsh`
+
+Custom domain DNS (Route 53 — pending setup):
+
+| Record | Type | Value |
+|--------|------|-------|
+| `preview.gptechadvisors.com` | CNAME | `preview.d3t25f13f2ifsh.amplifyapp.com` |
+| `gptechadvisors.com` | CNAME/ALIAS | `main.d3t25f13f2ifsh.amplifyapp.com` |
+| `www.gptechadvisors.com` | CNAME | `main.d3t25f13f2ifsh.amplifyapp.com` |
+
 ## Branch Strategy
 
 | Branch | Purpose | Deploys To |
