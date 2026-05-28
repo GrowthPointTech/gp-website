@@ -1,0 +1,414 @@
+plan_id: gp-website-rebuild
+source: CLAUDE.md + README.md
+
+# ============================================================
+# Phase 1: Foundation — COMPLETE
+# Scaffold committed in 5ebb8fd (brand assets, CSS, nav, footer HTML)
+# ============================================================
+
+phases:
+
+  - id: phase-1-foundation
+    title: "Foundation & Shared Components"
+    week: 3
+    status: complete
+    units:
+      - id: unit-brand-assets
+        title: "Commit logo SVGs, icons, and favicon"
+        assignee: maddox
+        status: complete
+        files:
+          - assets/logos/
+          - assets/icons/
+          - assets/favicon/
+        depends_on: []
+
+      - id: unit-css-variables
+        title: "Finalize CSS variables from brand guide"
+        assignee: maddox
+        status: complete
+        files:
+          - css/variables.css
+        depends_on: []
+
+      - id: unit-nav
+        title: "Responsive navigation bar with mobile hamburger toggle"
+        assignee: maddox
+        status: complete
+        files:
+          - css/components.css
+          - js/nav.js
+        depends_on: [unit-css-variables]
+
+      - id: unit-footer-scaffold
+        title: "Footer HTML structure with KO logo and nav links"
+        assignee: maddox
+        status: complete
+        files:
+          - css/components.css
+        depends_on: [unit-css-variables]
+
+      - id: unit-base-css
+        title: "Reset, typography, and layout primitives"
+        assignee: maddox
+        status: complete
+        files:
+          - css/base.css
+        depends_on: [unit-css-variables]
+
+  # ============================================================
+  # Phase 2: Footer Social + Home Page
+  # ============================================================
+
+  - id: phase-2-home
+    title: "Footer Social Links + Home Page"
+    week: 4
+    units:
+      - id: unit-footer-social
+        title: "Add LinkedIn and X social links to footer on all pages"
+        assignee: joshua
+        files:
+          - index.html
+          - services.html
+          - about.html
+          - contact.html
+          - blog/index.html
+        depends_on: [unit-footer-scaffold]
+        notes: >
+          Footer CSS already has .footer__social styles. Add the social
+          <nav> block (LinkedIn + X SVG icons or text links) inside
+          .footer .container on every page. Icons in assets/icons/ or
+          use inline SVG.
+
+      - id: unit-home-hero
+        title: "Home page hero section"
+        assignee: maddox
+        files:
+          - index.html
+          - css/pages.css
+        depends_on: [unit-css-variables, unit-nav]
+        notes: >
+          Dark background (.hero class already in components.css).
+          Headline: "Scale Cybersecurity with Confidence."
+          Subhead + two CTAs: "Schedule a Call" (orange) + "View Services" (outline).
+
+      - id: unit-home-pillars
+        title: "Home page four pillars section"
+        assignee: maddox
+        files:
+          - index.html
+          - css/pages.css
+        depends_on: [unit-home-hero]
+        notes: >
+          4 pillars: Structure, Strengthen, Streamline, Scale.
+          Use .pillars grid from components.css.
+          Icons: assets/icons/icon-structure.svg, icon-strength.svg,
+          icon-streamline.svg, icon-scale.svg.
+
+      - id: unit-home-services
+        title: "Home page services overview section"
+        assignee: maddox
+        files:
+          - index.html
+          - css/pages.css
+        depends_on: [unit-home-pillars]
+        notes: >
+          3–4 service cards: Fractional CISO, Compliance Projects,
+          ISMS Management, Audits & Certifications.
+          Use .card-grid from components.css. Link each to services.html.
+
+      - id: unit-home-blog-highlights
+        title: "Home page blog highlights section (3 recent posts)"
+        assignee: maddox
+        files:
+          - index.html
+          - css/pages.css
+        depends_on: [unit-home-services]
+        notes: >
+          3 blog preview cards with eyebrow tag, title, and "Read more" link.
+          Use .card-grid from components.css. Link to blog/index.html.
+          Placeholder content OK for now; will be replaced in Phase 5.
+
+      - id: unit-home-testimonial-cta
+        title: "Home page testimonial (Clayton Dillard) + CTA section"
+        assignee: maddox
+        files:
+          - index.html
+          - css/pages.css
+        depends_on: [unit-home-blog-highlights]
+        notes: >
+          Testimonial: Clayton Dillard quote using .testimonial component.
+          CTA section: .cta-section with blue background, "Ready to get started?"
+          heading + "Schedule a Call" button linking to contact.html.
+
+  # ============================================================
+  # Phase 3: Services Page
+  # ============================================================
+
+  - id: phase-3-services
+    title: "Services Page"
+    week: 5
+    units:
+      - id: unit-services-hero-ciso
+        title: "Services page hero + Fractional CISO section"
+        assignee: maddox
+        files:
+          - services.html
+          - css/pages.css
+        depends_on: [unit-home-hero]
+        notes: >
+          Hero: dark background, "Comprehensive Cybersecurity Services" heading.
+          Fractional CISO: what it is, who it's for, how it works.
+          Use Icon - CISO.svg from assets/icons/.
+
+      - id: unit-services-compliance
+        title: "Services page compliance projects section"
+        assignee: maddox
+        files:
+          - services.html
+          - css/pages.css
+        depends_on: [unit-services-hero-ciso]
+        notes: >
+          Compliance section: SOC 2, HIPAA, ISO 27001, CMMC.
+          Icon - Cybersecurity.svg. Two-column layout: description left,
+          framework list right.
+
+      - id: unit-services-isms-wheel
+        title: "Interactive ISMS wheel (9 areas, click to reveal)"
+        assignee: maddox
+        files:
+          - services.html
+          - js/isms-wheel.js
+          - css/pages.css
+        depends_on: [unit-services-compliance]
+        notes: >
+          Create js/isms-wheel.js. SVG or CSS-drawn wheel with 9 ISMS areas.
+          Clicking each segment reveals the area name + 1-line description.
+          Must work without inline JS (external script only, CSP compliant).
+
+      - id: unit-services-audits-privacy
+        title: "Services page audits, certifications, data privacy + CTA"
+        assignee: maddox
+        files:
+          - services.html
+          - css/pages.css
+        depends_on: [unit-services-isms-wheel]
+        notes: >
+          Audits & Certifications section: gap assessments, readiness reviews.
+          Data Privacy section: GDPR, CCPA, AI governance.
+          Final CTA section linking to contact.html.
+
+  # ============================================================
+  # Phase 4: About + Contact Pages
+  # ============================================================
+
+  - id: phase-4-about-contact
+    title: "About + Contact Pages"
+    week: 5
+    units:
+      - id: unit-about-story
+        title: "About page — company story and mission sections"
+        assignee: joshua
+        files:
+          - about.html
+          - css/pages.css
+        depends_on: [unit-home-hero]
+        notes: >
+          Company origin story, mission statement, and values.
+          Why GrowthPoint exists. Light gray background sections
+          alternating with white.
+
+      - id: unit-about-stacey
+        title: "About page — Stacey Robinson bio and social links"
+        assignee: joshua
+        files:
+          - about.html
+          - css/pages.css
+        depends_on: [unit-about-story]
+        notes: >
+          Founder bio for Stacey Robinson. Photo placeholder (assets/images/).
+          LinkedIn + X social links. Credentials/certifications.
+
+      - id: unit-contact-page
+        title: "Contact page — Calendly embed and mailto fallback"
+        assignee: joshua
+        files:
+          - contact.html
+          - css/pages.css
+        depends_on: [unit-home-hero]
+        notes: >
+          Embed Calendly scheduling widget via their embed script tag.
+          Below: mailto fallback link. No inline JS per CSP —
+          Calendly embed uses a <script src="..."> tag which is allowed.
+
+      - id: unit-contact-js
+        title: "Contact page JS interactions"
+        assignee: joshua
+        files:
+          - js/contact.js
+          - contact.html
+        depends_on: [unit-contact-page]
+        notes: >
+          Implement contact.js: form validation if needed, smooth scroll
+          to Calendly section, maybe a mailto button handler.
+          Currently contact.js has 3 lines (placeholder).
+
+  # ============================================================
+  # Phase 5: Blog System
+  # ============================================================
+
+  - id: phase-5-blog
+    title: "Blog System"
+    week: 6
+    units:
+      - id: unit-blog-listing
+        title: "Blog index page — card grid of posts"
+        assignee: joshua
+        files:
+          - blog/index.html
+          - css/pages.css
+        depends_on: [unit-home-blog-highlights]
+        notes: >
+          Card grid using .card-grid component. Each card: category eyebrow,
+          title, excerpt, date, "Read more" link.
+          Hero at top: "Insights & Resources" + subtitle.
+
+      - id: unit-blog-post-template
+        title: "Blog post HTML template"
+        assignee: joshua
+        files:
+          - blog/posts/post-template.html
+          - css/pages.css
+        depends_on: [unit-blog-listing]
+        notes: >
+          Create blog/posts/ directory and a reusable post template.
+          Sections: hero with post title + meta, article body,
+          related posts CTA. Typography from base.css.
+
+      - id: unit-blog-post-1
+        title: "First blog post: AI and HIPAA compliance"
+        assignee: joshua
+        files:
+          - blog/posts/ai-hipaa-compliance-2026.html
+        depends_on: [unit-blog-post-template]
+        notes: >
+          Write and publish first real post. Topic: "What Healthcare
+          Organizations Need to Know About AI and HIPAA in 2026."
+          ~600 words, factual, GrowthPoint voice.
+
+  # ============================================================
+  # Phase 6: Polish + Launch Prep
+  # ============================================================
+
+  - id: phase-6-polish
+    title: "Polish, Accessibility & Launch Prep"
+    week: 7
+    units:
+      - id: unit-favicon-all-pages
+        title: "Add favicon link tag to all HTML pages"
+        assignee: joshua
+        files:
+          - index.html
+          - services.html
+          - about.html
+          - contact.html
+          - blog/index.html
+        depends_on: []
+        notes: >
+          assets/favicon/GP-Logo mark_sml.png exists.
+          Add <link rel="icon" ...> to <head> of every page.
+          Consider generating a proper .ico or multi-size favicon set.
+
+      - id: unit-responsive-audit
+        title: "Responsive layout audit at all breakpoints"
+        assignee: maddox
+        files:
+          - css/pages.css
+          - css/components.css
+        depends_on: [unit-home-testimonial-cta, unit-services-audits-privacy]
+        notes: >
+          Open each page at 1200px, 1024px, 768px, 375px.
+          Fix any overflow, stacking, or font-size issues.
+          Focus on pillars grid, card grids, ISMS wheel.
+
+      - id: unit-accessibility-audit
+        title: "Accessibility audit — ARIA labels, alt text, keyboard nav"
+        assignee: joshua
+        files:
+          - index.html
+          - services.html
+          - about.html
+          - contact.html
+          - blog/index.html
+        depends_on: [unit-blog-listing]
+        notes: >
+          Verify: all images have alt text, nav has aria-label,
+          nav toggle has aria-expanded, links are descriptive,
+          color contrast passes WCAG AA. Fix issues found.
+
+      - id: unit-seo-meta
+        title: "Complete meta descriptions and page titles on all pages"
+        assignee: joshua
+        files:
+          - index.html
+          - services.html
+          - about.html
+          - contact.html
+          - blog/index.html
+        depends_on: [unit-accessibility-audit]
+        notes: >
+          Review title tags and meta description content.
+          Add Open Graph tags (og:title, og:description, og:image).
+          Ensure each page has a unique, keyword-rich description.
+
+  # ============================================================
+  # Phase 7: AWS + Launch
+  # ============================================================
+
+  - id: phase-7-launch
+    title: "AWS Configuration & Launch"
+    week: 8
+    units:
+      - id: unit-amplify-config
+        title: "AWS Amplify app configuration and deploy settings"
+        assignee: maddox
+        files:
+          - amplify.yml
+        depends_on: []
+        notes: >
+          Create amplify.yml build spec if not present.
+          Configure branch → environment mapping:
+          preview branch → preview.gptechadvisors.com
+          main branch → gptechadvisors.com
+
+      - id: unit-security-headers
+        title: "Review and finalize customHttp.yml security headers"
+        assignee: maddox
+        files:
+          - customHttp.yml
+        depends_on: [unit-amplify-config]
+        notes: >
+          Review CSP directive against actual external scripts
+          (Google Fonts, Calendly). Verify HSTS, X-Frame-Options,
+          X-Content-Type-Options are correct.
+
+      - id: unit-dns-setup
+        title: "DNS configuration for gptechadvisors.com"
+        assignee: maddox
+        files: []
+        depends_on: [unit-amplify-config]
+        notes: >
+          Configure custom domain in Amplify console.
+          Update DNS records (CNAME/ALIAS) at registrar.
+          Enable HTTPS (Amplify handles cert). No files to commit.
+
+      - id: unit-final-smoke-test
+        title: "Final smoke test — all pages on preview.gptechadvisors.com"
+        assignee: joshua
+        files: []
+        depends_on: [unit-dns-setup, unit-security-headers]
+        notes: >
+          Walk every page on the live preview URL.
+          Check: nav links, footer links, Calendly embed, blog posts,
+          mobile view, ISMS wheel interaction, no 404s.
+          Run Lighthouse on home page — all scores > 90.

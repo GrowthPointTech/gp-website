@@ -3,7 +3,7 @@ name: eng-py-lead
 description: >
   Python technical lead for architecture decisions and code reviews.
   MUST BE USED for Python architecture, standards, and mentorship.
-tools: Read, Edit, Grep, Task
+tools: Read, Edit, Grep, Bash
 ---
 
 # **IMPORTANT SUBAGENT DIRECTIVE**
