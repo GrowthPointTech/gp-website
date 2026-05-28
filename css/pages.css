@@ -5,6 +5,57 @@
    Shared component styles belong in components.css.
    ============================================================ */
 
+/* Home Page — Hero */
+
+.hero__eyebrow {
+  color: var(--gp-lime);
+}
+
+.hero__ctas {
+  display: flex;
+  gap: var(--space-sm);
+  flex-wrap: wrap;
+}
+
+.btn--outline-white {
+  background: transparent;
+  color: var(--gp-white);
+  border: 2px solid var(--gp-white);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+  display: inline-block;
+}
+
+.btn--outline-white:hover {
+  background: var(--gp-white);
+  color: var(--gp-rich-black);
+  transform: translateY(-1px);
+}
+
+.btn--outline-white:active {
+  transform: translateY(0);
+}
+
+/* Home Page — Pillars */
+
+.pillars-section {
+  background: var(--gp-light-gray);
+}
+
+.pillars-section h2 {
+  margin-bottom: var(--space-xl);
+}
+
+.pillars-section .eyebrow {
+  margin-bottom: var(--space-xs);
+}
+
 /* Services Page — ISMS Wheel */
 /* TODO: Implement interactive ISMS wheel (Maddox) */
 
