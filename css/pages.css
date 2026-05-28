@@ -94,8 +94,244 @@
   margin-top: var(--space-lg);
 }
 
+/* Services Page — Shared */
+
+.service-section {
+  background: var(--gp-white);
+}
+
+.service-section:nth-of-type(even) {
+  background: var(--gp-light-gray);
+}
+
+.service-section__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: center;
+}
+
+.service-section__content h2 {
+  margin-bottom: var(--space-md);
+}
+
+.service-section__content p {
+  margin-bottom: var(--space-md);
+}
+
+.service-section__icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: var(--space-lg);
+}
+
+.service-feature-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.service-feature-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-size: 16px;
+  color: var(--gp-rich-black);
+}
+
+.service-feature-list li img {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 767px) {
+  .service-section__layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Services Page — Compliance */
+
+.service-section--alt {
+  background: var(--gp-light-gray);
+}
+
+.service-section__layout--reverse {
+  direction: rtl;
+}
+
+.service-section__layout--reverse > * {
+  direction: ltr;
+}
+
+.compliance-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.compliance-card {
+  background: var(--gp-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  box-shadow: var(--shadow-card);
+}
+
+.compliance-card h4 {
+  color: var(--gp-bright-blue);
+  margin-bottom: var(--space-xs);
+}
+
+.compliance-card p {
+  font-size: 15px;
+  color: var(--gp-gray);
+  line-height: 1.5;
+  margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+  .service-section__layout--reverse {
+    direction: ltr;
+  }
+
+  .compliance-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Services Page — ISMS Wheel */
-/* TODO: Implement interactive ISMS wheel (Maddox) */
+
+.isms-section {
+  background: var(--gp-rich-black);
+  color: var(--gp-white);
+}
+
+.isms-section .eyebrow {
+  color: var(--gp-lime);
+}
+
+.isms-section h2 {
+  color: var(--gp-white);
+  margin-bottom: var(--space-sm);
+}
+
+.isms-section__intro {
+  color: var(--gp-light-gray);
+  max-width: 700px;
+  margin-bottom: var(--space-xl);
+}
+
+.isms-wheel-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+}
+
+.isms-wheel-panel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.isms-wheel {
+  width: 100%;
+  max-width: 380px;
+}
+
+.isms-wheel svg {
+  width: 100%;
+  height: auto;
+}
+
+.isms-detail {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  min-height: 100px;
+}
+
+.isms-detail__name {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--gp-lime);
+  margin-bottom: var(--space-xs);
+}
+
+.isms-detail__desc {
+  font-size: 16px;
+  color: var(--gp-light-gray);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.isms-legend {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding-top: var(--space-xs);
+}
+
+.isms-legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  padding: 10px var(--space-sm);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.15s ease;
+  color: var(--gp-light-gray);
+  font-size: 15px;
+}
+
+.isms-legend__item:hover,
+.isms-legend__item--active {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gp-white);
+}
+
+.isms-legend__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--gp-white);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1024px) {
+  .isms-wheel-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .isms-wheel-panel {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .isms-wheel {
+    max-width: 260px;
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .isms-wheel-panel {
+    flex-direction: column;
+  }
+
+  .isms-wheel {
+    max-width: 100%;
+  }
+}
 
 /* Blog Listing */
 /* TODO: Blog grid layout and filters (Joshua) */
