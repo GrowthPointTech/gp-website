@@ -56,6 +56,44 @@
   margin-bottom: var(--space-xs);
 }
 
+/* Home Page — Services Overview */
+
+.services-overview {
+  background: var(--gp-white);
+}
+
+.services-overview h2 {
+  margin-bottom: var(--space-xl);
+}
+
+.card__icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: var(--space-sm);
+}
+
+.card__text {
+  font-size: 16px;
+  color: var(--gp-gray);
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+/* Home Page — Blog Highlights */
+
+.blog-highlights {
+  background: var(--gp-light-gray);
+}
+
+.blog-highlights h2 {
+  margin-bottom: var(--space-xl);
+}
+
+.blog-highlights__cta {
+  text-align: center;
+  margin-top: var(--space-lg);
+}
+
 /* Services Page — ISMS Wheel */
 /* TODO: Implement interactive ISMS wheel (Maddox) */
 
