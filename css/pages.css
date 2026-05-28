@@ -115,6 +115,8 @@
 
 .calendly-inline-widget {
   width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
   height: 900px;
 }
 
@@ -396,15 +398,22 @@
 
 .about-millie__photos {
   display: block;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-natural);
 }
 
 .about-millie__photo {
   width: 100%;
-  border-radius: var(--radius-lg);
   object-fit: cover;
   object-position: center top;
   aspect-ratio: 3 / 4;
-  box-shadow: var(--shadow-natural);
+  display: block;
+}
+
+.about-millie__photo--main {
+  transform: scale(1.15);
+  transform-origin: center 20%;
 }
 
 .about-millie__title {
