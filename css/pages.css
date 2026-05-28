@@ -11,6 +11,13 @@
   color: var(--gp-lime);
 }
 
+.hero__sub {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  color: var(--gp-lime);
+  margin-bottom: var(--space-sm);
+}
+
 .hero__ctas {
   display: flex;
   gap: var(--space-sm);
@@ -49,11 +56,14 @@
 }
 
 .pillars-section h2 {
-  margin-bottom: var(--space-xl);
+  margin-bottom: var(--space-sm);
 }
 
-.pillars-section .eyebrow {
-  margin-bottom: var(--space-xs);
+.pillars-section__intro {
+  font-size: 18px;
+  color: var(--gp-gray);
+  max-width: 800px;
+  margin-bottom: var(--space-xl);
 }
 
 /* Home Page — Services Overview */
@@ -86,6 +96,12 @@
 }
 
 .blog-highlights h2 {
+  margin-bottom: var(--space-sm);
+}
+
+.blog-highlights__intro {
+  font-size: 18px;
+  color: var(--gp-gray);
   margin-bottom: var(--space-xl);
 }
 
