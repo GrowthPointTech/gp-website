@@ -1,0 +1,53 @@
+/* ============================================================
+   GrowthPoint Brand Tokens
+   Source: GrowthPoint Brand Guide (2025)
+   ============================================================
+   This is the single source of truth for all brand values.
+   Never hard-code colors, fonts, or spacing in other files.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+:root {
+  /* Primary Palette */
+  --gp-rich-black:   #080F1F;
+  --gp-bright-blue:  #0C50D5;
+  --gp-med-blue:     #3F8CFF;
+  --gp-light-blue:   #A2C8F3;
+  --gp-white:        #FFFFFF;
+
+  /* Secondary Palette */
+  --gp-gray:         #8D99AE;
+  --gp-light-gray:   #EDF2F4;
+  --gp-lime:         #A4E322;
+  --gp-light-lime:   #E4FDB2;
+  --gp-orange:       #F6621C;
+  --gp-light-orange: #FDD8C6;
+
+  /* Typography */
+  --font-heading:  'Rethink Sans', system-ui, sans-serif;
+  --font-body:     'Onest', system-ui, sans-serif;
+
+  /* Spacing Scale */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  64px;
+  --space-2xl: 96px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Shadows */
+  --shadow-natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+  --shadow-deep:    12px 12px 50px rgba(0, 0, 0, 0.4);
+  --shadow-card:    0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Layout */
+  --content-width:  800px;
+  --wide-width:     1200px;
+  --max-width:      1400px;
+}

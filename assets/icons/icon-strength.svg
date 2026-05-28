@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" width="151" height="151" viewBox="0 0 151 151" fill="none">
+<circle cx="75.5" cy="75.5" r="75.5" fill="#F6621C"/>
+<path d="M73.8409 71.8365L55.5909 63.2092V89.7547L73.8409 98.0501V71.8365Z" fill="white"/>
+<path d="M75.5 68.85L92.7546 60.8864L75.5 52.9227L58.2455 60.8864L75.5 68.85Z" fill="white"/>
+<path d="M95.4092 63.2092L77.1592 71.8365V98.0501L95.4092 89.7547V63.2092Z" fill="white"/>
+<path d="M98.7273 61.5502V89.7547L112 96.3911V55.2456L98.7273 61.5502Z" fill="white"/>
+<path d="M97.0683 92.741L77.1592 101.7V115.636L110.341 99.3773L97.0683 92.741Z" fill="white"/>
+<path d="M73.841 101.7L53.9319 92.741L40.6592 99.3773L73.841 115.636V101.7Z" fill="white"/>
+<path d="M52.2727 89.7547V61.5502L39 55.2456V96.3911L52.2727 89.7547Z" fill="white"/>
+<path d="M54.2637 58.8955L73.841 49.9364V36L40.6592 52.2591L54.2637 58.8955Z" fill="white"/>
+<path d="M77.1592 49.9364L96.7365 58.8955L110.341 52.2591L77.1592 36V49.9364Z" fill="white"/>
+</svg>

@@ -1,0 +1,607 @@
+/* ============================================================
+   GrowthPoint Website — Reference Stylesheet
+   ============================================================
+   Extracted from gptechadvisors.com (WordPress/Elementor) and
+   the GrowthPoint Brand Guide. Use this as the starting point
+   for the static site rebuild.
+
+   Source: Brand guide (growthpoint-brand-guide.html)
+   Source: Live site (gptechadvisors.com) — crawled 2026-05-25
+   ============================================================ */
+
+/* ============================================================
+   1. CSS VARIABLES — BRAND TOKENS
+   ============================================================ */
+:root {
+  /* Primary Palette */
+  --gp-rich-black:   #080F1F;
+  --gp-bright-blue:  #0C50D5;
+  --gp-med-blue:     #3F8CFF;
+  --gp-light-blue:   #A2C8F3;
+  --gp-white:        #FFFFFF;
+
+  /* Secondary Palette */
+  --gp-gray:         #8D99AE;
+  --gp-light-gray:   #EDF2F4;
+  --gp-lime:         #A4E322;
+  --gp-light-lime:   #E4FDB2;
+  --gp-orange:       #F6621C;
+  --gp-light-orange: #FDD8C6;
+
+  /* Typography */
+  --font-heading:  'Rethink Sans', system-ui, sans-serif;
+  --font-body:     'Onest', system-ui, sans-serif;
+
+  /* Spacing Scale (from brand guide) */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  24px;
+  --space-lg:  40px;
+  --space-xl:  64px;
+  --space-2xl: 96px;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+
+  /* Shadows (from live site) */
+  --shadow-natural: 6px 6px 9px rgba(0, 0, 0, 0.2);
+  --shadow-deep:    12px 12px 50px rgba(0, 0, 0, 0.4);
+  --shadow-card:    0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Layout */
+  --content-width:  800px;
+  --wide-width:     1200px;
+  --max-width:      1400px;
+}
+
+/* ============================================================
+   2. GOOGLE FONTS IMPORT
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap');
+
+/* ============================================================
+   3. RESET & BASE
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--gp-rich-black);
+  background: var(--gp-white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--gp-med-blue);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--gp-bright-blue);
+}
+
+/* ============================================================
+   4. TYPOGRAPHY
+   ============================================================ */
+
+/* Eyebrow — small uppercase label above headings */
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gp-bright-blue);
+  margin-bottom: var(--space-xs);
+}
+
+/* On dark backgrounds, eyebrow uses lime */
+.dark .eyebrow,
+.bg-dark .eyebrow {
+  color: var(--gp-lime);
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--gp-rich-black);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--gp-rich-black);
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--gp-rich-black);
+}
+
+h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--gp-rich-black);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+/* On dark backgrounds */
+.dark h1, .dark h2, .dark h3, .dark h4,
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4 {
+  color: var(--gp-white);
+}
+
+.dark p, .dark a,
+.bg-dark p, .bg-dark a {
+  color: var(--gp-light-gray);
+}
+
+/* ============================================================
+   5. LAYOUT
+   ============================================================ */
+.container {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.container--narrow {
+  max-width: var(--content-width);
+}
+
+.container--wide {
+  max-width: var(--max-width);
+}
+
+section {
+  padding: var(--space-2xl) 0;
+}
+
+/* ============================================================
+   6. NAVIGATION (from live site)
+   ============================================================ */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--gp-white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid var(--gp-light-gray);
+}
+
+.nav__logo img {
+  height: 42px;
+  width: auto;
+}
+
+.nav__links {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+  align-items: center;
+}
+
+.nav__links a {
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--gp-rich-black);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav__links a:hover {
+  color: var(--gp-bright-blue);
+}
+
+/* Mobile hamburger (hidden on desktop) */
+.nav__toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--space-xs);
+}
+
+/* ============================================================
+   7. HERO SECTION (from live site)
+   ============================================================ */
+.hero {
+  background: var(--gp-rich-black);
+  color: var(--gp-white);
+  padding: var(--space-2xl) 0;
+  text-align: left;
+}
+
+.hero h1 {
+  color: var(--gp-white);
+  font-size: 56px;
+  max-width: 700px;
+  margin-bottom: var(--space-md);
+}
+
+.hero p {
+  color: var(--gp-light-blue);
+  font-size: 20px;
+  max-width: 600px;
+  margin-bottom: var(--space-lg);
+}
+
+/* ============================================================
+   8. BUTTONS & CTAs
+   ============================================================ */
+.btn {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  padding: 14px 32px;
+  border-radius: var(--radius-md);
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  border: none;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* Primary CTA — Orange */
+.btn--primary {
+  background: var(--gp-orange);
+  color: var(--gp-white);
+}
+
+.btn--primary:hover {
+  background: #e5571a;
+  color: var(--gp-white);
+}
+
+/* Secondary CTA — Blue */
+.btn--secondary {
+  background: var(--gp-bright-blue);
+  color: var(--gp-white);
+}
+
+.btn--secondary:hover {
+  background: #0a45b8;
+  color: var(--gp-white);
+}
+
+/* Outline variant */
+.btn--outline {
+  background: transparent;
+  color: var(--gp-bright-blue);
+  border: 2px solid var(--gp-bright-blue);
+}
+
+.btn--outline:hover {
+  background: var(--gp-bright-blue);
+  color: var(--gp-white);
+}
+
+/* ============================================================
+   9. CARDS (blog cards, service cards)
+   ============================================================ */
+.card {
+  background: var(--gp-white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: var(--shadow-natural);
+  transform: translateY(-2px);
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.card__body {
+  padding: var(--space-md);
+}
+
+.card__tag {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--gp-bright-blue);
+  margin-bottom: var(--space-xs);
+}
+
+.card__title {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.3;
+  color: var(--gp-rich-black);
+  margin-bottom: var(--space-sm);
+}
+
+.card__link {
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--gp-med-blue);
+  text-decoration: none;
+}
+
+.card__link:hover {
+  text-decoration: underline;
+}
+
+/* Card grid layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+}
+
+/* ============================================================
+   10. PILLARS SECTION (Structure, Strengthen, Streamline, Scale)
+   ============================================================ */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  text-align: center;
+}
+
+.pillar__icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-sm);
+}
+
+.pillar__title {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--gp-bright-blue);
+  margin-bottom: var(--space-xs);
+}
+
+.pillar__text {
+  font-size: 16px;
+  color: var(--gp-gray);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   11. TESTIMONIAL
+   ============================================================ */
+.testimonial {
+  background: var(--gp-light-gray);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.testimonial__quote {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--gp-rich-black);
+  max-width: 800px;
+  margin: 0 auto var(--space-md);
+}
+
+.testimonial__author {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gp-bright-blue);
+}
+
+.testimonial__role {
+  font-size: 14px;
+  color: var(--gp-gray);
+}
+
+/* ============================================================
+   12. FOOTER
+   ============================================================ */
+.footer {
+  background: var(--gp-rich-black);
+  color: var(--gp-white);
+  padding: var(--space-xl) 0 var(--space-md);
+}
+
+.footer__logo img {
+  height: 42px;
+  width: auto;
+  margin-bottom: var(--space-md);
+}
+
+.footer__links {
+  display: flex;
+  gap: var(--space-md);
+  list-style: none;
+  margin-bottom: var(--space-lg);
+}
+
+.footer__links a {
+  color: var(--gp-light-gray);
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.footer__links a:hover {
+  color: var(--gp-white);
+}
+
+.footer__social {
+  display: flex;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-lg);
+}
+
+.footer__social a {
+  color: var(--gp-gray);
+  font-size: 20px;
+  transition: color 0.2s ease;
+}
+
+.footer__social a:hover {
+  color: var(--gp-white);
+}
+
+.footer__bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: var(--space-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: var(--gp-gray);
+}
+
+/* ============================================================
+   13. CTA SECTION (full-width callout)
+   ============================================================ */
+.cta-section {
+  background: var(--gp-bright-blue);
+  color: var(--gp-white);
+  text-align: center;
+  padding: var(--space-xl) 0;
+}
+
+.cta-section h2 {
+  color: var(--gp-white);
+  margin-bottom: var(--space-sm);
+}
+
+.cta-section p {
+  color: var(--gp-light-blue);
+  margin-bottom: var(--space-md);
+}
+
+/* ============================================================
+   14. RESPONSIVE BREAKPOINTS
+   ============================================================ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  h1 { font-size: 42px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 24px; }
+
+  .pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  h1 { font-size: 32px; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 22px; }
+  p  { font-size: 16px; }
+
+  section {
+    padding: var(--space-xl) 0;
+  }
+
+  .nav__links {
+    display: none; /* toggled via JS */
+  }
+
+  .nav__toggle {
+    display: block;
+  }
+
+  .nav__links.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--gp-white);
+    padding: var(--space-md);
+    border-bottom: 1px solid var(--gp-light-gray);
+    box-shadow: var(--shadow-natural);
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .pillars {
+    grid-template-columns: 1fr;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer__bottom {
+    flex-direction: column;
+    gap: var(--space-xs);
+    text-align: center;
+  }
+}

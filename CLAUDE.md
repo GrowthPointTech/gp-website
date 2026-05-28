@@ -1,0 +1,80 @@
+# CLAUDE.md — gp-website
+
+## Project
+
+Static HTML/CSS website for GrowthPoint Technology Advisors (gptechadvisors.com).
+Replaces WordPress/Elementor site. Hosted on AWS Amplify.
+
+## Stack
+
+- HTML5 + CSS3 + vanilla JavaScript
+- No frameworks, no build step
+- CSS custom properties for brand tokens
+- Mobile-first responsive (breakpoints: 768px, 1024px)
+
+## Brand Compliance
+
+**All design must follow the GrowthPoint Brand Guide.**
+
+- Colors: `css/variables.css` (source of truth for all brand tokens)
+- Fonts: Rethink Sans (headings), Onest (body/eyebrows) via Google Fonts
+- Logos: `assets/logos/` — use SVG versions. KO (white) variants for dark backgrounds.
+- Reference: `reference/website-reference-styles.css` has the full extracted stylesheet from the current site
+
+## File Organization
+
+| Directory | Purpose |
+|-----------|---------|
+| `css/variables.css` | Brand tokens only (colors, fonts, spacing, shadows) |
+| `css/base.css` | Reset, typography, layout primitives |
+| `css/components.css` | Reusable: nav, footer, cards, buttons, testimonials |
+| `css/pages.css` | Page-specific styles |
+| `js/` | Minimal JS: mobile nav toggle, contact page |
+| `assets/` | Images, logos, icons, favicons |
+| `reference/` | Reference files — not deployed |
+
+## Conventions
+
+- No inline styles or inline JavaScript
+- Semantic HTML5 elements (`<nav>`, `<main>`, `<article>`, `<footer>`)
+- BEM-like CSS naming: `.block__element--modifier`
+- All images must have `alt` attributes
+- CSS classes use brand variable names, never hard-coded hex values
+- Keep each HTML page under 300 lines — extract shared partials into components
+
+## Pages
+
+| Page | File | Key Sections |
+|------|------|-------------|
+| Home | `index.html` | Hero, 4 pillars, services overview, blog highlights, testimonial, CTA |
+| Services | `services.html` | Fractional CISO, Compliance, ISMS wheel, Audits, Data Privacy |
+| About | `about.html` | Company story, mission, Stacey bio, social links |
+| Contact | `contact.html` | Calendly booking embed + mailto fallback |
+| Blog | `blog/index.html` | Card grid of posts |
+| Blog Post | `blog/posts/{slug}.html` | Article content |
+
+## Shared Components
+
+Every page includes:
+1. **Nav** — Logo left, links right (Services, Blog, About, Contact). Sticky. Mobile hamburger.
+2. **Footer** — KO logo, nav links, social (LinkedIn, X), copyright, privacy policy link.
+
+## Security
+
+- `customHttp.yml` defines security headers (HSTS, CSP, X-Frame-Options, X-Content-Type-Options)
+- No secrets in the repo
+- No inline JS (Content-Security-Policy compliance)
+
+## Branch Strategy
+
+- `feature/*` → PR to `preview` → merge deploys to preview.gptechadvisors.com
+- `preview` → PR to `main` → merge deploys to gptechadvisors.com
+- Never push directly to `main` or `preview`
+
+## Team
+
+| Person | Role |
+|--------|------|
+| Stacey Robinson | Project champion, final approver |
+| Maddox Strader | Intern — Home, Services, ISMS wheel, AWS |
+| Joshua Williams | Intern — About, Blog, Contact, Claude skills |

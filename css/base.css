@@ -1,0 +1,150 @@
+/* ============================================================
+   Base — Reset, Typography, Layout Primitives
+   ============================================================ */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.6;
+  color: var(--gp-rich-black);
+  background: var(--gp-white);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--gp-med-blue);
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--gp-bright-blue);
+}
+
+/* Typography */
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gp-bright-blue);
+  margin-bottom: var(--space-xs);
+}
+
+.bg-dark .eyebrow {
+  color: var(--gp-lime);
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 56px;
+  line-height: 1.0;
+  letter-spacing: -0.02em;
+  color: var(--gp-rich-black);
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 42px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--gp-rich-black);
+}
+
+h3 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--gp-rich-black);
+}
+
+h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.4;
+  color: var(--gp-rich-black);
+}
+
+p {
+  font-family: var(--font-body);
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: var(--space-sm);
+}
+
+.bg-dark h1, .bg-dark h2, .bg-dark h3, .bg-dark h4 {
+  color: var(--gp-white);
+}
+
+.bg-dark p, .bg-dark a {
+  color: var(--gp-light-gray);
+}
+
+/* Layout */
+
+.container {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.container--narrow {
+  max-width: var(--content-width);
+}
+
+.container--wide {
+  max-width: var(--max-width);
+}
+
+section {
+  padding: var(--space-2xl) 0;
+}
+
+/* Responsive */
+
+@media (max-width: 1024px) {
+  h1 { font-size: 42px; }
+  h2 { font-size: 32px; }
+  h3 { font-size: 24px; }
+
+  .container {
+    padding: 0 var(--space-md);
+  }
+}
+
+@media (max-width: 767px) {
+  h1 { font-size: 32px; }
+  h2 { font-size: 28px; }
+  h3 { font-size: 22px; }
+  p  { font-size: 16px; }
+
+  section {
+    padding: var(--space-xl) 0;
+  }
+}
