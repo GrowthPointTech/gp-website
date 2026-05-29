@@ -1,0 +1,17 @@
+{
+  "name": "gp-website",
+  "version": "1.0.0",
+  "description": "Static HTML/CSS website for [gptechadvisors.com](https://www.gptechadvisors.com), hosted on AWS Amplify.",
+  "main": "index.js",
+  "scripts": {
+    "extract-styles": "node tools/extract-styles.js",
+    "compare-styles": "node tools/compare-styles.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^24.43.1"
+  }
+}
