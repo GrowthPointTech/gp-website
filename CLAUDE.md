@@ -53,6 +53,10 @@ Replaces WordPress/Elementor site. Hosted on AWS Amplify.
 | Blog | `blog/index.html` | Card grid of posts |
 | Blog Post | `blog/posts/{slug}.html` | Article content |
 
+## Blog
+- Maintain this as an array of Blog Posts so that we can dynamically list posts and add posts in the future
+- The home page should pull form this array to create a scrollable horizontal band on the home page of blog posts
+
 ## Shared Components
 
 Every page includes:
