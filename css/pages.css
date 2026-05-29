@@ -102,8 +102,8 @@
 .pillar__circle--lime { background: var(--gp-lime); }
 
 .pillar__icon {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
 }
 
 /* Pillar name: Onest 18px/700 (computed) */
@@ -117,13 +117,18 @@
 
 /* Pillar description slider */
 .pillar-slider {
-  background: var(--gp-rich-black);
+  background: none;
   border-radius: var(--radius-lg);
-  padding: var(--space-xl) var(--space-2xl);
   position: relative;
   min-height: 300px;
   display: flex;
   align-items: center;
+  overflow: hidden;
+}
+
+.pillar-slider__slide {
+  padding: var(--space-xl) var(--space-2xl);
+  border-radius: var(--radius-lg);
 }
 
 .pillar-slider__track {
@@ -138,6 +143,18 @@
 
 .pillar-slider__slide--active {
   display: block;
+}
+
+/* Slide background colors matching pillar circles */
+.pillar-slider__slide--dark { background: var(--gp-rich-black); }
+.pillar-slider__slide--orange { background: var(--gp-orange); }
+.pillar-slider__slide--purple { background: #6C5CE7; }
+.pillar-slider__slide--lime { background: var(--gp-lime); }
+
+/* Dark text on lime background */
+.pillar-slider__slide--lime .pillar-slider__heading,
+.pillar-slider__slide--lime .pillar-slider__desc {
+  color: var(--gp-rich-black);
 }
 
 /* Slide heading: Onest 35px/700, white (computed) */
