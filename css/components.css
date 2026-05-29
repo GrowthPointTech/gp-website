@@ -16,6 +16,25 @@
   border-bottom: 1px solid var(--gp-light-gray);
 }
 
+/* Transparent nav — overlays hero on home page */
+.nav--transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom: none;
+  z-index: 100;
+}
+
+.nav--transparent .nav__links a {
+  color: var(--gp-white);
+}
+
+.nav--transparent .nav__links a:hover {
+  color: var(--gp-light-blue);
+}
+
 .nav__logo img {
   height: 42px;
   width: auto;
@@ -222,14 +241,15 @@
   margin-bottom: var(--space-lg);
 }
 
-/* Home page hero — pattern background + two-column layout */
+/* Home page hero — real background from live site */
 .hero--home {
   background:
-    url('../assets/images/hero-pattern.svg') repeat,
-    linear-gradient(135deg, #080F1F 0%, #0f1a3a 40%, #1a1040 100%);
-  padding: var(--space-2xl) 0 0;
-  min-height: 560px;
+    url('../assets/images/background-blue-arrows.svg') center / cover no-repeat;
+  padding: 0;
+  min-height: 100vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
 }
 
 .hero__grid {
@@ -240,6 +260,7 @@
 }
 
 .hero__content {
+  padding-top: 120px; /* clear the transparent nav */
   padding-bottom: var(--space-2xl);
 }
 
@@ -298,6 +319,10 @@
   .hero--home {
     min-height: auto;
     padding: var(--space-xl) 0;
+  }
+
+  .hero__content {
+    padding-top: 80px;
   }
 }
 
