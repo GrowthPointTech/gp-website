@@ -50,9 +50,9 @@
 .nav__links a {
   font-family: var(--font-body);
   font-weight: 600;
-  font-size: 14px;
+  font-size: 16px; /* live: 16px computed */
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.5px; /* live: computed */
   color: var(--gp-rich-black);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -261,10 +261,10 @@
 
 .hero__content {
   padding-top: 80px; /* clear the transparent nav */
-  max-width: 550px;
+  max-width: 800px; /* live site H1 bounding width is 768px */
 }
 
-/* Eyebrow: matches Elementor "accent" typography variable */
+/* Eyebrow: computed from live site via Puppeteer */
 .hero--home .hero__eyebrow {
   font-family: var(--font-body);
   font-size: 23px;
@@ -272,30 +272,30 @@
   text-transform: uppercase;
   letter-spacing: 0.5px;
   line-height: 23px;
-  color: var(--gp-lime);
+  color: var(--gp-light-lime); /* live: rgb(228,253,178) = #E4FDB2 */
   margin-bottom: var(--space-md);
 }
 
-/* H1: matches Elementor "primary" typography variable */
+/* H1: computed from live site via Puppeteer */
 .hero--home h1 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 95px;
-  line-height: 95px;
+  font-size: 110px; /* live: 110px (was 95px) */
+  line-height: 100px; /* live: 100px (was 95px) */
   letter-spacing: 0.3px;
   color: var(--gp-white);
-  max-width: none;
+  max-width: 768px; /* live: 768px bounding width */
   margin-bottom: var(--space-lg);
 }
 
-/* Body: matches Elementor "text" typography variable */
+/* Body: computed from live site via Puppeteer */
 .hero--home .hero__content > p {
   font-family: var(--font-body);
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
-  color: var(--gp-light-gray);
-  max-width: 480px;
+  color: var(--gp-white); /* live: rgb(255,255,255) — not light-gray */
+  max-width: 467px; /* live: 466.766px bounding width */
 }
 
 @media (max-width: 1024px) {
