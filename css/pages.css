@@ -98,8 +98,8 @@
 
 .pillar__circle--dark { background: var(--gp-rich-black); }
 .pillar__circle--orange { background: var(--gp-orange); }
-.pillar__circle--purple { background: radial-gradient(circle at center, #9B59B6 0%, #6C5CE7 70%); }
-.pillar__circle--lime { background: radial-gradient(circle at center, #C4F74A 0%, var(--gp-lime) 70%); }
+.pillar__circle--blue { background: radial-gradient(circle at center, #3F8CFF 0%, #0C50D5 70%); }
+.pillar__circle--green { background: radial-gradient(circle at center, #B5E655 0%, #95D316 70%); }
 
 .pillar__icon {
   width: 110px;

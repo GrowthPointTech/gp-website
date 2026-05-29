@@ -9,7 +9,7 @@
   var current = 0;
 
   // Map slide index to slider background color
-  var colors = ['#080F1F', '#F6621C', '#6C5CE7', '#A4E322'];
+  var colors = ['#080F1F', '#F6621C', '#0C50D5', '#95D316'];
   // Text should be dark on lime
   var darkText = [false, false, false, true];
 
