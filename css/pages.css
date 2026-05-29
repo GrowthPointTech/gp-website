@@ -98,8 +98,8 @@
 
 .pillar__circle--dark { background: var(--gp-rich-black); }
 .pillar__circle--orange { background: var(--gp-orange); }
-.pillar__circle--purple { background: #6C5CE7; }
-.pillar__circle--lime { background: var(--gp-lime); }
+.pillar__circle--purple { background: radial-gradient(circle at center, #9B59B6 0%, #6C5CE7 70%); }
+.pillar__circle--lime { background: radial-gradient(circle at center, #C4F74A 0%, var(--gp-lime) 70%); }
 
 .pillar__icon {
   width: 110px;
@@ -117,18 +117,19 @@
 
 /* Pillar description slider */
 .pillar-slider {
-  background: none;
   border-radius: var(--radius-lg);
   position: relative;
   min-height: 300px;
-  display: flex;
-  align-items: center;
   overflow: hidden;
+  background: var(--gp-rich-black); /* default, overridden by active slide color */
+}
+
+.pillar-slider__track {
+  padding: var(--space-xl) var(--space-2xl);
 }
 
 .pillar-slider__slide {
-  padding: var(--space-xl) var(--space-2xl);
-  border-radius: var(--radius-lg);
+  border-radius: 0;
 }
 
 .pillar-slider__track {
@@ -145,17 +146,8 @@
   display: block;
 }
 
-/* Slide background colors matching pillar circles */
-.pillar-slider__slide--dark { background: var(--gp-rich-black); }
-.pillar-slider__slide--orange { background: var(--gp-orange); }
-.pillar-slider__slide--purple { background: #6C5CE7; }
-.pillar-slider__slide--lime { background: var(--gp-lime); }
-
-/* Dark text on lime background */
-.pillar-slider__slide--lime .pillar-slider__heading,
-.pillar-slider__slide--lime .pillar-slider__desc {
-  color: var(--gp-rich-black);
-}
+/* Slide background colors handled by JS on .pillar-slider container */
+/* JS also updates text/arrow/dot colors for contrast on lime */
 
 /* Slide heading: Onest 35px/700, white (computed) */
 .pillar-slider__heading {
@@ -179,8 +171,11 @@
   margin: 0 0 var(--space-sm);
 }
 
-/* Arrows */
+/* Arrows — overlaid on slider */
 .pillar-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
   background: none;
   border: none;
   color: var(--gp-white);
@@ -189,8 +184,11 @@
   padding: 0 var(--space-sm);
   opacity: 0.7;
   transition: opacity 0.2s;
-  flex-shrink: 0;
+  z-index: 2;
 }
+
+.pillar-slider__arrow--prev { left: 10px; }
+.pillar-slider__arrow--next { right: 10px; }
 
 .pillar-slider__arrow:hover {
   opacity: 1;
