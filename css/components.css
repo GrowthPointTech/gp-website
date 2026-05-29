@@ -223,7 +223,8 @@
 /* Hero */
 
 .hero {
-  background: var(--gp-rich-black);
+  background: none;
+  background-color: var(--gp-rich-black);
   color: var(--gp-white);
   padding: var(--space-2xl) 0;
   text-align: left;
