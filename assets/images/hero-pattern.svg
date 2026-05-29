@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800">
+  <defs>
+    <pattern id="arrows" x="0" y="0" width="120" height="120" patternUnits="userSpaceOnUse">
+      <!-- Arrow/chevron pointing right -->
+      <path d="M30 10 L70 60 L30 110" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="2"/>
+      <!-- Smaller arrow offset -->
+      <path d="M60 30 L90 60 L60 90" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+  <rect width="800" height="800" fill="url(#arrows)"/>
+</svg>
