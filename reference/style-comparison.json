@@ -1,0 +1,144 @@
+{
+  "/": [
+    {
+      "label": "hero-eyebrow",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "20px"
+        },
+        {
+          "property": "text-align",
+          "live": "start",
+          "local": "left"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Scale Cybersecurity and GRC With Confidence",
+      "localText": "Scale Cybersecurity and GRC With Confidence",
+      "liveSize": "626px x 23px",
+      "localSize": "768px x 23px"
+    },
+    {
+      "label": "hero-h1",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "20px"
+        },
+        {
+          "property": "text-align",
+          "live": "start",
+          "local": "left"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Move forward. Move smart.",
+      "localText": "Move forward. Move smart.",
+      "liveSize": "768px x 200px",
+      "localSize": "768px x 200px"
+    },
+    {
+      "label": "hero-body",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "text-align",
+          "live": "start",
+          "local": "left"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Achieve sustainable growth and operational excellence with o",
+      "localText": "Achieve sustainable growth and operational excellence with o",
+      "liveSize": "467px x 104px",
+      "localSize": "467px x 104px"
+    },
+    {
+      "label": "nav-link",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "min-height",
+          "live": "auto",
+          "local": "0px"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Services",
+      "localText": "Services",
+      "liveSize": "123px x 49px",
+      "localSize": "123px x 49px"
+    },
+    {
+      "label": "pillars-heading",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        },
+        {
+          "property": "font-size",
+          "live": "23px",
+          "local": "42px"
+        },
+        {
+          "property": "font-weight",
+          "live": "600",
+          "local": "400"
+        },
+        {
+          "property": "line-height",
+          "live": "23px",
+          "local": "46.2px"
+        },
+        {
+          "property": "letter-spacing",
+          "live": "0.5px",
+          "local": "-0.84px"
+        },
+        {
+          "property": "text-transform",
+          "live": "uppercase",
+          "local": "none"
+        },
+        {
+          "property": "color",
+          "live": "rgb(228, 253, 178)",
+          "local": "rgb(8, 15, 31)"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "16px"
+        }
+      ],
+      "textMatch": false,
+      "liveText": "Scale Cybersecurity and GRC With Confidence",
+      "localText": "Expertise and Experience",
+      "liveSize": "626px x 23px",
+      "localSize": "1120px x 46px"
+    }
+  ]
+}

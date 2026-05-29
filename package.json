@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "extract-styles": "node tools/extract-styles.js",
+    "compare-styles": "node tools/compare-styles.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
