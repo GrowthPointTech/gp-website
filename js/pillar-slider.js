@@ -11,6 +11,8 @@
   // Map slide index to slider background color
   var colors = ['#080F1F', '#F6621C', '#0C50D5', '#95D316'];
   // Text should be dark on lime
+  // Dark text needed on light backgrounds (Scale green)
+  // Streamline (#0C50D5) is dark enough for white text
   var darkText = [false, false, false, true];
 
   if (!slides.length || !slider) return;
@@ -30,12 +32,28 @@
     // Update slider container background color
     slider.style.backgroundColor = colors[current];
 
-    // Update arrow and dot colors for readability
+    // Update all text, arrow, and dot colors for readability
     var textColor = darkText[current] ? '#080F1F' : '#FFFFFF';
     var dotInactive = darkText[current] ? 'rgba(8,15,31,0.3)' : 'rgba(255,255,255,0.3)';
 
     prevBtn.style.color = textColor;
     nextBtn.style.color = textColor;
+
+    // Update heading and description text color
+    var heading = slides[current].querySelector('.pillar-slider__heading');
+    var descs = slides[current].querySelectorAll('.pillar-slider__desc');
+    if (heading) heading.style.color = textColor;
+    descs.forEach(function (d) { d.style.color = textColor; });
+
+    // Reset previous slide text to white (default)
+    slides.forEach(function (s, i) {
+      if (i !== current) {
+        var h = s.querySelector('.pillar-slider__heading');
+        var ds = s.querySelectorAll('.pillar-slider__desc');
+        if (h) h.style.color = '';
+        ds.forEach(function (d) { d.style.color = ''; });
+      }
+    });
 
     dots.forEach(function (dot, i) {
       dot.style.backgroundColor = (i === current) ? textColor : dotInactive;
