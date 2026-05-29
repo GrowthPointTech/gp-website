@@ -60,13 +60,28 @@ const COMPARISONS = {
       },
       {
         label: 'pillars-heading',
-        live: '.elementor-widget-heading .elementor-heading-title',
-        local: '.pillars-section h2'
+        live: '[data-id="a3c9176"] .elementor-heading-title',
+        local: '.pillars-section__heading'
       },
       {
-        label: 'pillar-title',
-        live: '.elementor-icon-box .elementor-icon-box-title',
-        local: '.pillar__title'
+        label: 'pillars-intro',
+        live: '[data-id="3a60c65"] p',
+        local: '.pillars-section__intro'
+      },
+      {
+        label: 'pillar-name',
+        live: '[data-id="3e18276"] .elementor-heading-title',
+        local: '.pillar__name'
+      },
+      {
+        label: 'pillar-slide-heading',
+        live: '.elementor-slide-heading',
+        local: '.pillar-slider__heading'
+      },
+      {
+        label: 'pillar-slide-desc',
+        live: '.elementor-slide-description',
+        local: '.pillar-slider__desc'
       },
       {
         label: 'pillar-text',

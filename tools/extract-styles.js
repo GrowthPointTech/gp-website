@@ -48,13 +48,14 @@ const ELEMENTS = {
       'nav-link': '[data-id="cd7bc42"] .elementor-item',
       'nav-contact-btn': '[data-id="77e69cb"] .elementor-button',
       // Pillars section
-      'pillars-container': '[data-id="670d7e3e"]',
-      'pillars-heading': '.elementor-element-670d7e3e .elementor-heading-title',
-      // Services section
-      'services-heading': '.elementor-element-388bf55 .elementor-heading-title',
-      // Testimonial
-      'testimonial-quote': '.elementor-element-77d9e0c6 .elementor-widget-container',
-      'testimonial-author': '.elementor-element-6a9ff28d .elementor-heading-title',
+      'pillars-container': '[data-id="9c99b3f"]',
+      'pillars-heading': '[data-id="a3c9176"] .elementor-heading-title',
+      'pillars-intro': '[data-id="3a60c65"] p',
+      'pillar-icon-container': '[data-id="51c480a"]',
+      'pillar-name': '[data-id="3e18276"] .elementor-heading-title',
+      'pillar-slide-heading': '.elementor-slide-heading',
+      'pillar-slide-description': '.elementor-slide-description',
+      'pillar-slider-container': '[data-id="c0088ab"]',
       // Footer
       'footer-container': 'footer, [data-elementor-type="footer"]',
     }

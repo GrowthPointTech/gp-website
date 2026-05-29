@@ -45,18 +45,222 @@
 /* Home Page — Pillars */
 
 .pillars-section {
-  background: var(--gp-light-gray);
+  background: var(--gp-white);
+  padding: var(--space-2xl) 0;
 }
 
-.pillars-section h2 {
-  margin-bottom: var(--space-sm);
+/* Heading: Rethink Sans 60px/400, line-height 55px, letter-spacing 0.3px (computed) */
+.pillars-section__heading {
+  font-family: var(--font-heading);
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 55px;
+  letter-spacing: 0.3px;
+  color: var(--gp-rich-black);
+  text-align: center;
+  margin-bottom: var(--space-md);
 }
 
+/* Intro: Onest 18px/400, line-height 26px (computed) */
 .pillars-section__intro {
+  font-family: var(--font-body);
   font-size: 18px;
-  color: var(--gp-gray);
-  max-width: 800px;
-  margin-bottom: var(--space-xl);
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--gp-rich-black);
+  text-align: left;
+  margin-bottom: 14.4px; /* live: 14.4px computed */
+}
+
+/* Pillar icon row */
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-md);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.pillar {
+  cursor: pointer;
+  padding-bottom: 20px;
+}
+
+/* Pillar icons — using actual images from live site (circles baked in) */
+.pillar__img {
+  width: 150px;
+  height: 150px;
+  margin: 0 auto var(--space-sm);
+  display: block;
+  border-radius: 50%;
+}
+
+/* Pillar name: Onest 18px/700 (computed) */
+.pillar__name {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 18px;
+  color: var(--gp-rich-black);
+}
+
+/* Pillar description slider */
+.pillar-slider {
+  border-radius: var(--radius-lg);
+  position: relative;
+  min-height: 300px;
+  overflow: hidden;
+  background: var(--gp-rich-black); /* default, overridden by active slide color */
+}
+
+.pillar-slider__track {
+  padding: var(--space-xl) var(--space-2xl);
+}
+
+.pillar-slider__slide {
+  border-radius: 0;
+}
+
+.pillar-slider__track {
+  flex: 1;
+  overflow: hidden;
+}
+
+.pillar-slider__slide {
+  display: none;
+  text-align: center;
+}
+
+.pillar-slider__slide--active {
+  display: block;
+}
+
+/* Slide background colors handled by JS on .pillar-slider container */
+/* JS also updates text/arrow/dot colors for contrast on lime */
+
+/* Slide heading: Onest 35px/700, white (computed) */
+.pillar-slider__heading {
+  font-family: var(--font-body);
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 35px;
+  letter-spacing: normal; /* override inherited h3 value */
+  color: var(--gp-white);
+  margin-bottom: 30px; /* live: 30px */
+}
+
+/* Slide description: Onest 17px/400, line-height 23.8px, white (computed) */
+.pillar-slider__desc {
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 23.8px;
+  color: var(--gp-white);
+  max-width: 780px;
+  margin: 0 0 var(--space-sm);
+}
+
+/* Arrows — overlaid on slider */
+.pillar-slider__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--gp-white);
+  font-size: 48px;
+  cursor: pointer;
+  padding: 0 var(--space-sm);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  z-index: 2;
+}
+
+.pillar-slider__arrow--prev { left: 10px; }
+.pillar-slider__arrow--next { right: 10px; }
+
+.pillar-slider__arrow:hover {
+  opacity: 1;
+}
+
+/* Pagination dots */
+.pillar-slider__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pillar-slider__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s, width 0.2s;
+}
+
+.pillar-slider__dot--active {
+  background: var(--gp-white);
+  width: 24px;
+  border-radius: 5px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pillars-section__heading {
+    font-size: 42px;
+    line-height: 46px;
+  }
+
+  .pillar__img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .pillar-slider {
+    padding: var(--space-lg) var(--space-xl);
+  }
+}
+
+@media (max-width: 767px) {
+  .pillars {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pillars-section__heading {
+    font-size: 32px;
+    line-height: 36px;
+  }
+
+  .pillar__img {
+    width: 100px;
+    height: 100px;
+  }
+
+  .pillar-slider {
+    padding: var(--space-lg) var(--space-md);
+  }
+
+  .pillar-slider__heading {
+    font-size: 24px;
+    line-height: 28px;
+  }
+
+  .pillar-slider__desc {
+    font-size: 15px;
+    line-height: 21px;
+  }
+
+  .pillar-slider__arrow {
+    font-size: 32px;
+    padding: 0 var(--space-xs);
+  }
 }
 
 /* Home Page — Services Overview */

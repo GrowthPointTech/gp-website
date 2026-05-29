@@ -95,38 +95,48 @@
       "diffs": [
         {
           "property": "font-family",
-          "live": "Onest, sans-serif",
+          "live": "\"Rethink Sans\", sans-serif",
           "local": "\"Rethink Sans\", system-ui, sans-serif"
         },
         {
-          "property": "font-size",
-          "live": "23px",
-          "local": "42px"
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "24px"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Expertise and Experience",
+      "localText": "Expertise and Experience",
+      "liveSize": "713px x 55px",
+      "localSize": "1120px x 55px"
+    },
+    {
+      "label": "pillars-intro",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
         },
         {
-          "property": "font-weight",
-          "live": "600",
-          "local": "400"
-        },
+          "property": "text-align",
+          "live": "start",
+          "local": "left"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "GrowthPoint can help regardless of where you are on your cyb",
+      "localText": "GrowthPoint can help regardless of where you are on your cyb",
+      "liveSize": "1280px x 52px",
+      "localSize": "1120px x 52px"
+    },
+    {
+      "label": "pillar-name",
+      "diffs": [
         {
-          "property": "line-height",
-          "live": "23px",
-          "local": "46.2px"
-        },
-        {
-          "property": "letter-spacing",
-          "live": "0.5px",
-          "local": "-0.84px"
-        },
-        {
-          "property": "text-transform",
-          "live": "uppercase",
-          "local": "none"
-        },
-        {
-          "property": "color",
-          "live": "rgb(228, 253, 178)",
-          "local": "rgb(8, 15, 31)"
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
         },
         {
           "property": "margin-bottom",
@@ -134,11 +144,46 @@
           "local": "16px"
         }
       ],
-      "textMatch": false,
-      "liveText": "Scale Cybersecurity and GRC With Confidence",
-      "localText": "Expertise and Experience",
-      "liveSize": "626px x 23px",
-      "localSize": "1120px x 46px"
+      "textMatch": true,
+      "liveText": "STRUCTURE",
+      "localText": "STRUCTURE",
+      "liveSize": "109px x 18px",
+      "localSize": "262px x 18px"
+    },
+    {
+      "label": "pillar-slide-heading",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "STRUCTURE",
+      "localText": "STRUCTURE",
+      "liveSize": "779px x 35px",
+      "localSize": "832px x 35px"
+    },
+    {
+      "label": "pillar-slide-desc",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "16px"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Building a cybersecurity and compliance program from the gro",
+      "localText": "Building a cybersecurity and compliance program from the gro",
+      "liveSize": "779px x 214px",
+      "localSize": "780px x 167px"
     }
   ]
 }
