@@ -12,6 +12,44 @@ Replaces WordPress/Elementor site. Hosted on AWS Amplify.
 - CSS custom properties for brand tokens
 - Mobile-first responsive (breakpoints: 768px, 1024px)
 
+## Critical — Matching the Live Site
+
+When copying ANY element from the live site (https://gptechadvisors.com), follow this exact sequence:
+
+### Step 1: Find the element in the cached reference files
+- `reference/live-home.html` — full page source for home page
+- `reference/live-services.html` — full page source for services page
+- `reference/live-about.html` — full page source for about page
+- `reference/live-blog.html` — full page source for blog page
+- Find the element by searching for its text content or Elementor class names
+
+### Step 2: Extract the CSS from the cached Elementor stylesheets
+- `reference/elementor-post-6.css` — global/theme styles
+- `reference/elementor-post-13.css` — additional page styles
+- `reference/elementor-post-28.css` — additional page styles
+- `reference/elementor-post-39.css` — home page specific styles
+- Search for the element's Elementor class (e.g., `elementor-element-6b1b81a`)
+- Extract ALL CSS properties: font-family, font-size, font-weight, color, letter-spacing, text-transform, padding, margin, background, line-height, etc.
+- Check parent containers for inherited styles
+
+### Step 3: Map live CSS to our CSS system
+Compare extracted values against:
+- `css/variables.css` — brand tokens
+- `css/base.css` — typography, reset
+- `css/components.css` — shared components
+- `css/pages.css` — page-specific
+- `reference/website-reference-styles.css` — pre-extracted reference stylesheet
+
+Document any differences. Do NOT guess or approximate — use the exact values.
+
+### Step 4: Verify after making changes
+After implementing, compare the local result to the live site:
+- Font: family, size, weight, transform, spacing
+- Colors: text, background, border
+- Spacing: padding, margin, gap
+- Layout: display, position, width, alignment
+- List every difference. Fix before committing.
+
 ## Brand Compliance
 
 **All design must follow the GrowthPoint Brand Guide.**
@@ -19,7 +57,7 @@ Replaces WordPress/Elementor site. Hosted on AWS Amplify.
 - Colors: `css/variables.css` (source of truth for all brand tokens)
 - Fonts: Rethink Sans (headings), Onest (body/eyebrows) via Google Fonts
 - Logos: `assets/logos/` — use SVG versions. KO (white) variants for dark backgrounds.
-- Reference: `reference/website-reference-styles.css` has the full extracted stylesheet from the current site
+- Reference: `reference/` directory contains cached live site assets (see Critical section above)
 
 ## File Organization
 
