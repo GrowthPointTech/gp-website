@@ -7,9 +7,7 @@
 
 /* Home Page — Hero */
 
-.hero__eyebrow {
-  color: var(--gp-lime);
-}
+/* hero__eyebrow color set in components.css .hero--home .hero__eyebrow */
 
 /* hero__sub removed — "Move forward. Move smart." is now the h1 */
 
