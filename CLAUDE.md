@@ -23,24 +23,28 @@ When copying ANY element from the live site (https://gptechadvisors.com), follow
 - `reference/live-blog.html` — full page source for blog page
 - Find the element by searching for its text content or Elementor class names
 
-### Step 2: Extract the CSS from the cached Elementor stylesheets
-- `reference/elementor-post-6.css` — global/theme styles
-- `reference/elementor-post-13.css` — additional page styles
-- `reference/elementor-post-28.css` — additional page styles
-- `reference/elementor-post-39.css` — home page specific styles
-- Search for the element's Elementor class (e.g., `elementor-element-6b1b81a`)
-- Extract ALL CSS properties: font-family, font-size, font-weight, color, letter-spacing, text-transform, padding, margin, background, line-height, etc.
-- Check parent containers for inherited styles
+### Step 2: Get exact computed styles via Puppeteer
+Run the style extraction tool — this launches headless Chrome, renders the live site
+(including Elementor JS), and dumps every computed CSS property to JSON:
+```bash
+npm run extract-styles
+```
+Output: `reference/computed-styles.json` — contains exact browser-computed values for
+every element: font-family, font-size, font-weight, color, line-height, letter-spacing,
+text-transform, padding, margin, width, and bounding box dimensions.
 
-### Step 3: Map live CSS to our CSS system
-Compare extracted values against:
+**ALWAYS use computed-styles.json as the source of truth for CSS values.**
+Do NOT guess from the Elementor CSS variable files — Elementor assigns variables to
+elements via JavaScript at runtime, and the static CSS files do not contain those mappings.
+
+### Step 3: Map computed values to our CSS system
+Compare `reference/computed-styles.json` values against:
 - `css/variables.css` — brand tokens
 - `css/base.css` — typography, reset
 - `css/components.css` — shared components
 - `css/pages.css` — page-specific
-- `reference/website-reference-styles.css` — pre-extracted reference stylesheet
 
-Document any differences. Do NOT guess or approximate — use the exact values.
+Use the EXACT computed values. Do NOT approximate or round.
 
 ### Step 4: Verify after making changes
 After implementing, compare the local result to the live site:
