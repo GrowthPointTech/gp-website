@@ -11,6 +11,16 @@
   color: var(--gp-lime);
 }
 
+.page-about .hero__eyebrow {
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  line-height: 1;
+  margin-bottom: var(--space-md);
+}
+
 .hero__ctas {
   display: flex;
   gap: var(--space-sm);
@@ -105,7 +115,6 @@
 .contact-calendly {
   background: var(--gp-white);
   padding: var(--space-2xl) 0;
-  border-top: 4px solid var(--gp-lime);
 }
 
 .contact-calendly__sub {
@@ -185,6 +194,7 @@
 /* About Page — Logo watermark on colored sections */
 
 .hero,
+.about-story,
 .about-bio,
 .about-millie,
 .cta-section {
@@ -200,19 +210,22 @@
   inset: 0;
   background-image: url('../assets/logos/GP-Logo mark-KO.svg');
   background-repeat: repeat;
-  background-size: 80px;
+  background-size: 160px;
+  background-attachment: fixed;
   opacity: 0.06;
   pointer-events: none;
 }
 
+.about-story::before,
 .about-millie::before {
   content: '';
   position: absolute;
   inset: 0;
   background-image: url('../assets/logos/GP-Logo mark.svg');
   background-repeat: repeat;
-  background-size: 80px;
-  opacity: 0.08;
+  background-size: 160px;
+  background-attachment: fixed;
+  opacity: 0.06;
   pointer-events: none;
 }
 
@@ -221,7 +234,6 @@
 .about-story {
   background: var(--gp-white);
   padding: var(--space-2xl) 0;
-  border-top: 4px solid var(--gp-lime);
 }
 
 .about-story__grid {
@@ -254,7 +266,32 @@
   border-left: 4px solid var(--gp-orange);
   border-radius: var(--radius-md);
   padding: var(--space-sm);
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.55s ease, transform 0.55s ease;
 }
+
+.about-values__item.from-bottom {
+  transform: translateX(-80px) translateY(60px);
+}
+
+.about-values__item.no-transition {
+  transition: none !important;
+}
+
+.about-values__item.is-visible {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.about-values__item:nth-child(2) { transition-delay: 0.1s; }
+.about-values__item:nth-child(3) { transition-delay: 0.2s; }
+.about-values__item:nth-child(4) { transition-delay: 0.3s; }
+
+.about-values__list.reverse-stagger .about-values__item:nth-child(1) { transition-delay: 0.3s; }
+.about-values__list.reverse-stagger .about-values__item:nth-child(2) { transition-delay: 0.2s; }
+.about-values__list.reverse-stagger .about-values__item:nth-child(3) { transition-delay: 0.1s; }
+.about-values__list.reverse-stagger .about-values__item:nth-child(4) { transition-delay: 0s; }
 
 .about-values__icon {
   width: 20px;
@@ -290,7 +327,6 @@
 .about-story__mission {
   margin-top: var(--space-xl);
   padding-top: var(--space-lg);
-  border-top: 2px solid var(--gp-light-gray);
 }
 
 .about-story__mission h3 {
@@ -382,6 +418,7 @@
   color: var(--gp-white);
 }
 
+
 /* Millie B Section */
 
 .about-millie {
@@ -391,10 +428,13 @@
 
 .about-millie__grid {
   display: grid;
-  grid-template-columns: 480px 1fr;
+  grid-template-columns: 1fr 480px;
   gap: var(--space-xl);
   align-items: start;
 }
+
+.about-millie__photos { order: 2; }
+.about-millie__content { order: 1; }
 
 .about-millie__photos {
   display: block;
@@ -479,4 +519,179 @@
   .about-millie__photo--secondary {
     grid-column: 1;
   }
+}
+
+/* =========================================
+   Scroll-Driven Color Theme — About Page
+   ========================================= */
+
+:root {
+  --scroll-bg:   rgb(8, 15, 31);
+  --scroll-text: rgb(255, 255, 255);
+}
+
+.page-about {
+  background-color: var(--scroll-bg);
+}
+
+/* Strip section backgrounds so body color shows through */
+.page-about .hero,
+.page-about .about-story,
+.page-about .about-bio,
+.page-about .about-millie {
+  background: transparent;
+}
+
+/* Headings follow scroll theme (overrides base.css defaults + section rules) */
+.page-about h1,
+.page-about h2,
+.page-about h3 {
+  color: var(--scroll-text);
+}
+
+/* Body text follows scroll theme */
+.page-about .about-story__content p,
+.page-about .about-story__values p,
+.page-about .about-bio__content p,
+.page-about .about-millie__content p {
+  color: var(--scroll-text);
+}
+
+.page-about .about-story__content .eyebrow,
+.page-about .about-story__mission .eyebrow {
+  color: var(--scroll-text);
+}
+
+/* Larger section padding */
+.page-about .about-story,
+.page-about .about-bio,
+.page-about .about-millie {
+  padding: 140px 0;
+}
+
+/* Hero fills the full viewport */
+.page-about .hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Hero content sweep */
+.page-about .hero .container {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-about .hero .container.from-top {
+  transform: translateY(-60px);
+}
+
+.page-about .hero .container.no-transition {
+  transition: none !important;
+}
+
+.page-about .hero .container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Column swipe-in animations */
+.about-story__content,
+.about-bio__photo,
+.about-millie__content {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-bio__content,
+.about-millie__photos {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.about-story__content.is-visible,
+.about-bio__photo.is-visible,
+.about-millie__content.is-visible,
+.about-bio__content.is-visible,
+.about-millie__photos.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =========================================
+   Contact Page — Watermarks
+   ========================================= */
+
+.contact-calendly,
+.contact-fallback {
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-calendly::before,
+.contact-fallback::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('../assets/logos/GP-Logo mark.svg');
+  background-repeat: repeat;
+  background-size: 160px;
+  background-attachment: fixed;
+  opacity: 0.06;
+  pointer-events: none;
+}
+
+/* =========================================
+   Contact Page — Layout & Animations
+   ========================================= */
+
+/* Tighter section padding */
+.page-contact .contact-calendly,
+.page-contact .contact-fallback {
+  padding: var(--space-2xl) 0;
+}
+
+/* Hero container — direction-aware vertical sweep */
+.page-contact .hero .container {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-contact .hero .container.from-top { transform: translateY(-60px); }
+.page-contact .hero .container.no-transition { transition: none !important; }
+.page-contact .hero .container.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Calendly header sweep up */
+.page-contact .contact-calendly .container {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-contact .contact-calendly .container.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fallback columns swipe from opposite sides */
+.page-contact .contact-fallback__text {
+  opacity: 0;
+  transform: translateX(-80px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-contact .contact-fallback__info {
+  opacity: 0;
+  transform: translateX(80px);
+  transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.page-contact .contact-fallback__text.is-visible,
+.page-contact .contact-fallback__info.is-visible {
+  opacity: 1;
+  transform: translateX(0);
 }
