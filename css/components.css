@@ -241,27 +241,21 @@
   margin-bottom: var(--space-lg);
 }
 
-/* Home page hero — real background from live site */
+/* Home page hero — combined background + cubes from live site */
 .hero--home {
   background:
-    url('../assets/images/background-blue-arrows.svg') center / cover no-repeat;
+    url('../assets/images/banner-arrows-shape-charts.svg') center / cover no-repeat;
   padding: 0;
-  min-height: 100vh;
+  min-height: 600px;
   overflow: hidden;
   display: flex;
-  align-items: center;
-}
-
-.hero__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-lg);
   align-items: center;
 }
 
 .hero__content {
   padding-top: 120px; /* clear the transparent nav */
   padding-bottom: var(--space-2xl);
+  max-width: 600px;
 }
 
 .hero--home .hero__eyebrow {
@@ -285,18 +279,6 @@
   line-height: 1.7;
 }
 
-.hero__graphic {
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-.hero__cubes {
-  width: 100%;
-  max-width: 480px;
-  height: auto;
-}
-
 @media (max-width: 1024px) {
   .hero--home h1 {
     font-size: 56px;
@@ -304,21 +286,12 @@
 }
 
 @media (max-width: 767px) {
-  .hero__grid {
-    grid-template-columns: 1fr;
-  }
-
   .hero--home h1 {
     font-size: 42px;
   }
 
-  .hero__graphic {
-    display: none;
-  }
-
   .hero--home {
     min-height: auto;
-    padding: var(--space-xl) 0;
   }
 
   .hero__content {
