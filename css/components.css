@@ -49,8 +49,10 @@
 
 .nav__links a {
   font-family: var(--font-body);
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   color: var(--gp-rich-black);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -243,45 +245,59 @@
 
 /* Home page hero — combined background + cubes from live site */
 .hero--home {
-  background:
-    url('../assets/images/banner-arrows-shape-charts.svg') center / cover no-repeat;
+  background: url('../assets/images/banner-arrows-shape-charts.svg') center / cover no-repeat;
   padding: 0;
-  min-height: 600px;
+  min-height: 680px;
   overflow: hidden;
+  text-align: left;
+}
+
+.hero--home .container {
   display: flex;
   align-items: center;
+  min-height: 680px;
 }
 
 .hero__content {
-  padding-top: 120px; /* clear the transparent nav */
-  padding-bottom: var(--space-2xl);
-  max-width: 600px;
+  padding-top: 80px; /* clear the transparent nav */
+  max-width: 550px;
 }
 
 .hero--home .hero__eyebrow {
   color: var(--gp-lime);
-  font-size: 16px;
-  letter-spacing: 0.06em;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   margin-bottom: var(--space-sm);
 }
 
 .hero--home h1 {
-  font-size: 72px;
-  line-height: 1.05;
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 80px;
+  line-height: 1.0;
+  color: var(--gp-white);
   max-width: none;
-  margin-bottom: var(--space-md);
+  margin-bottom: var(--space-lg);
 }
 
 .hero--home .hero__content > p {
   color: var(--gp-light-gray);
   font-size: 18px;
-  max-width: 520px;
+  max-width: 480px;
   line-height: 1.7;
 }
 
 @media (max-width: 1024px) {
   .hero--home h1 {
-    font-size: 56px;
+    font-size: 60px;
+  }
+
+  .hero--home,
+  .hero--home .container {
+    min-height: 500px;
   }
 }
 
@@ -290,12 +306,9 @@
     font-size: 42px;
   }
 
-  .hero--home {
-    min-height: auto;
-  }
-
-  .hero__content {
-    padding-top: 80px;
+  .hero--home,
+  .hero--home .container {
+    min-height: 400px;
   }
 }
 
