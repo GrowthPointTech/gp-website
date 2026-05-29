@@ -455,7 +455,6 @@
   overflow: hidden;
 }
 
-.hero::before,
 .about-bio::before,
 .cta-section::before {
   content: '';
