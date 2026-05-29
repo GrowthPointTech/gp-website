@@ -264,36 +264,49 @@
   max-width: 550px;
 }
 
+/* Eyebrow: matches Elementor "accent" typography variable */
 .hero--home .hero__eyebrow {
-  color: var(--gp-lime);
   font-family: var(--font-body);
-  font-weight: 700;
-  font-size: 15px;
-  letter-spacing: 0.08em;
+  font-size: 23px;
+  font-weight: 600;
   text-transform: uppercase;
-  margin-bottom: var(--space-sm);
+  letter-spacing: 0.5px;
+  line-height: 23px;
+  color: var(--gp-lime);
+  margin-bottom: var(--space-md);
 }
 
+/* H1: matches Elementor "primary" typography variable */
 .hero--home h1 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 80px;
-  line-height: 1.0;
+  font-size: 95px;
+  line-height: 95px;
+  letter-spacing: 0.3px;
   color: var(--gp-white);
   max-width: none;
   margin-bottom: var(--space-lg);
 }
 
+/* Body: matches Elementor "text" typography variable */
 .hero--home .hero__content > p {
-  color: var(--gp-light-gray);
+  font-family: var(--font-body);
   font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--gp-light-gray);
   max-width: 480px;
-  line-height: 1.7;
 }
 
 @media (max-width: 1024px) {
+  .hero--home .hero__eyebrow {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
   .hero--home h1 {
-    font-size: 60px;
+    font-size: 48px;
+    line-height: 54px;
   }
 
   .hero--home,
@@ -303,8 +316,14 @@
 }
 
 @media (max-width: 767px) {
+  .hero--home .hero__eyebrow {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
   .hero--home h1 {
-    font-size: 42px;
+    font-size: 48px;
+    line-height: 54px;
   }
 
   .hero--home,
