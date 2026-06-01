@@ -230,7 +230,7 @@
       "liveText": "About Us",
       "localText": "About Us",
       "liveSize": "409px x 95px",
-      "localSize": "700px x 95px"
+      "localSize": "1120px x 95px"
     },
     {
       "label": "about-hero-body",
@@ -243,7 +243,7 @@
         {
           "property": "margin-right",
           "live": "0px",
-          "local": "160px"
+          "local": "300px"
         },
         {
           "property": "margin-bottom",
@@ -253,14 +253,14 @@
         {
           "property": "margin-left",
           "live": "0px",
-          "local": "160px"
+          "local": "300px"
         }
       ],
       "textMatch": true,
       "liveText": "Navigating the cybersecurity and compliance landscape can be",
       "localText": "Navigating the cybersecurity and compliance landscape can be",
       "liveSize": "520px x 156px",
-      "localSize": "800px x 104px"
+      "localSize": "520px x 156px"
     },
     {
       "label": "about-mission-h2",
@@ -323,7 +323,7 @@
         {
           "property": "margin-bottom",
           "live": "0px",
-          "local": "64px"
+          "local": "24px"
         }
       ],
       "textMatch": true,
@@ -355,7 +355,7 @@
       "liveText": "Stacey Robinson, CISSP, CHPS",
       "localText": "Stacey Robinson, CISSP, CHPS",
       "liveSize": "819px x 23px",
-      "localSize": "536px x 23px"
+      "localSize": "998px x 23px"
     },
     {
       "label": "about-team-title",
@@ -364,16 +364,6 @@
           "property": "font-family",
           "live": "Onest, sans-serif",
           "local": "Onest, system-ui, sans-serif"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "0px",
-          "local": "24px"
-        },
-        {
-          "property": "min-height",
-          "live": "auto",
-          "local": "0px"
         },
         {
           "property": "text-align",
@@ -385,7 +375,7 @@
       "liveText": "Managing Partner, Fractional CISO",
       "localText": "Managing Partner, Fractional CISO",
       "liveSize": "336px x 23px",
-      "localSize": "536px x 23px"
+      "localSize": "336px x 23px"
     },
     {
       "label": "about-team-bio",
@@ -406,6 +396,11 @@
           "local": "26px"
         },
         {
+          "property": "padding-top",
+          "live": "0px",
+          "local": "16px"
+        },
+        {
           "property": "margin-bottom",
           "live": "14.4px",
           "local": "16px"
@@ -420,7 +415,7 @@
       "liveText": "Stacey Robinson is a results-driven leader with experience i",
       "localText": "Stacey Robinson is a results-driven leader with experience i",
       "liveSize": "0px x 0px",
-      "localSize": "536px x 260px"
+      "localSize": "998px x 172px"
     }
   ]
 }

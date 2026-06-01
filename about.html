@@ -13,9 +13,9 @@
 </head>
 <body>
 
-  <nav class="nav">
+  <nav class="nav nav--transparent">
     <a href="/" class="nav__logo">
-      <img src="assets/logos/GP-Logo-horiz.svg" alt="GrowthPoint Technology Advisors">
+      <img src="assets/logos/GP-Logo-horiz-KO.svg" alt="GrowthPoint Technology Advisors">
     </a>
     <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <ul class="nav__links">
@@ -48,13 +48,24 @@
     <section class="about-team">
       <div class="container">
         <h2>Our Team</h2>
-        <div class="about-team__card">
-          <div class="about-team__photo">
-            <img src="assets/images/Stacey Head Shot.jpg" alt="Stacey Robinson, Managing Partner and Fractional CISO at GrowthPoint Technology Advisors">
+      </div>
+      <div class="about-team__card">
+          <div class="about-team__card-header">
+            <div class="about-team__photo">
+              <img src="assets/images/Stacey Head Shot.jpg" alt="Stacey Robinson, Managing Partner and Fractional CISO at GrowthPoint Technology Advisors">
+            </div>
+            <div class="about-team__info">
+              <h3 class="about-team__name">Stacey Robinson, CISSP, CHPS</h3>
+              <button class="about-team__title-row" aria-expanded="false" aria-controls="stacey-bio">
+                <span class="about-team__title">Managing Partner, Fractional CISO</span>
+                <span class="about-team__toggle" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 26 26" fill="none"><circle cx="13" cy="13" r="13" transform="matrix(1 0 0 -1 0 26)" fill="#0C50D5"></circle><path d="M12.7835 18.625C12.8797 18.7917 13.1203 18.7917 13.2165 18.625L17.9796 10.375C18.0759 10.2083 17.9556 10 17.7631 10L8.23686 10C8.04441 10 7.92413 10.2083 8.02035 10.375L12.7835 18.625Z" fill="white"></path></svg>
+                </span>
+              </button>
+            </div>
           </div>
-          <div class="about-team__info">
-            <h3 class="about-team__name">Stacey Robinson, CISSP, CHPS</h3>
-            <p class="about-team__title">Managing Partner, Fractional CISO</p>
+          <div class="about-team__bio" id="stacey-bio">
+            <div class="about-team__bio-inner">
             <p>Stacey Robinson is a results-driven leader with experience in building and leading cybersecurity, enterprise risk and regulatory compliance programs. He excels in developing high-performing cybersecurity teams, maturing cybersecurity programs, driving strategic growth, and securing top industry certifications. Stacey collaborates effectively with boards, executive teams, and diverse stakeholders and is recognized for his ability to bridge the gap between technical and non-technical stakeholders, ensuring that cybersecurity, risk, and regulatory compliance initiatives align with business objectives.</p>
             <p>Throughout his career, Stacey has held pivotal roles in both startup and growing companies, leading cybersecurity and product engineering organizations. As a trusted advisor and mentor, he supports executives and leadership teams in strategic planning for cybersecurity and technology, establishing strong foundations, maturing existing programs, mentoring team members, and fostering high-performing cultures.</p>
             <p>Stacey holds a Bachelor of Science in Computer Science from The Citadel and a Master of Science in Computer Science from George Mason University. He also has CISSP (Certified Information Systems Security Professional) and CHPS (Certified in Healthcare Privacy and Security) certifications through ISC2 (International Information System Security Certification Consortium) and AHIMA (American Health Information Management Association) respectively.</p>
@@ -72,13 +83,13 @@
                   <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                     <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.91-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                   </svg>
-                  FOLLOW
+                  Follow
                 </a>
               </li>
             </ul>
+            </div>
           </div>
         </div>
-      </div>
     </section>
 
   </main>
@@ -113,5 +124,6 @@
   </footer>
 
   <script src="js/nav.js"></script>
+  <script src="js/about.js"></script>
 </body>
 </html>
