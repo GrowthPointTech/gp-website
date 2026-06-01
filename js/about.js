@@ -1,7 +1,8 @@
-document.querySelectorAll('.about-team__title-row').forEach(btn => {
+document.querySelectorAll('.about-team__toggle-btn').forEach(btn => {
   const bioId = btn.getAttribute('aria-controls');
   const bio = document.getElementById(bioId);
-  if (!bio) return;
+  const card = btn.closest('.about-team__card');
+  if (!bio || !card) return;
 
   btn.addEventListener('click', () => {
     const isOpen = btn.getAttribute('aria-expanded') === 'true';
@@ -13,9 +14,11 @@ document.querySelectorAll('.about-team__title-row').forEach(btn => {
       });
       bio.addEventListener('transitionend', () => {
         bio.style.height = '0';
+        card.classList.remove('is-expanded');
       }, { once: true });
       btn.setAttribute('aria-expanded', 'false');
     } else {
+      card.classList.add('is-expanded');
       btn.setAttribute('aria-expanded', 'true');
       const h = bio.scrollHeight;
       bio.style.height = '0';
