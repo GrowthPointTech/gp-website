@@ -668,6 +668,37 @@
 
 /* About Page — Hero */
 
+/* About page fade-in animation */
+@keyframes aboutFadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes aboutSlideUp {
+  from { opacity: 0; transform: translateY(60px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.about-slide-up {
+  opacity: 0;
+}
+
+.about-slide-up.is-visible {
+  animation: aboutSlideUp 1s ease forwards;
+}
+
+.about-fade {
+  opacity: 0;
+}
+
+.about-fade.is-visible {
+  animation: aboutFadeIn 0.7s ease forwards;
+}
+
+.about-fade.is-visible:nth-child(2) { animation-delay: 0.1s; }
+.about-fade.is-visible:nth-child(3) { animation-delay: 0.2s; }
+.about-fade.is-visible:nth-child(4) { animation-delay: 0.3s; }
+
 .hero--about {
   background: url('../assets/images/background-dark-blue-arrows.svg') center / cover no-repeat;
   background-color: var(--gp-rich-black);
@@ -822,7 +853,7 @@
 }
 
 .about-team__toggle {
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -835,7 +866,7 @@
 .about-team__bio {
   overflow: hidden;
   height: 0;
-  transition: height 0.3s ease;
+  transition: height 0.5s ease;
 }
 
 .about-team__bio p {

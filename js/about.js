@@ -1,3 +1,30 @@
+// Fade-in on scroll — stagger siblings within the same parent
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const siblings = Array.from(el.parentElement.querySelectorAll('.about-fade'));
+      const index = siblings.indexOf(el);
+      el.style.animationDelay = (index * 0.15) + 's';
+      el.classList.add('is-visible');
+      observer.unobserve(el);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.about-fade').forEach(el => observer.observe(el));
+
+const slideObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      slideObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.about-slide-up').forEach(el => slideObserver.observe(el));
+
 document.querySelectorAll('.about-team__toggle-btn').forEach(btn => {
   const bioId = btn.getAttribute('aria-controls');
   const bio = document.getElementById(bioId);
