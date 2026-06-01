@@ -103,7 +103,10 @@ async function extractStyles(page, selectors) {
 
 async function main() {
   console.log('Launching headless Chrome...');
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+  });
 
   const allResults = {};
 

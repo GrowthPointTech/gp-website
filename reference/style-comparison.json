@@ -163,7 +163,7 @@
       "liveText": "STRUCTURE",
       "localText": "STRUCTURE",
       "liveSize": "779px x 35px",
-      "localSize": "832px x 35px"
+      "localSize": "928px x 35px"
     },
     {
       "label": "pillar-slide-desc",
@@ -184,6 +184,243 @@
       "localText": "Building a cybersecurity and compliance program from the gro",
       "liveSize": "779px x 214px",
       "localSize": "780px x 167px"
+    }
+  ],
+  "/about/": [
+    {
+      "label": "about-hero-eyebrow",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "16px"
+        },
+        {
+          "property": "text-align",
+          "live": "start",
+          "local": "center"
+        }
+      ],
+      "textMatch": false,
+      "liveText": "STRUCTURE, STRENGTHEN, STREAMLINE,  SCALE",
+      "localText": "STRUCTURE, STRENGTHEN, STREAMLINE, SCALE",
+      "liveSize": "451px x 18px",
+      "localSize": "1120px x 18px"
+    },
+    {
+      "label": "about-hero-h1",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "24px"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "About Us",
+      "localText": "About Us",
+      "liveSize": "409px x 95px",
+      "localSize": "700px x 95px"
+    },
+    {
+      "label": "about-hero-body",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "margin-right",
+          "live": "0px",
+          "local": "160px"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "14.4px",
+          "local": "0px"
+        },
+        {
+          "property": "margin-left",
+          "live": "0px",
+          "local": "160px"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Navigating the cybersecurity and compliance landscape can be",
+      "localText": "Navigating the cybersecurity and compliance landscape can be",
+      "liveSize": "520px x 156px",
+      "localSize": "800px x 104px"
+    },
+    {
+      "label": "about-mission-h2",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "40px"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Our Mission",
+      "localText": "Our Mission",
+      "liveSize": "331px x 55px",
+      "localSize": "1120px x 55px"
+    },
+    {
+      "label": "about-mission-body",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "margin-right",
+          "live": "0px",
+          "local": "160px"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "14.4px",
+          "local": "0px"
+        },
+        {
+          "property": "margin-left",
+          "live": "0px",
+          "local": "160px"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "GrowthPoint was created by founders who have scaled companie",
+      "localText": "GrowthPoint was created by founders who have scaled companie",
+      "liveSize": "800px x 156px",
+      "localSize": "800px x 156px"
+    },
+    {
+      "label": "about-team-h2",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "64px"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Our Team",
+      "localText": "Our Team",
+      "liveSize": "270px x 55px",
+      "localSize": "1120px x 55px"
+    },
+    {
+      "label": "about-team-name",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "8px"
+        },
+        {
+          "property": "text-align",
+          "live": "start",
+          "local": "left"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Stacey Robinson, CISSP, CHPS",
+      "localText": "Stacey Robinson, CISSP, CHPS",
+      "liveSize": "819px x 23px",
+      "localSize": "536px x 23px"
+    },
+    {
+      "label": "about-team-title",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "24px"
+        },
+        {
+          "property": "min-height",
+          "live": "auto",
+          "local": "0px"
+        },
+        {
+          "property": "text-align",
+          "live": "start",
+          "local": "left"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Managing Partner, Fractional CISO",
+      "localText": "Managing Partner, Fractional CISO",
+      "liveSize": "336px x 23px",
+      "localSize": "536px x 23px"
+    },
+    {
+      "label": "about-team-bio",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "font-size",
+          "live": "16px",
+          "local": "18px"
+        },
+        {
+          "property": "line-height",
+          "live": "22px",
+          "local": "26px"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "14.4px",
+          "local": "16px"
+        },
+        {
+          "property": "text-align",
+          "live": "start",
+          "local": "left"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Stacey Robinson is a results-driven leader with experience i",
+      "localText": "Stacey Robinson is a results-driven leader with experience i",
+      "liveSize": "0px x 0px",
+      "localSize": "536px x 260px"
     }
   ]
 }

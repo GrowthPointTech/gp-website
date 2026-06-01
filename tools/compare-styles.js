@@ -35,6 +35,7 @@ const PROPERTIES = [
 // Elements to compare — pairs of [live_selector, local_selector, label]
 // Live selectors use Elementor data-id attributes
 // Local selectors use our CSS classes
+// Optional localPath overrides the key path for the local URL (e.g. when live uses /about/ but local is /about.html)
 const COMPARISONS = {
   '/': {  // home page
     elements: [
@@ -87,6 +88,56 @@ const COMPARISONS = {
         label: 'pillar-text',
         live: '.elementor-icon-box .elementor-icon-box-description',
         local: '.pillar__text'
+      }
+    ]
+  },
+  '/about/': {  // about page
+    localPath: '/about.html',
+    elements: [
+      {
+        label: 'about-hero-eyebrow',
+        live: '[data-id="cfe7e5"] .elementor-heading-title',
+        local: '.hero--about__eyebrow'
+      },
+      {
+        label: 'about-hero-h1',
+        live: '[data-id="31000285"] .elementor-heading-title',
+        local: '.hero--about h1'
+      },
+      {
+        label: 'about-hero-body',
+        live: '[data-id="7026cbaf"] .elementor-widget-container p',
+        local: '.hero--about p:not(.hero--about__eyebrow)'
+      },
+      {
+        label: 'about-mission-h2',
+        live: '[data-id="a2692e5"] .elementor-heading-title',
+        local: '.about-mission h2'
+      },
+      {
+        label: 'about-mission-body',
+        live: '[data-id="8513ee0"] .elementor-widget-container p',
+        local: '.about-mission p'
+      },
+      {
+        label: 'about-team-h2',
+        live: '[data-id="9fdc93a"] .elementor-heading-title',
+        local: '.about-team h2'
+      },
+      {
+        label: 'about-team-name',
+        live: '[data-id="e6275b4"] .elementor-heading-title',
+        local: '.about-team__name'
+      },
+      {
+        label: 'about-team-title',
+        live: '[data-id="23565a9f"] .e-n-accordion-item-title-text',
+        local: '.about-team__title'
+      },
+      {
+        label: 'about-team-bio',
+        live: '[data-id="3a54297b"] .elementor-widget-container p',
+        local: '.about-team__info p:not(.about-team__title)'
       }
     ]
   }
@@ -147,14 +198,17 @@ async function main() {
   const server = await startLocalServer();
 
   console.log('Launching headless Chrome...\n');
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await puppeteer.launch({
+    headless: true,
+    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+  });
 
   const results = {};
   let totalMismatches = 0;
 
   for (const [pagePath, config] of Object.entries(COMPARISONS)) {
     const liveUrl = LIVE_URL + pagePath;
-    const localUrl = `http://localhost:${LOCAL_PORT}${pagePath}`;
+    const localUrl = `http://localhost:${LOCAL_PORT}${config.localPath || pagePath}`;
 
     console.log(`\n${'='.repeat(70)}`);
     console.log(`PAGE: ${pagePath}`);
