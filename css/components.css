@@ -16,6 +16,25 @@
   border-bottom: 1px solid var(--gp-light-gray);
 }
 
+/* Transparent nav — overlays hero on home page */
+.nav--transparent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: transparent;
+  border-bottom: none;
+  z-index: 100;
+}
+
+.nav--transparent .nav__links a {
+  color: var(--gp-white);
+}
+
+.nav--transparent .nav__links a:hover {
+  color: var(--gp-light-blue);
+}
+
 .nav__logo img {
   height: 42px;
   width: auto;
@@ -30,8 +49,14 @@
 
 .nav__links a {
   font-family: var(--font-body);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 23px; /* live: 23px */
+  padding: 13px 20px; /* live: 13px 20px */
+  display: flex; /* live: flex */
+  position: relative; /* live: relative */
   color: var(--gp-rich-black);
   text-decoration: none;
   transition: color 0.2s ease;
@@ -202,7 +227,8 @@
 /* Hero */
 
 .hero {
-  background: var(--gp-rich-black);
+  background: none;
+  background-color: var(--gp-rich-black);
   color: var(--gp-white);
   padding: var(--space-2xl) 0;
   text-align: left;
@@ -220,6 +246,95 @@
   font-size: 20px;
   max-width: 600px;
   margin-bottom: var(--space-lg);
+}
+
+/* Home page hero — combined background + cubes from live site */
+.hero--home {
+  background: url('../assets/images/banner-arrows-shape-charts.svg') center / cover no-repeat;
+  padding: 0;
+  min-height: 680px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.hero--home .container {
+  display: flex;
+  align-items: center;
+  min-height: 680px;
+}
+
+.hero__content {
+  padding-top: 80px; /* clear the transparent nav */
+  max-width: 800px; /* live site H1 bounding width is 768px */
+}
+
+/* Eyebrow: computed from live site via Puppeteer */
+.hero--home .hero__eyebrow {
+  font-family: var(--font-body);
+  font-size: 23px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  line-height: 23px;
+  color: var(--gp-light-lime); /* live: rgb(228,253,178) = #E4FDB2 */
+  margin-bottom: 20px; /* visual spacing — live uses container gap */
+}
+
+/* H1: computed from live site via Puppeteer */
+.hero--home h1 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  font-size: 110px; /* live: 110px (was 95px) */
+  line-height: 100px; /* live: 100px (was 95px) */
+  letter-spacing: 0.3px;
+  color: var(--gp-white);
+  max-width: 768px; /* live: 768px bounding width */
+  margin-bottom: 20px; /* visual spacing — live uses container gap */
+}
+
+/* Body: computed from live site via Puppeteer */
+.hero--home .hero__content > p {
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--gp-white); /* live: rgb(255,255,255) */
+  max-width: 467px; /* live: 466.766px bounding width */
+  margin-bottom: 14.4px; /* live: 14.4px computed */
+}
+
+@media (max-width: 1024px) {
+  .hero--home .hero__eyebrow {
+    font-size: 18px;
+    line-height: 18px;
+  }
+
+  .hero--home h1 {
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  .hero--home,
+  .hero--home .container {
+    min-height: 500px;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero--home .hero__eyebrow {
+    font-size: 16px;
+    line-height: 16px;
+  }
+
+  .hero--home h1 {
+    font-size: 48px;
+    line-height: 54px;
+  }
+
+  .hero--home,
+  .hero--home .container {
+    min-height: 400px;
+  }
 }
 
 @media (max-width: 767px) {

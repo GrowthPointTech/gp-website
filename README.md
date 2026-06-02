@@ -9,11 +9,36 @@ Static HTML/CSS website for [gptechadvisors.com](https://www.gptechadvisors.com)
 git clone https://github.com/GrowthPointTech/gp-website.git
 cd gp-website
 
-# Open in browser (no build step required)
+# Install dev tools (Puppeteer — headless Chrome for style validation)
+npm install
+
+# Open in browser (no build step required for the site itself)
 open index.html
 ```
 
-No frameworks, no build tools. Open any `.html` file directly in a browser to preview.
+No frameworks, no build tools for the site. `npm install` is only needed for the Puppeteer-based style validation tools.
+
+## Dev Tools — Style Validation
+
+We use Puppeteer (headless Chrome) to extract and compare computed CSS from the live site vs our local build. This is how we ensure our static site matches the WordPress/Elementor original.
+
+```bash
+# Extract exact computed styles from the live site
+npm run extract-styles
+# Output: reference/computed-styles.json
+
+# Compare live site vs local — shows every CSS diff
+npm run compare-styles
+# Output: terminal diff table + reference/style-comparison.json
+```
+
+**Run `npm run compare-styles` before every PR.** This is our quality gate — it catches font size, color, spacing, and layout differences that are invisible in code review.
+
+See `tools/extract-styles.js` and `tools/compare-styles.js` for implementation.
+
+### Requirements
+- Node.js 18+
+- `npm install` downloads Puppeteer + bundled Chromium (~170MB, one-time, in `node_modules/`)
 
 ## Project Structure
 
@@ -39,8 +64,15 @@ gp-website/
 │   ├── logos/                 # SVG logos from brand package
 │   ├── icons/                 # Brand icons (pillars, services)
 │   └── favicon/               # Favicon set
+├── tools/
+│   ├── extract-styles.js         # Puppeteer: extract computed CSS from live site
+│   └── compare-styles.js         # Puppeteer: diff live vs local computed CSS
 ├── reference/
-│   └── website-reference-styles.css  # Full reference stylesheet (do not deploy)
+│   ├── computed-styles.json      # Exact computed CSS from live site (via Puppeteer)
+│   ├── style-comparison.json     # Live vs local diff output
+│   ├── live-*.html               # Cached live page HTML sources
+│   ├── elementor-post-*.css      # Elementor stylesheets (variable defs)
+│   └── website-reference-styles.css  # Pre-extracted reference stylesheet
 ├── .claude/
 │   └── CLAUDE.md              # Claude Code instructions for this repo
 ├── .github/
