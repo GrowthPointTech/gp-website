@@ -13,9 +13,9 @@
 </head>
 <body>
 
-  <nav class="nav">
+  <nav class="nav nav--transparent">
     <a href="/" class="nav__logo">
-      <img src="assets/logos/GP-Logo-horiz.svg" alt="GrowthPoint Technology Advisors">
+      <img src="assets/logos/GP-Logo-horiz-KO.svg" alt="GrowthPoint Technology Advisors">
     </a>
     <button class="nav__toggle" aria-label="Toggle navigation">&#9776;</button>
     <ul class="nav__links">
@@ -65,18 +65,14 @@
     <!-- ISMS Wheel -->
     <section class="isms-section isms-section--services">
       <div class="container">
-        <p class="eyebrow">ISMS Management</p>
         <h2>ISMS Program</h2>
         <p class="isms-section__intro">GrowthPoint takes a strategic view toward cybersecurity, governance, risk and compliance that is framework agnostic.&nbsp; We can work with the major frameworks such as SOC 2, ISO 27001, NIST CSF 2.0, and CIS Controls and help you determine which frameworks works best where you are on your cybersecurity journey.&nbsp; The interactive graphic below shows the high-level components of a mature Information Security Management System (ISMS) program.&nbsp; Click on each title in the graphic to see more details.</p>
-        <div class="isms-wheel-wrapper">
-          <div class="isms-wheel-panel">
-            <div id="isms-wheel" class="isms-wheel" aria-label="ISMS management wheel"></div>
-            <div class="isms-detail">
-              <h3 id="isms-area-name" class="isms-detail__name">Governance &amp; Policies</h3>
-              <p id="isms-area-desc" class="isms-detail__desc">Click any segment or list item to learn about that area of ISMS management.</p>
-            </div>
-          </div>
-          <ol id="isms-legend" class="isms-legend"></ol>
+        <div class="isms-wheel-center">
+          <div id="isms-wheel" class="isms-wheel" aria-label="ISMS management wheel"></div>
+        </div>
+        <div class="isms-detail isms-detail--light">
+          <h3 id="isms-area-name" class="isms-detail__name">Click a segment to learn more</h3>
+          <p id="isms-area-desc" class="isms-detail__desc"></p>
         </div>
       </div>
     </section>
