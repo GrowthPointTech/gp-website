@@ -594,127 +594,201 @@
   margin-top: var(--space-lg);
 }
 
-/* Services Page — Intro */
-
-.service-intro {
-  text-align: center;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-.service-intro h2 {
-  margin-bottom: var(--space-md);
-}
-
-.service-intro p {
-  font-size: 20px;
-  color: var(--gp-gray);
-  line-height: 1.6;
-}
-
 /* Services Page — Shared */
 
 .service-section {
   background: var(--gp-white);
 }
 
-.service-section:nth-of-type(even) {
+.service-section--alt {
   background: var(--gp-light-gray);
 }
 
-.service-section__layout {
+/* Services Page — h2/h3 typography matching live computed values */
+
+.service-section h2,
+.isms-section h2,
+.service-tailored__content h2,
+.service-leadership h2 {
+  font-size: 60px;
+  line-height: 55px;
+  letter-spacing: 0.3px;
+  margin-bottom: 0;
+}
+
+.service-article h3 {
+  font-size: 46px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.3px;
+  margin-bottom: 0;
+}
+
+/* Services Page — ISMS light-theme override (live site: white background) */
+
+.isms-section--services {
+  background: var(--gp-white);
+  color: var(--gp-rich-black);
+}
+
+.isms-section.isms-section--services h2 {
+  color: var(--gp-rich-black);
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.isms-section--services .isms-section__intro {
+  color: var(--gp-gray);
+}
+
+.isms-section--services .eyebrow {
+  color: var(--gp-bright-blue);
+}
+
+/* Services Page — Intro (two-column: H2 left, body right) */
+
+.service-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  margin-bottom: var(--space-xl);
+}
+
+.service-intro p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--gp-rich-black);
+  margin-bottom: 14.4px;
+}
+
+/* Services Page — Service Card Rows (icon+label left, description right) */
+
+.service-card-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+  align-items: start;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--gp-light-gray);
+}
+
+.service-card-row__label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+}
+
+.service-card-row__label svg {
+  flex-shrink: 0;
+}
+
+.service-card-row__label span {
+  font-family: var(--font-heading);
+  font-size: 38px;
+  font-weight: 400;
+  line-height: 40px;
+  letter-spacing: 0.3px;
+  padding-left: 5px;
+  color: var(--gp-rich-black);
+}
+
+.service-card-row p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--gp-rich-black);
+  margin-bottom: 14.4px;
+}
+
+/* Services Page — Risk-based Tailored Approach */
+
+.service-tailored {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-xl);
   align-items: center;
 }
 
-.service-section__content h2 {
-  margin-bottom: var(--space-md);
-}
-
-.service-section__content p {
-  margin-bottom: var(--space-md);
-}
-
-.service-section__icon {
-  width: 80px;
-  height: 80px;
-  margin-bottom: var(--space-lg);
-}
-
-.service-feature-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-sm);
-}
-
-.service-feature-list li {
-  display: flex;
-  align-items: center;
-  gap: var(--space-sm);
-  font-size: 16px;
+.service-tailored__content p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
   color: var(--gp-rich-black);
+  margin-bottom: 14.4px;
 }
 
-.service-feature-list li img {
-  width: 20px;
-  height: 20px;
-  flex-shrink: 0;
+.service-tailored__image img {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  display: block;
 }
 
-@media (max-width: 767px) {
-  .service-section__layout {
-    grid-template-columns: 1fr;
-  }
-}
+/* Services Page — Service Articles Grid (2×2) */
 
-/* Services Page — Compliance */
-
-.service-section--alt {
-  background: var(--gp-light-gray);
-}
-
-.service-section__layout--reverse {
-  direction: rtl;
-}
-
-.service-section__layout--reverse > * {
-  direction: ltr;
-}
-
-.compliance-grid {
+.service-articles {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-md);
+  gap: var(--space-xl);
 }
 
-.compliance-card {
-  background: var(--gp-white);
+.service-article img {
+  width: 100%;
   border-radius: var(--radius-md);
-  padding: var(--space-md);
-  box-shadow: var(--shadow-card);
+  display: block;
+  margin-bottom: var(--space-md);
 }
 
-.compliance-card h4 {
-  color: var(--gp-bright-blue);
-  margin-bottom: var(--space-xs);
-}
-
-.compliance-card p {
-  font-size: 15px;
-  color: var(--gp-gray);
-  line-height: 1.5;
+.service-article h3 {
   margin-bottom: 0;
 }
 
-@media (max-width: 767px) {
-  .service-section__layout--reverse {
-    direction: ltr;
+.service-article p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--gp-rich-black);
+  margin-bottom: 0;
+}
+
+/* Services Page — Leadership Experience */
+
+.service-leadership {
+  text-align: center;
+}
+
+.service-leadership p {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 26px;
+  color: var(--gp-rich-black);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+@media (max-width: 1024px) {
+  .service-intro {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
   }
 
-  .compliance-grid {
+  .service-card-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
+
+  .service-tailored {
+    grid-template-columns: 1fr;
+  }
+
+  .service-tailored__image {
+    order: -1;
+  }
+}
+
+@media (max-width: 767px) {
+  .service-articles {
     grid-template-columns: 1fr;
   }
 }
