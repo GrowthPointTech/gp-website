@@ -161,6 +161,108 @@
       "localSize": "780px x 167px"
     }
   ],
+  "/blog/": [
+    {
+      "label": "blog-hero-eyebrow",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "min-height",
+          "live": "0px",
+          "local": "auto"
+        },
+        {
+          "property": "text-align",
+          "live": "start",
+          "local": "left"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "STRUCTURE, STRENGTHEN, STREAMLINE, & SCALE",
+      "localText": "STRUCTURE, STRENGTHEN, STREAMLINE, & SCALE",
+      "liveSize": "469px x 18px",
+      "localSize": "469px x 18px"
+    },
+    {
+      "label": "blog-hero-h1",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        },
+        {
+          "property": "min-height",
+          "live": "0px",
+          "local": "auto"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "GrowthPoint Blog",
+      "localText": "GrowthPoint Blog",
+      "liveSize": "762px x 95px",
+      "localSize": "762px x 95px"
+    },
+    {
+      "label": "blog-hero-desc",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "min-height",
+          "live": "0px",
+          "local": "auto"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "See our guidance and recommendations for structuring and str",
+      "localText": "See our guidance and recommendations for structuring and str",
+      "liveSize": "580px x 78px",
+      "localSize": "580px x 78px"
+    },
+    {
+      "label": "blog-card-category",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "CISO",
+      "localText": "CISO",
+      "liveSize": "65px x 18px",
+      "localSize": "36px x 18px"
+    },
+    {
+      "label": "blog-card-title",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        },
+        {
+          "property": "min-height",
+          "live": "0px",
+          "local": "auto"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "5 Cybersecurity Landmines Startups Step Into—And How to Avoi",
+      "localText": "5 Cybersecurity Landmines Startups Step Into—And How to Avoi",
+      "liveSize": "347px x 128px",
+      "localSize": "405px x 128px"
+    }
+  ],
   "/services/": [
     {
       "label": "services-hero-eyebrow",
@@ -340,7 +442,7 @@
       ],
       "textMatch": false,
       "liveText": "",
-      "localText": "GrowthPoint Tech Advisors LLC (“GrowthPoint”) is a cybersecu",
+      "localText": "GrowthPoint Tech Advisors LLC (\u201cGrowthPoint\u201d) is a cybersecu",
       "liveSize": "1280px x 0px",
       "localSize": "1120px x 78px"
     }
@@ -355,19 +457,14 @@
           "local": "Onest, system-ui, sans-serif"
         },
         {
-          "property": "margin-bottom",
-          "live": "0px",
-          "local": "16px"
-        },
-        {
           "property": "text-align",
           "live": "start",
-          "local": "center"
+          "local": "left"
         }
       ],
       "textMatch": false,
       "liveText": "STRUCTURE, STRENGTHEN, STREAMLINE,  SCALE",
-      "localText": "STRUCTURE, STRENGTHEN, STREAMLINE, SCALE",
+      "localText": "STRUCTURE, STRENGTHEN, STREAMLINE,  SCALE",
       "liveSize": "450px x 18px",
       "localSize": "1120px x 18px"
     },
@@ -378,11 +475,6 @@
           "property": "font-family",
           "live": "\"Rethink Sans\", sans-serif",
           "local": "\"Rethink Sans\", system-ui, sans-serif"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "0px",
-          "local": "24px"
         }
       ],
       "textMatch": true,
@@ -398,21 +490,6 @@
           "property": "font-family",
           "live": "Onest, sans-serif",
           "local": "Onest, system-ui, sans-serif"
-        },
-        {
-          "property": "margin-right",
-          "live": "0px",
-          "local": "300px"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "14.4px",
-          "local": "0px"
-        },
-        {
-          "property": "margin-left",
-          "live": "0px",
-          "local": "300px"
         }
       ],
       "textMatch": true,
@@ -428,11 +505,6 @@
           "property": "font-family",
           "live": "\"Rethink Sans\", sans-serif",
           "local": "\"Rethink Sans\", system-ui, sans-serif"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "0px",
-          "local": "40px"
         }
       ],
       "textMatch": true,
@@ -448,21 +520,6 @@
           "property": "font-family",
           "live": "Onest, sans-serif",
           "local": "Onest, system-ui, sans-serif"
-        },
-        {
-          "property": "margin-right",
-          "live": "0px",
-          "local": "160px"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "14.4px",
-          "local": "0px"
-        },
-        {
-          "property": "margin-left",
-          "live": "0px",
-          "local": "160px"
         }
       ],
       "textMatch": true,
@@ -478,7 +535,7 @@
           "property": "font-family",
           "live": "\"Rethink Sans\", sans-serif",
           "local": "\"Rethink Sans\", system-ui, sans-serif"
-        },
+},
         {
           "property": "margin-bottom",
           "live": "0px",
