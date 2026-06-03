@@ -13,9 +13,9 @@
 </head>
 <body>
 
-  <nav class="nav">
+  <nav class="nav nav--transparent">
     <a href="/" class="nav__logo">
-      <img src="../assets/logos/GP-Logo-horiz.svg" alt="GrowthPoint Technology Advisors">
+      <img src="../assets/logos/GP-Logo-horiz-KO.svg" alt="GrowthPoint Technology Advisors">
     </a>
     <button class="nav__toggle" aria-label="Toggle navigation">&#9776;</button>
     <ul class="nav__links">
@@ -26,15 +26,34 @@
   </nav>
 
   <main>
-    <section class="container">
-      <div class="eyebrow">Blog</div>
-      <h1>Insights &amp; Resources</h1>
-      <!-- TODO: Blog card grid (8 articles) -->
-      <!-- TODO: Category tags (CISO, HIPAA, Gen AI) -->
-      <div class="card-grid">
-        <!-- Cards will be added here -->
+
+    <!-- Hero -->
+    <section class="blog-hero">
+      <p class="blog-hero__eyebrow blog-fade blog-fade--d1">STRUCTURE, STRENGTHEN, STREAMLINE, &amp; SCALE</p>
+      <h1 class="blog-fade blog-fade--d2">GrowthPoint Blog</h1>
+      <p class="blog-hero__desc blog-fade blog-fade--d3">See our guidance and recommendations for structuring and strengthening your cybersecurity and regulatory compliance programs.</p>
+    </section>
+
+    <!-- Cards -->
+    <section class="blog-listing">
+      <div class="container">
+        <div class="blog-filter__dropdown-row blog-fade blog-fade--d1">
+          <label class="blog-filter__label" for="taxonomy-dropdown">Filter by</label>
+          <div class="blog-filter__select-wrap">
+            <select class="blog-filter__select" id="taxonomy-dropdown">
+              <option value="all">All Categories</option>
+              <option value="Article">Article</option>
+              <option value="Blog Post">Blog Post</option>
+              <option value="CISO">CISO</option>
+              <option value="Gen AI">Gen AI</option>
+              <option value="HIPAA">HIPAA</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-grid" id="blog-card-grid"></div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
@@ -62,12 +81,15 @@
         </nav>
       </div>
       <div class="footer__bottom">
-        <span>Copyright ©2026 GrowthPoint. All rights reserved.</span>
+        <span>&copy; 2026 GrowthPoint Technology Advisors, LLC. All rights reserved.</span>
         <a href="../privacy.html">Privacy Policy</a>
       </div>
     </div>
   </footer>
 
+  <script src="../js/blog-data.js"></script>
+  <script src="../js/blog.js"></script>
+  <script src="../js/blog-animations.js"></script>
   <script src="../js/nav.js"></script>
 </body>
 </html>

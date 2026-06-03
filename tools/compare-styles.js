@@ -91,6 +91,41 @@ const COMPARISONS = {
       }
     ]
   },
+  '/blog/': {  // blog listing page
+    localPath: '/blog/index.html',
+    elements: [
+      {
+        label: 'blog-hero-eyebrow',
+        live: '[data-id="61d7aebb"] .elementor-heading-title',
+        local: '.blog-hero__eyebrow'
+      },
+      {
+        label: 'blog-hero-h1',
+        live: '[data-id="71e193d8"] .elementor-heading-title',
+        local: '.blog-hero h1'
+      },
+      {
+        label: 'blog-hero-desc',
+        live: '[data-id="76ec358d"] .elementor-widget-container p',
+        local: '.blog-hero__desc'
+      },
+      {
+        label: 'blog-filter-btn',
+        live: '.e-filter-item',
+        local: '.blog-filter__btn'
+      },
+      {
+        label: 'blog-card-category',
+        live: '.e-loop-item .elementor-post-info__item',
+        local: '.blog-card .card__tag'
+      },
+      {
+        label: 'blog-card-title',
+        live: '.e-loop-item h3.elementor-heading-title',
+        local: '.blog-card .card__title'
+      }
+    ]
+  },
   '/about/': {  // about page
     localPath: '/about.html',
     elements: [
