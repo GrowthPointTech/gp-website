@@ -1684,13 +1684,15 @@
 
 .privacy-content {
   background: var(--gp-white);
-  padding: var(--space-2xl) 0;
+  padding: var(--space-lg) 0 var(--space-xl);
 }
 
 .privacy-updated {
   font-size: 14px;
   color: var(--gp-gray);
-  margin-bottom: var(--space-md);
+  margin-top: var(--space-lg);
+  margin-bottom: 0;
+  font-style: italic;
 }
 
 .privacy-section {
@@ -1698,21 +1700,21 @@
 }
 
 .privacy-section h2 {
-  font-size: 60px;
-  line-height: 55px;
-  letter-spacing: 0.3px;
+  font-size: 42px;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
   color: var(--gp-rich-black);
   font-weight: 400;
-  margin-top: 28px;
+  margin-top: var(--space-md);
   margin-bottom: 8px;
 }
 
 .privacy-section h3 {
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 700;
   color: var(--gp-rich-black);
   letter-spacing: normal;
-  margin-top: 20px;
+  margin-top: 14px;
   margin-bottom: 4px;
 }
 
@@ -1720,7 +1722,7 @@
   font-size: 18px;
   color: var(--gp-rich-black);
   line-height: 26px;
-  margin-bottom: 14.4px;
+  margin-bottom: 8px;
   max-width: none;
 }
 
@@ -1735,7 +1737,7 @@
   font-size: 18px;
   color: var(--gp-rich-black);
   line-height: 1.7;
-  margin-bottom: 14px;
+  margin-bottom: 8px;
 }
 
 .privacy-section a {
