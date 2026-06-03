@@ -442,7 +442,7 @@
       ],
       "textMatch": false,
       "liveText": "",
-      "localText": "GrowthPoint Tech Advisors LLC (“GrowthPoint”) is a cybersecu",
+      "localText": "GrowthPoint Tech Advisors LLC (\u201cGrowthPoint\u201d) is a cybersecu",
       "liveSize": "1280px x 0px",
       "localSize": "1120px x 78px"
     }
@@ -535,6 +535,11 @@
           "property": "font-family",
           "live": "\"Rethink Sans\", sans-serif",
           "local": "\"Rethink Sans\", system-ui, sans-serif"
+},
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "30px"
         }
       ],
       "textMatch": true,
