@@ -9,11 +9,6 @@
           "local": "Onest, system-ui, sans-serif"
         },
         {
-          "property": "margin-bottom",
-          "live": "0px",
-          "local": "20px"
-        },
-        {
           "property": "text-align",
           "live": "start",
           "local": "left"
@@ -32,11 +27,6 @@
           "property": "font-family",
           "live": "\"Rethink Sans\", sans-serif",
           "local": "\"Rethink Sans\", system-ui, sans-serif"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "0px",
-          "local": "20px"
         },
         {
           "property": "text-align",
@@ -97,11 +87,6 @@
           "property": "font-family",
           "live": "\"Rethink Sans\", sans-serif",
           "local": "\"Rethink Sans\", system-ui, sans-serif"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "0px",
-          "local": "24px"
         }
       ],
       "textMatch": true,
@@ -137,11 +122,6 @@
           "property": "font-family",
           "live": "Onest, sans-serif",
           "local": "Onest, system-ui, sans-serif"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "0px",
-          "local": "16px"
         }
       ],
       "textMatch": true,
@@ -172,11 +152,6 @@
           "property": "font-family",
           "live": "Onest, sans-serif",
           "local": "Onest, system-ui, sans-serif"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "0px",
-          "local": "16px"
         }
       ],
       "textMatch": true,
@@ -336,6 +311,38 @@
       "localText": "Leadership Experience",
       "liveSize": "639px x 55px",
       "localSize": "1120px x 55px"
+    }
+  ],
+  "/privacy-policy/": [
+    {
+      "label": "privacy-h1",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Privacy Policy",
+      "localText": "Privacy Policy",
+      "liveSize": "520px x 190px",
+      "localSize": "1120px x 95px"
+    },
+    {
+      "label": "privacy-body",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        }
+      ],
+      "textMatch": false,
+      "liveText": "",
+      "localText": "GrowthPoint Tech Advisors LLC (“GrowthPoint”) is a cybersecu",
+      "liveSize": "1280px x 0px",
+      "localSize": "1120px x 78px"
     }
   ],
   "/about/": [
