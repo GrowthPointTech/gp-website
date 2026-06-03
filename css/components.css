@@ -345,9 +345,27 @@
 
 /* Services page hero — centered, lime eyebrow */
 .hero--services {
-  background-color: var(--gp-bright-blue);
+  background: var(--gp-bright-blue) url('../assets/images/background-dark-blue-arrows.svg') center / cover no-repeat;
+  background-blend-mode: screen;
   text-align: center;
   padding: var(--space-2xl) 0 calc(var(--space-2xl) + 40px);
+}
+
+.hero--services h1 {
+  font-size: 95px;
+  line-height: 95px;
+  letter-spacing: 0.3px;
+  max-width: none;
+  margin-bottom: 0;
+}
+
+.hero--services p:not(.hero__eyebrow) {
+  color: var(--gp-white);
+  max-width: none;
+  font-size: 18px;
+  line-height: 26px;
+  text-align: center;
+  margin-bottom: 0;
 }
 
 .hero--services .hero__eyebrow {
