@@ -277,7 +277,7 @@
   letter-spacing: 0.5px;
   line-height: 23px;
   color: var(--gp-light-lime); /* live: rgb(228,253,178) = #E4FDB2 */
-  margin-bottom: 20px; /* visual spacing — live uses container gap */
+  margin-bottom: 0;
 }
 
 /* H1: computed from live site via Puppeteer */
@@ -289,7 +289,7 @@
   letter-spacing: 0.3px;
   color: var(--gp-white);
   max-width: 768px; /* live: 768px bounding width */
-  margin-bottom: 20px; /* visual spacing — live uses container gap */
+  margin-bottom: 0;
 }
 
 /* Body: computed from live site via Puppeteer */

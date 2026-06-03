@@ -58,7 +58,7 @@
   letter-spacing: 0.3px;
   color: var(--gp-rich-black);
   text-align: center;
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
 }
 
 /* Intro: Onest 18px/400, line-height 26px (computed) */
@@ -102,6 +102,7 @@
   font-weight: 700;
   line-height: 18px;
   color: var(--gp-rich-black);
+  margin-bottom: 0;
 }
 
 /* Pillar description slider */
@@ -157,7 +158,7 @@
   line-height: 23.8px;
   color: var(--gp-white);
   max-width: 780px;
-  margin: 0 0 var(--space-sm);
+  margin: 0;
 }
 
 /* Arrows — overlaid on slider */
@@ -321,6 +322,7 @@
   letter-spacing: 0.5px;
   color: #EDF2F4;
   margin: 0;
+  text-align: left;
 }
 
 .blog-hero h1 {
@@ -335,7 +337,7 @@
 .blog-hero__desc {
   color: var(--gp-white);
   max-width: 580px;
-  margin: 0;
+  margin: 0 0 14.4px;
   font-size: 18px;
   line-height: 26px;
 }
@@ -469,15 +471,15 @@
 
 .blog-card .card__tag {
   display: inline;
-  padding: 5px 12px;
+  padding: 0;
   font-size: 14px;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 18px;
   letter-spacing: 0.5px;
-  color: var(--gp-rich-black);
-  background-color: var(--gp-lime);
-  border-radius: 30px;
+  color: #A1C8F3; /* live: rgb(161,200,243) */
+  background-color: transparent;
+  border-radius: 0;
   margin-bottom: 0;
 }
 
@@ -508,7 +510,7 @@
 }
 
 .blog-card .card__title {
-  padding: 0 30px;
+  padding: 0;
   font-size: 32px;
   font-weight: 400;
   line-height: 32px;
@@ -1082,10 +1084,11 @@
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--gp-lime);
-  margin-bottom: var(--space-sm);
-  max-width: none;
+  margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
+  max-width: none;
+  text-align: left;
 }
 
 .hero--about h1 {
@@ -1097,7 +1100,7 @@
   text-align: center;
   max-width: none;
   color: var(--gp-white);
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
 }
 
 .hero--about p:not(.hero--about__eyebrow) {
@@ -1107,7 +1110,7 @@
   line-height: 26px;
   color: var(--gp-white);
   max-width: 520px;
-  margin: 0 auto;
+  margin: 0 0 14.4px;
 }
 
 /* About Page — Mission */
@@ -1125,7 +1128,7 @@
   line-height: 55px;
   letter-spacing: 0.3px;
   color: var(--gp-rich-black);
-  margin-bottom: var(--space-lg);
+  margin-bottom: 0;
 }
 
 .about-mission p {
@@ -1135,7 +1138,7 @@
   line-height: 26px;
   color: var(--gp-rich-black);
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 0 14.4px;
 }
 
 /* About Page — Team */
@@ -1153,7 +1156,7 @@
   line-height: 55px;
   letter-spacing: 0.3px;
   color: var(--gp-rich-black);
-  margin-bottom: 30px;
+  margin-bottom: 0;
 }
 
 .about-team__card {
