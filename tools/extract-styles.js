@@ -105,7 +105,7 @@ async function main() {
   console.log('Launching headless Chrome...');
   const browser = await puppeteer.launch({
     headless: true,
-    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
   });
 
   const allResults = {};

@@ -91,6 +91,56 @@ const COMPARISONS = {
       }
     ]
   },
+  '/services/': {  // services page
+    localPath: '/services.html',
+    elements: [
+      {
+        label: 'services-hero-eyebrow',
+        live: '[data-id="e14a232"] .elementor-heading-title',
+        local: '.hero--services .hero__eyebrow, .hero .hero__eyebrow'
+      },
+      {
+        label: 'services-intro-h2',
+        live: '[data-id="644b81e"] .elementor-heading-title',
+        local: '.service-intro h2'
+      },
+      {
+        label: 'services-intro-body',
+        live: '[data-id="b08e0bf"] .elementor-widget-container p',
+        local: '.service-intro p'
+      },
+      {
+        label: 'services-ciso-label',
+        live: '[data-id="0040ec3"] .elementor-icon-list-text',
+        local: '.service-card-row__label span'
+      },
+      {
+        label: 'services-ciso-body',
+        live: '[data-id="92a3ece"] .elementor-widget-container p',
+        local: '.service-card-row p'
+      },
+      {
+        label: 'services-isms-h2',
+        live: '[data-id="8110f94"] .elementor-heading-title',
+        local: '.isms-section h2'
+      },
+      {
+        label: 'services-tailored-h2',
+        live: '[data-id="39ede071"] .elementor-heading-title',
+        local: '.service-tailored__content h2'
+      },
+      {
+        label: 'services-article-h3',
+        live: '[data-id="8d7bae2"] .elementor-heading-title',
+        local: '.service-article h3'
+      },
+      {
+        label: 'services-leadership-h2',
+        live: '[data-id="760baaf"] .elementor-heading-title',
+        local: '.service-leadership h2'
+      }
+    ]
+  },
   '/about/': {  // about page
     localPath: '/about.html',
     elements: [
@@ -200,7 +250,7 @@ async function main() {
   console.log('Launching headless Chrome...\n');
   const browser = await puppeteer.launch({
     headless: true,
-    executablePath: 'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe'
+    executablePath: '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
   });
 
   const results = {};

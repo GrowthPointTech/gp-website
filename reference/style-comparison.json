@@ -186,6 +186,158 @@
       "localSize": "780px x 167px"
     }
   ],
+  "/services/": [
+    {
+      "label": "services-hero-eyebrow",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        }
+      ],
+      "textMatch": false,
+      "liveText": "STRUCTURE, STRENGTHEN, STREAMLINE,  SCALE",
+      "localText": "Structure, Strengthen, Streamline,  Scale",
+      "liveSize": "1400px x 18px",
+      "localSize": "600px x 18px"
+    },
+    {
+      "label": "services-intro-h2",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        },
+        {
+          "property": "min-height",
+          "live": "0px",
+          "local": "auto"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Structure, Strengthen, Streamline, Scale",
+      "localText": "Structure, Strengthen, Streamline, Scale",
+      "liveSize": "625px x 110px",
+      "localSize": "528px x 165px"
+    },
+    {
+      "label": "services-intro-body",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "min-height",
+          "live": "0px",
+          "local": "auto"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "GrowthPoint can help you build and scale your cybersecurity ",
+      "localText": "GrowthPoint can help you build and scale your cybersecurity ",
+      "liveSize": "625px x 130px",
+      "localSize": "528px x 130px"
+    },
+    {
+      "label": "services-ciso-label",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Fractional CISO Services",
+      "localText": "Fractional CISO Services",
+      "liveSize": "314px x 80px",
+      "localSize": "444px x 80px"
+    },
+    {
+      "label": "services-ciso-body",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "Onest, sans-serif",
+          "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "min-height",
+          "live": "0px",
+          "local": "auto"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "GrowthPoint provides fractional CISO services to lead and bu",
+      "localText": "GrowthPoint provides fractional CISO services to lead and bu",
+      "liveSize": "791px x 104px",
+      "localSize": "528px x 182px"
+    },
+    {
+      "label": "services-isms-h2",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "ISMS Program",
+      "localText": "ISMS Program",
+      "liveSize": "850px x 55px",
+      "localSize": "1120px x 55px"
+    },
+    {
+      "label": "services-tailored-h2",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        }
+      ],
+      "textMatch": false,
+      "liveText": "Risk-based  Tailored Approach",
+      "localText": "Risk-based  Tailored Approach",
+      "liveSize": "540px x 110px",
+      "localSize": "528px x 110px"
+    },
+    {
+      "label": "services-article-h3",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Audits & Certifications",
+      "localText": "Audits & Certifications",
+      "liveSize": "590px x 50px",
+      "localSize": "528px x 50px"
+    },
+    {
+      "label": "services-leadership-h2",
+      "diffs": [
+        {
+          "property": "font-family",
+          "live": "\"Rethink Sans\", sans-serif",
+          "local": "\"Rethink Sans\", system-ui, sans-serif"
+        }
+      ],
+      "textMatch": true,
+      "liveText": "Leadership Experience",
+      "localText": "Leadership Experience",
+      "liveSize": "639px x 55px",
+      "localSize": "1120px x 55px"
+    }
+  ],
   "/about/": [
     {
       "label": "about-hero-eyebrow",
@@ -209,7 +361,7 @@
       "textMatch": false,
       "liveText": "STRUCTURE, STRENGTHEN, STREAMLINE,  SCALE",
       "localText": "STRUCTURE, STRENGTHEN, STREAMLINE, SCALE",
-      "liveSize": "451px x 18px",
+      "liveSize": "450px x 18px",
       "localSize": "1120px x 18px"
     },
     {
@@ -323,7 +475,7 @@
         {
           "property": "margin-bottom",
           "live": "0px",
-          "local": "24px"
+          "local": "30px"
         }
       ],
       "textMatch": true,
@@ -341,9 +493,9 @@
           "local": "Onest, system-ui, sans-serif"
         },
         {
-          "property": "margin-bottom",
+          "property": "min-height",
           "live": "0px",
-          "local": "8px"
+          "local": "auto"
         },
         {
           "property": "text-align",
@@ -355,7 +507,7 @@
       "liveText": "Stacey Robinson, CISSP, CHPS",
       "localText": "Stacey Robinson, CISSP, CHPS",
       "liveSize": "819px x 23px",
-      "localSize": "998px x 23px"
+      "localSize": "720px x 23px"
     },
     {
       "label": "about-team-title",
@@ -375,47 +527,7 @@
       "liveText": "Managing Partner, Fractional CISO",
       "localText": "Managing Partner, Fractional CISO",
       "liveSize": "336px x 23px",
-      "localSize": "336px x 23px"
-    },
-    {
-      "label": "about-team-bio",
-      "diffs": [
-        {
-          "property": "font-family",
-          "live": "Onest, sans-serif",
-          "local": "Onest, system-ui, sans-serif"
-        },
-        {
-          "property": "font-size",
-          "live": "16px",
-          "local": "18px"
-        },
-        {
-          "property": "line-height",
-          "live": "22px",
-          "local": "26px"
-        },
-        {
-          "property": "padding-top",
-          "live": "0px",
-          "local": "16px"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "14.4px",
-          "local": "16px"
-        },
-        {
-          "property": "text-align",
-          "live": "start",
-          "local": "left"
-        }
-      ],
-      "textMatch": true,
-      "liveText": "Stacey Robinson is a results-driven leader with experience i",
-      "localText": "Stacey Robinson is a results-driven leader with experience i",
-      "liveSize": "0px x 0px",
-      "localSize": "998px x 172px"
+      "localSize": "720px x 23px"
     }
   ]
 }
