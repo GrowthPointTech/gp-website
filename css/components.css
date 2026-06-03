@@ -345,7 +345,9 @@
 
 /* Services page hero — centered, lime eyebrow */
 .hero--services {
+  background-color: var(--gp-bright-blue);
   text-align: center;
+  padding: var(--space-2xl) 0 calc(var(--space-2xl) + 40px);
 }
 
 .hero--services .hero__eyebrow {
