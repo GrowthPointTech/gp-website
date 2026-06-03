@@ -374,6 +374,8 @@
   letter-spacing: 0.5px;
   color: var(--gp-lime);
   margin-bottom: 0;
+  max-width: none;
+  text-align: center;
 }
 
 /* Pillars */
