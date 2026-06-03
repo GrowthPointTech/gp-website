@@ -176,6 +176,26 @@ const COMPARISONS = {
       }
     ]
   },
+  '/privacy-policy/': {  // privacy policy page
+    localPath: '/privacy.html',
+    elements: [
+      {
+        label: 'privacy-h1',
+        live: '.elementor-widget-heading h1, h1.elementor-heading-title',
+        local: '.hero--privacy h1'
+      },
+      {
+        label: 'privacy-section-h2',
+        live: 'h2.elementor-heading-title',
+        local: '.privacy-section h2'
+      },
+      {
+        label: 'privacy-body',
+        live: '.elementor-widget-text-editor p',
+        local: '.privacy-section p'
+      }
+    ]
+  },
   '/about/': {  // about page
     localPath: '/about.html',
     elements: [
