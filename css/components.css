@@ -8,12 +8,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--space-sm) var(--space-lg);
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px 60px;
   background: var(--gp-white);
   position: sticky;
   top: 0;
   z-index: 100;
   border-bottom: 1px solid var(--gp-light-gray);
+  box-sizing: border-box;
 }
 
 /* Transparent nav — overlays hero on home page */
@@ -252,7 +255,7 @@
 .hero--home {
   background: url('../assets/images/banner-arrows-shape-charts.svg') center / cover no-repeat;
   padding: 0;
-  min-height: 680px;
+  min-height: 750px;
   overflow: hidden;
   text-align: left;
 }
@@ -260,7 +263,7 @@
 .hero--home .container {
   display: flex;
   align-items: center;
-  min-height: 680px;
+  min-height: 750px;
 }
 
 .hero__content {
@@ -345,10 +348,19 @@
 
 /* Services page hero — centered, lime eyebrow */
 .hero--services {
-  background: var(--gp-bright-blue) url('../assets/images/background-dark-blue-arrows.svg') center / cover no-repeat;
-  background-blend-mode: screen;
+  background: url('../assets/images/background-blue-arrows.svg') center / cover no-repeat;
   text-align: center;
-  padding: var(--space-2xl) 0 calc(var(--space-2xl) + 40px);
+  padding: 150px 0 100px;
+}
+
+.hero--services .container {
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 15px;
+  padding: 0 20px;
 }
 
 .hero--services h1 {
@@ -365,7 +377,7 @@
   font-size: 18px;
   line-height: 26px;
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 14.4px;
 }
 
 .hero--services .hero__eyebrow {
