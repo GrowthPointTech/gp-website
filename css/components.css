@@ -255,7 +255,7 @@
 .hero--home {
   background: url('../assets/images/banner-arrows-shape-charts.svg') center / cover no-repeat;
   padding: 0;
-  min-height: 750px;
+  min-height: 881px;
   overflow: hidden;
   text-align: left;
 }
@@ -263,7 +263,7 @@
 .hero--home .container {
   display: flex;
   align-items: center;
-  min-height: 750px;
+  min-height: 881px;
 }
 
 .hero__content {
@@ -436,31 +436,64 @@
 /* Testimonial */
 
 .testimonial {
-  background: var(--gp-light-gray);
+  background: var(--gp-white);
   padding: var(--space-xl) 0;
-  text-align: center;
 }
 
 .testimonial__quote {
-  font-family: var(--font-heading);
-  font-size: 28px;
+  font-family: var(--font-body);
+  font-size: 32px;
+  font-weight: 300;
   font-style: italic;
-  line-height: 1.4;
+  line-height: 60px;
   color: var(--gp-rich-black);
-  max-width: 800px;
-  margin: 0 auto var(--space-md);
+  max-width: 952px;
+  margin: 0 auto 20px;
+}
+
+.testimonial__meta {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  max-width: 952px;
+  margin: 0 auto;
+}
+
+.testimonial__photo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.testimonial__details {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .testimonial__author {
   font-family: var(--font-body);
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 18px;
   color: var(--gp-bright-blue);
+  margin: 0;
 }
 
 .testimonial__role {
-  font-size: 14px;
-  color: var(--gp-gray);
+  font-family: var(--font-body);
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--gp-rich-black);
+  margin: 0;
+}
+
+@media (max-width: 767px) {
+  .testimonial__quote {
+    font-size: 22px;
+    line-height: 36px;
+  }
 }
 
 /* CTA Section */
@@ -590,14 +623,14 @@
 }
 
 .footer__social-icon {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 21px;
   height: 21px;
   background-color: var(--gp-med-blue);
-  border-radius: 50%;
-  padding: 3px;
+  border-radius: 10%;
+  padding: 0;
   transition: opacity 0.2s ease;
   flex-shrink: 0;
 }
@@ -607,8 +640,8 @@
 }
 
 .footer__social-icon svg {
-  width: 13px;
-  height: 13px;
+  width: 15px;
+  height: 15px;
   fill: var(--gp-rich-black);
   display: block;
 }

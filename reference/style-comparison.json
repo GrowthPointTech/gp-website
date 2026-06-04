@@ -52,6 +52,11 @@
           "property": "text-align",
           "live": "start",
           "local": "left"
+        },
+        {
+          "property": "opacity",
+          "live": "1",
+          "local": "0.987916"
         }
       ],
       "textMatch": true,
@@ -500,7 +505,7 @@
       "textMatch": false,
       "liveText": "STRUCTURE, STRENGTHEN, STREAMLINE,  SCALE",
       "localText": "STRUCTURE, STRENGTHEN, STREAMLINE,  SCALE",
-      "liveSize": "450px x 18px",
+      "liveSize": "451px x 18px",
       "localSize": "1120px x 18px"
     },
     {
