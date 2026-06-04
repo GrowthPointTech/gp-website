@@ -336,6 +336,7 @@
 .services-overview__content {
   width: 50%;
   padding-right: 60px;
+  margin-left: -8px;
   display: flex;
   flex-direction: column;
   gap: 20px;
