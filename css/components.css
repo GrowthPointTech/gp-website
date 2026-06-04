@@ -485,10 +485,19 @@
   letter-spacing: 0.2px;
   color: var(--gp-rich-black);
   margin: 0 0 20px;
+  position: relative; /* anchors the absolute quote marks */
 }
 
+/* Floating opening " — positioned absolute 23px left of text, matching live */
 .testimonial__quote::before {
-  content: '\201C '; /* opening curly quote matching live site */
+  content: '\201C';
+  position: absolute;
+  left: -23px;
+}
+
+/* Closing " inline at end of text */
+.testimonial__quote::after {
+  content: '\201D';
 }
 
 .testimonial__meta {
