@@ -264,6 +264,8 @@
   display: flex;
   align-items: center;
   min-height: 881px;
+  max-width: none;
+  padding-left: 20px;
 }
 
 .hero__content {
