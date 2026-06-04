@@ -1,65 +1,106 @@
-// Pillar description slider — matches live site's swiper carousel behavior
+// Pillar slider — text swipes up, colour wipes right→left on transition
 (function () {
-  var slider = document.querySelector('.pillar-slider');
-  var slides = document.querySelectorAll('.pillar-slider__slide');
-  var dots = document.querySelectorAll('.pillar-slider__dot');
+  var slider  = document.querySelector('.pillar-slider');
+  var wipeEl  = document.querySelector('.pillar-slider__wipe');
+  var slides  = document.querySelectorAll('.pillar-slider__slide');
+  var dots    = document.querySelectorAll('.pillar-slider__dot');
   var pillars = document.querySelectorAll('.pillar[data-slide]');
   var prevBtn = document.querySelector('.pillar-slider__arrow--prev');
   var nextBtn = document.querySelector('.pillar-slider__arrow--next');
-  var current = 0;
+  if (!slider || !slides.length) return;
 
-  // Map slide index to slider background color
-  var colors = ['#080F1F', '#F6621C', '#0C50D5', '#95D316'];
-  // Text should be dark on lime
-  // Dark text needed on light backgrounds (Scale green)
-  // Streamline (#0C50D5) is dark enough for white text
-  var darkText = [false, false, false, true];
+  var colors   = ['#080F1F', '#F6621C', '#0C50D5', '#95D316'];
+  var darkText = [false,     false,     false,     true    ];
+  var current  = 0;
+  var busy     = false;
+  var WIPE_MS  = 350;  // half-way duration
+  var SLIDE_MS = 380;  // text animation duration
 
-  if (!slides.length || !slider) return;
+  // ------------------------------------------------------------------
+  // Appearance helpers
+  // ------------------------------------------------------------------
+  function applyAppearance(idx) {
+    var light  = !darkText[idx];
+    var fg     = light ? '#ffffff' : '#080F1F';
+    var dotOff = light ? 'rgba(255,255,255,0.35)' : 'rgba(8,15,31,0.25)';
 
-  function goTo(index) {
-    if (index < 0) index = slides.length - 1;
-    if (index >= slides.length) index = 0;
+    if (prevBtn) prevBtn.style.color = fg;
+    if (nextBtn) nextBtn.style.color = fg;
 
-    slides[current].classList.remove('pillar-slider__slide--active');
-    dots[current].classList.remove('pillar-slider__dot--active');
-
-    current = index;
-
-    slides[current].classList.add('pillar-slider__slide--active');
-    dots[current].classList.add('pillar-slider__dot--active');
-
-    // Update slider container background color
-    slider.style.backgroundColor = colors[current];
-
-    // Update all text, arrow, and dot colors for readability
-    var textColor = darkText[current] ? '#080F1F' : '#FFFFFF';
-    var dotInactive = darkText[current] ? 'rgba(8,15,31,0.3)' : 'rgba(255,255,255,0.3)';
-
-    prevBtn.style.color = textColor;
-    nextBtn.style.color = textColor;
-
-    // Update heading and description text color
-    var heading = slides[current].querySelector('.pillar-slider__heading');
-    var descs = slides[current].querySelectorAll('.pillar-slider__desc');
-    if (heading) heading.style.color = textColor;
-    descs.forEach(function (d) { d.style.color = textColor; });
-
-    // Reset previous slide text to white (default)
-    slides.forEach(function (s, i) {
-      if (i !== current) {
-        var h = s.querySelector('.pillar-slider__heading');
-        var ds = s.querySelectorAll('.pillar-slider__desc');
-        if (h) h.style.color = '';
-        ds.forEach(function (d) { d.style.color = ''; });
-      }
+    dots.forEach(function (d, i) {
+      d.style.backgroundColor = (i === idx) ? fg : dotOff;
+      if (i === idx) d.classList.add('pillar-slider__dot--active');
+      else           d.classList.remove('pillar-slider__dot--active');
     });
 
-    dots.forEach(function (dot, i) {
-      dot.style.backgroundColor = (i === current) ? textColor : dotInactive;
-    });
+    var slide = slides[idx];
+    [slide.querySelector('.pillar-slider__heading')]
+      .concat(Array.from(slide.querySelectorAll('.pillar-slider__desc')))
+      .forEach(function (el) { if (el) el.style.color = fg; });
   }
 
+  // ------------------------------------------------------------------
+  // Core transition
+  // ------------------------------------------------------------------
+  function goTo(idx) {
+    if (busy) return;
+    idx = ((idx % slides.length) + slides.length) % slides.length;
+    if (idx === current) return;
+    busy = true;
+
+    var oldSlide = slides[current];
+    var newSlide = slides[idx];
+    var newColor = colors[idx];
+
+    // ---- Phase 1: colour wipe slides in from right (right→centre) ----
+    wipeEl.style.backgroundColor = newColor;
+    wipeEl.style.transition       = 'none';
+    wipeEl.style.transform        = 'translateX(100%)';
+    wipeEl.offsetHeight;                    // force reflow
+
+    wipeEl.style.transition = 'transform ' + WIPE_MS + 'ms ease-in';
+    wipeEl.style.transform  = 'translateX(0)';
+
+    // Simultaneously: current text slides UP
+    oldSlide.style.transition = 'transform ' + SLIDE_MS + 'ms ease-in, opacity ' + SLIDE_MS + 'ms ease-in';
+    oldSlide.style.transform  = 'translateY(-60px)';
+    oldSlide.style.opacity    = '0';
+
+    setTimeout(function () {
+      // ---- Mid-point: wipe covers slider — instant swap ----
+      slider.style.backgroundColor = newColor;
+      applyAppearance(idx);
+
+      // Hide old, prepare new (below)
+      oldSlide.classList.remove('pillar-slider__slide--active');
+      oldSlide.style.transition = 'none';
+      oldSlide.style.transform  = '';
+      oldSlide.style.opacity    = '';
+
+      newSlide.style.transition = 'none';
+      newSlide.style.transform  = 'translateY(60px)';
+      newSlide.style.opacity    = '0';
+      newSlide.classList.add('pillar-slider__slide--active');
+      newSlide.offsetHeight;               // force reflow
+
+      current = idx;
+
+      // ---- Phase 2: colour wipe continues off left (centre→left) ----
+      wipeEl.style.transition = 'transform ' + WIPE_MS + 'ms ease-out';
+      wipeEl.style.transform  = 'translateX(-100%)';
+
+      // New text swipes UP into view
+      newSlide.style.transition = 'transform ' + SLIDE_MS + 'ms ease-out, opacity ' + SLIDE_MS + 'ms ease-out';
+      newSlide.style.transform  = 'translateY(0)';
+      newSlide.style.opacity    = '1';
+
+      setTimeout(function () { busy = false; }, WIPE_MS);
+    }, WIPE_MS);
+  }
+
+  // ------------------------------------------------------------------
+  // Event wiring
+  // ------------------------------------------------------------------
   if (prevBtn) prevBtn.addEventListener('click', function () { goTo(current - 1); });
   if (nextBtn) nextBtn.addEventListener('click', function () { goTo(current + 1); });
 
@@ -69,12 +110,19 @@
     });
   });
 
-  pillars.forEach(function (pillar) {
-    pillar.addEventListener('click', function () {
+  pillars.forEach(function (p) {
+    p.addEventListener('click', function () {
       goTo(parseInt(this.getAttribute('data-slide'), 10));
     });
   });
 
-  // Initialize first slide colors
-  goTo(0);
+  // ------------------------------------------------------------------
+  // Init
+  // ------------------------------------------------------------------
+  // Set initial state without animation
+  slider.style.backgroundColor = colors[0];
+  slides[0].classList.add('pillar-slider__slide--active');
+  slides[0].style.transform = 'translateY(0)';
+  slides[0].style.opacity   = '1';
+  applyAppearance(0);
 })();
