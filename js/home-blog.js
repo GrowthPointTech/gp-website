@@ -19,7 +19,6 @@
     card.innerHTML =
       imgHtml +
       '<div class="blog-card__body">' +
-        '<span class="blog-card__tag">' + category + '</span>' +
         '<h3 class="blog-card__title"><a href="' + url + '">' + post.title + '</a></h3>' +
         (desc ? '<p class="blog-card__desc">' + desc + '</p>' : '') +
         '<a href="' + url + '" class="blog-card__link">Read More &#8250;</a>' +
