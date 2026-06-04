@@ -467,10 +467,10 @@
 
 .testimonial__quote {
   font-family: var(--font-body);
-  font-size: 38px;
+  font-size: 32px;
   font-weight: 300;
   font-style: italic;
-  line-height: 66px;
+  line-height: 60px;
   color: var(--gp-rich-black);
   max-width: 952px;
   margin: 0 auto 20px;
@@ -502,6 +502,8 @@
   font-family: var(--font-body);
   font-weight: 700;
   font-size: 18px;
+  line-height: 26px;
+  text-transform: uppercase;
   color: var(--gp-bright-blue);
   margin: 0;
 }
@@ -509,7 +511,9 @@
 .testimonial__role {
   font-family: var(--font-body);
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 600;
+  line-height: 18px;
+  text-transform: uppercase;
   color: var(--gp-rich-black);
   margin: 0;
 }
