@@ -454,6 +454,17 @@
   padding-right: 20px;
 }
 
+/* Quote decorative image in the left grey space */
+.testimonial__quote-image {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 380px;
+  height: auto;
+  pointer-events: none;
+}
+
 /* Pillar icons — tiny slivers peek at far left edge */
 .testimonial__decal {
   position: absolute;
