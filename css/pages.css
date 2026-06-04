@@ -330,7 +330,7 @@
 /* Inner only drives the left-column layout */
 .services-overview__inner {
   padding: 60px 0;
-  min-height: 540px;
+  min-height: 460px;
 }
 
 .services-overview__content {
@@ -365,7 +365,7 @@
   top: 0;
   bottom: 0;
   width: 50%;
-  overflow: hidden;
+  overflow: visible; /* head allowed to clip above orange into section above */
   background-color: var(--gp-orange);
 }
 
@@ -390,6 +390,7 @@
   object-fit: contain;
   object-position: top center;
   display: block;
+  transform: translateY(-40px); /* pull up — head clips above orange into section above */
 }
 
 /* Accordion */
