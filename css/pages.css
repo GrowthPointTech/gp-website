@@ -101,6 +101,7 @@
 .pillars-section {
   background: var(--gp-white);
   padding: var(--space-2xl) 0;
+  overflow: hidden;
 }
 
 /* Heading: Rethink Sans 60px/400, line-height 55px, letter-spacing 0.3px (computed) */
@@ -161,15 +162,18 @@
 
 /* Pillar description slider */
 .pillar-slider {
-  border-radius: var(--radius-lg);
+  border-radius: 0;                     /* sharp corners — matches live */
   position: relative;
   min-height: 300px;
   overflow: hidden;
-  background: var(--gp-rich-black); /* default, overridden by active slide color */
+  background: var(--gp-rich-black);
+  /* extend beyond container padding to match live's 1240px width */
+  margin-left: calc(-1 * var(--space-lg));
+  margin-right: calc(-1 * var(--space-lg));
 }
 
 .pillar-slider__track {
-  padding: var(--space-xl) var(--space-2xl);
+  padding: 40px var(--space-2xl);       /* compressed: 64→40px vertical */
 }
 
 .pillar-slider__slide {
