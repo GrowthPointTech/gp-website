@@ -651,7 +651,7 @@
   background: var(--gp-rich-black);
   border-radius: 12px;
   overflow: hidden;
-  height: 260px;
+  height: 340px;
 }
 
 /* Left: image */
@@ -829,10 +829,10 @@
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Cards: 80% of viewport width, centered */
+/* Cards: 65% of viewport width, taller */
 .blog-carousel__track .blog-card {
-  flex: 0 0 80vw;
-  max-width: 80vw;
+  flex: 0 0 65vw;
+  max-width: 65vw;
 }
 
 /* Arrows: row below the cards */
@@ -876,7 +876,9 @@
 
 /* CTA button — matches live site computed styles exactly */
 .btn--blog-cta {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
