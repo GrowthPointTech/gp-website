@@ -471,6 +471,7 @@
   font-weight: 300;
   font-style: italic;
   line-height: 60px;
+  letter-spacing: 0.2px;
   color: var(--gp-rich-black);
   max-width: 952px;
   margin: 0 auto 20px;
@@ -503,6 +504,7 @@
   font-weight: 700;
   font-size: 18px;
   line-height: 26px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--gp-bright-blue);
   margin: 0;
@@ -513,6 +515,7 @@
   font-size: 18px;
   font-weight: 600;
   line-height: 18px;
+  letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--gp-rich-black);
   margin: 0;
