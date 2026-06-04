@@ -321,7 +321,8 @@
 /* Home Page — Services Overview */
 
 .services-overview {
-  background: var(--gp-light-gray);
+  /* two-tone: gray left, orange right — matches live site */
+  background: linear-gradient(to right, var(--gp-light-gray) 50%, var(--gp-orange) 50%);
   padding: 0; /* cancel base section rule; inner controls spacing */
 }
 
@@ -329,7 +330,7 @@
 .services-overview__inner {
   position: relative;
   padding: 60px 0;
-  min-height: 420px; /* ensures space for photo even if content is short */
+  min-height: 540px; /* match live site height */
 }
 
 .services-overview__content {
