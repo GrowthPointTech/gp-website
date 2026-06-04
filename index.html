@@ -149,7 +149,13 @@
       <div class="container">
         <h2 class="scroll-animate fade-in">Latest Blog Posts &amp; Insights</h2>
         <p class="blog-highlights__intro scroll-animate fade-in delay-300">Read more about our cybersecurity, risk and regulatory compliance topics.</p>
-        <div class="card-grid" id="home-blog-grid"></div>
+        <div class="blog-carousel">
+          <button class="blog-carousel__arrow blog-carousel__arrow--prev" aria-label="Previous post">&#8249;</button>
+          <div class="blog-carousel__viewport">
+            <div class="card-grid blog-carousel__track" id="home-blog-grid"></div>
+          </div>
+          <button class="blog-carousel__arrow blog-carousel__arrow--next" aria-label="Next post">&#8250;</button>
+        </div>
         <div class="blog-highlights__cta scroll-animate fade-in delay-300">
           <a href="blog/" class="btn btn--blog-cta">See All Blog Posts &amp; Insights</a>
         </div>
@@ -210,6 +216,7 @@
 
   <script src="js/blog-data.js"></script>
   <script src="js/home-blog.js"></script>
+  <script src="js/home-carousel.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/pillar-slider.js"></script>
   <script src="js/home-animations.js"></script>
