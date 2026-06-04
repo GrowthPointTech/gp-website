@@ -446,8 +446,10 @@
   overflow: hidden;
 }
 
-/* Stretch quote further right by reducing container right padding */
+/* Stretch quote to right screen edge */
 .testimonial .container {
+  max-width: none;
+  margin-right: 0;
   padding-right: 0;
 }
 
