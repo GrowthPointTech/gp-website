@@ -446,6 +446,11 @@
   overflow: hidden;
 }
 
+/* Stretch quote further right by reducing container right padding */
+.testimonial .container {
+  padding-right: 0;
+}
+
 /* Pillar icons — tiny slivers peek at far left edge */
 .testimonial__decal {
   position: absolute;
