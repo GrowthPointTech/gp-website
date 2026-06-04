@@ -437,32 +437,41 @@
   }
 }
 
-/* Testimonial */
+/* Testimonial — two-column flex matching live site structure */
 
 .testimonial {
   background: var(--gp-light-gray);
-  padding: 40px 0;
-  position: relative;
+  /* live: pt 100, pr 50, pb 100, pl 0 — content+left col = 238+40+952 = 1230px, +50 right = 1280 */
+  padding: 100px 50px 100px 0;
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
   overflow: hidden;
 }
 
-/* Pillar icons — decorative stack on the left, partially clipped */
-.testimonial__pillars {
-  position: absolute;
-  left: -40px;
-  top: 50%;
-  transform: translateY(-50%);
+/* Left column: 238px — pillar icons, decorative, hidden on mobile */
+.testimonial__left {
+  width: 238px;
+  flex-shrink: 0;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
   gap: 0;
-  pointer-events: none;
+  overflow: hidden;
 }
 
-.testimonial__pillars img {
-  width: 80px;
-  height: 80px;
+.testimonial__left img {
+  width: 90px;
+  height: 90px;
   display: block;
-  opacity: 0.5;
+  opacity: 0.55;
+}
+
+/* Right column: 952px — all quote content */
+.testimonial__right {
+  width: 952px;
+  flex-shrink: 0;
 }
 
 .testimonial__quote {
@@ -473,16 +482,13 @@
   line-height: 60px;
   letter-spacing: 0.2px;
   color: var(--gp-rich-black);
-  max-width: 952px;
-  margin: 0 auto 20px;
+  margin: 0 0 20px;
 }
 
 .testimonial__meta {
   display: flex;
   align-items: center;
   gap: 16px;
-  max-width: 952px;
-  margin: 0 auto;
 }
 
 .testimonial__photo {
@@ -521,10 +527,38 @@
   margin: 0;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1024px) {
+  .testimonial {
+    padding: 60px 40px 60px 40px;
+    gap: 20px;
+  }
+  .testimonial__left {
+    width: 120px;
+  }
+  .testimonial__right {
+    width: auto;
+    flex: 1;
+  }
   .testimonial__quote {
-    font-size: 22px;
-    line-height: 36px;
+    font-size: 24px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .testimonial {
+    flex-direction: column;
+    padding: 40px 24px;
+  }
+  .testimonial__left {
+    display: none;
+  }
+  .testimonial__right {
+    width: 100%;
+  }
+  .testimonial__quote {
+    font-size: 20px;
+    line-height: 34px;
   }
 }
 
