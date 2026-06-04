@@ -361,10 +361,10 @@
 /* Photo: direct child of section so it reaches the screen right edge */
 .services-overview__photo {
   position: absolute;
-  right: 0;
+  left: 50%;  /* starts exactly at the midpoint of the section */
+  right: 0;   /* extends to the right edge */
   top: 0;
   bottom: 0;
-  width: 50%;
   overflow: visible; /* head allowed to clip above orange into section above */
   background-color: var(--gp-orange);
 }
@@ -383,14 +383,13 @@
 }
 
 .services-overview__photo img {
-  position: relative;
+  position: absolute;
+  top: -40px;               /* head clips 40px above section top */
+  left: 0;                  /* anchored to left edge of orange column */
+  width: auto;
+  height: calc(100% + 40px); /* 460px container + 40px shift = 500px → bottom flush */
   z-index: 1;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  object-position: top center;
   display: block;
-  transform: translateY(-40px); /* pull up — head clips above orange into section above */
 }
 
 /* Accordion */
