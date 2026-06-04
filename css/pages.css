@@ -212,7 +212,7 @@
   line-height: 23.8px;
   color: var(--gp-white);
   max-width: 780px;
-  margin: 0;
+  margin: 0 auto;
 }
 
 /* Arrows — overlaid on slider */
