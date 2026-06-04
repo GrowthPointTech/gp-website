@@ -385,7 +385,7 @@
 .services-overview__photo img {
   position: absolute;
   top: -60px;               /* head clips 60px into grey section above */
-  left: 0;
+  left: -50px;              /* overflows slightly into grey section on left */
   width: auto;
   height: calc(100% + 60px); /* 540px + 60px shift = 600px → bottom flush */
   z-index: 1;
