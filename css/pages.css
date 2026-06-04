@@ -804,6 +804,7 @@
   font-size: 18px;
   color: var(--gp-gray);
   text-align: center;
+  margin-top: 16px;
   margin-bottom: 48px;
 }
 
@@ -843,26 +844,26 @@
   margin-top: 24px;
 }
 
+/* Arrows: bare chevron SVG, matching live site style */
 .blog-carousel__arrow {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  border: 2px solid var(--gp-rich-black);
+  width: 32px;
+  height: 32px;
+  border: none;
   background: transparent;
   color: var(--gp-rich-black);
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+  padding: 4px;
+  opacity: 0.75;
+  transition: opacity 0.2s, transform 0.15s;
   flex-shrink: 0;
-  padding: 0;
 }
 
 .blog-carousel__arrow:hover {
-  border-color: var(--gp-gray);
-  color: var(--gp-gray);
-  transform: scale(1.08);
+  opacity: 1;
+  transform: scale(1.15);
 }
 
 @media (max-width: 767px) {
