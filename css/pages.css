@@ -330,7 +330,7 @@
 /* Inner only drives the left-column layout */
 .services-overview__inner {
   padding: 60px 0;
-  min-height: 460px;
+  min-height: 540px; /* match live site height */
 }
 
 .services-overview__content {
@@ -384,10 +384,10 @@
 
 .services-overview__photo img {
   position: absolute;
-  top: -40px;               /* head clips 40px above section top */
-  left: 0;                  /* anchored to left edge of orange column */
+  top: -60px;               /* head clips 60px into grey section above */
+  left: 0;
   width: auto;
-  height: calc(100% + 40px); /* 460px container + 40px shift = 500px → bottom flush */
+  height: calc(100% + 60px); /* 540px + 60px shift = 600px → bottom flush */
   z-index: 1;
   display: block;
 }
