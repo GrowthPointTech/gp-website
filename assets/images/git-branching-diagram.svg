@@ -1,0 +1,135 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="'Onest', 'Segoe UI', system-ui, sans-serif">
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#8D99AE"/>
+    </marker>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="108%">
+      <feDropShadow dx="1" dy="1" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" rx="12" fill="#080F1F"/>
+
+  <!-- Title -->
+  <text x="450" y="42" text-anchor="middle" fill="#FFFFFF" font-size="20" font-weight="600">GrowthPoint Branching Strategy</text>
+
+  <!-- Legend -->
+  <g transform="translate(620, 60)">
+    <rect x="0" y="0" width="250" height="120" rx="8" fill="#0C1A2E" stroke="#1A2744" stroke-width="1"/>
+    <text x="125" y="22" text-anchor="middle" fill="#8D99AE" font-size="11" font-weight="600">LEGEND</text>
+    <circle cx="20" cy="44" r="7" fill="#F6621C"/>
+    <text x="38" y="48" fill="#FFFFFF" font-size="12">main (production)</text>
+    <circle cx="20" cy="70" r="7" fill="#0C50D5"/>
+    <text x="38" y="74" fill="#FFFFFF" font-size="12">preview (staging)</text>
+    <circle cx="20" cy="96" r="7" fill="#A4E322"/>
+    <text x="38" y="100" fill="#FFFFFF" font-size="12">feature/* (dev work)</text>
+  </g>
+
+  <!-- Deploy labels -->
+  <g>
+    <rect x="30" y="195" width="85" height="22" rx="4" fill="#F6621C" opacity="0.15"/>
+    <text x="72" y="210" text-anchor="middle" fill="#F6621C" font-size="9" font-weight="600">PRODUCTION</text>
+    <text x="72" y="222" text-anchor="middle" fill="#8D99AE" font-size="8">gptechadvisors.com</text>
+
+    <rect x="30" y="295" width="85" height="22" rx="4" fill="#0C50D5" opacity="0.15"/>
+    <text x="72" y="310" text-anchor="middle" fill="#3F8CFF" font-size="9" font-weight="600">STAGING</text>
+    <text x="72" y="322" text-anchor="middle" fill="#8D99AE" font-size="8">preview.gptechadvisors.com</text>
+  </g>
+
+  <!-- Branch labels -->
+  <text x="135" y="210" fill="#F6621C" font-size="13" font-weight="600">main</text>
+  <text x="135" y="310" fill="#3F8CFF" font-size="13" font-weight="600">preview</text>
+
+  <!-- ==================== MAIN BRANCH LINE ==================== -->
+  <line x1="190" y1="205" x2="850" y2="205" stroke="#F6621C" stroke-width="3" stroke-opacity="0.4"/>
+
+  <!-- Main commits -->
+  <circle cx="210" cy="205" r="9" fill="#F6621C" filter="url(#shadow)"/>
+  <text x="210" y="188" text-anchor="middle" fill="#8D99AE" font-size="9">v1.0</text>
+
+  <circle cx="520" cy="205" r="9" fill="#F6621C" filter="url(#shadow)"/>
+  <text x="520" y="188" text-anchor="middle" fill="#8D99AE" font-size="9">v1.1</text>
+
+  <circle cx="830" cy="205" r="9" fill="#F6621C" filter="url(#shadow)"/>
+  <text x="830" y="188" text-anchor="middle" fill="#8D99AE" font-size="9">v1.2</text>
+
+  <!-- ==================== PREVIEW BRANCH LINE ==================== -->
+  <line x1="190" y1="305" x2="850" y2="305" stroke="#0C50D5" stroke-width="3" stroke-opacity="0.4"/>
+
+  <!-- Preview commits -->
+  <circle cx="210" cy="305" r="8" fill="#0C50D5" filter="url(#shadow)"/>
+  <circle cx="370" cy="305" r="8" fill="#0C50D5" filter="url(#shadow)"/>
+  <circle cx="450" cy="305" r="8" fill="#0C50D5" filter="url(#shadow)"/>
+  <circle cx="620" cy="305" r="8" fill="#0C50D5" filter="url(#shadow)"/>
+  <circle cx="720" cy="305" r="8" fill="#0C50D5" filter="url(#shadow)"/>
+  <circle cx="800" cy="305" r="8" fill="#0C50D5" filter="url(#shadow)"/>
+
+  <!-- ==================== FEATURE BRANCH 1 ==================== -->
+  <!-- Branch off preview at 250, merge back at 370 -->
+  <line x1="250" y1="305" x2="280" y2="385" stroke="#A4E322" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="280" y1="385" x2="340" y2="385" stroke="#A4E322" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="340" y1="385" x2="370" y2="305" stroke="#A4E322" stroke-width="2" stroke-opacity="0.5"/>
+
+  <circle cx="280" cy="385" r="7" fill="#A4E322" filter="url(#shadow)"/>
+  <circle cx="310" cy="385" r="7" fill="#A4E322" filter="url(#shadow)"/>
+  <circle cx="340" cy="385" r="7" fill="#A4E322" filter="url(#shadow)"/>
+
+  <text x="310" y="410" text-anchor="middle" fill="#A4E322" font-size="10" font-weight="500">feature/footer-redesign</text>
+
+  <!-- PR arrow -->
+  <rect x="343" y="340" width="24" height="16" rx="3" fill="#A4E322" opacity="0.2"/>
+  <text x="355" y="351" text-anchor="middle" fill="#A4E322" font-size="8" font-weight="700">PR</text>
+
+  <!-- ==================== FEATURE BRANCH 2 ==================== -->
+  <!-- Branch off preview at 400, merge back at 450 -->
+  <line x1="400" y1="305" x2="420" y2="430" stroke="#A4E322" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="420" y1="430" x2="500" y2="430" stroke="#A4E322" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="500" y1="430" x2="620" y2="305" stroke="#A4E322" stroke-width="2" stroke-opacity="0.5"/>
+
+  <circle cx="420" cy="430" r="7" fill="#A4E322" filter="url(#shadow)"/>
+  <circle cx="460" cy="430" r="7" fill="#A4E322" filter="url(#shadow)"/>
+  <circle cx="500" cy="430" r="7" fill="#A4E322" filter="url(#shadow)"/>
+
+  <text x="460" y="455" text-anchor="middle" fill="#A4E322" font-size="10" font-weight="500">feature/blog-system</text>
+
+  <!-- PR arrow -->
+  <rect x="530" y="358" width="24" height="16" rx="3" fill="#A4E322" opacity="0.2"/>
+  <text x="542" y="369" text-anchor="middle" fill="#A4E322" font-size="8" font-weight="700">PR</text>
+
+  <!-- ==================== FEATURE BRANCH 3 ==================== -->
+  <!-- Branch off preview at 650, still open -->
+  <line x1="660" y1="305" x2="680" y2="385" stroke="#A4E322" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="680" y1="385" x2="760" y2="385" stroke="#A4E322" stroke-width="2" stroke-opacity="0.5"/>
+  <line x1="760" y1="385" x2="800" y2="305" stroke="#A4E322" stroke-width="2" stroke-opacity="0.5"/>
+
+  <circle cx="680" cy="385" r="7" fill="#A4E322" filter="url(#shadow)"/>
+  <circle cx="720" cy="385" r="7" fill="#A4E322" filter="url(#shadow)"/>
+  <circle cx="760" cy="385" r="7" fill="#A4E322" filter="url(#shadow)"/>
+
+  <text x="720" y="410" text-anchor="middle" fill="#A4E322" font-size="10" font-weight="500">feature/fix-services-hero</text>
+
+  <!-- PR arrow -->
+  <rect x="763" y="340" width="24" height="16" rx="3" fill="#A4E322" opacity="0.2"/>
+  <text x="775" y="351" text-anchor="middle" fill="#A4E322" font-size="8" font-weight="700">PR</text>
+
+  <!-- ==================== PREVIEW → MAIN MERGES ==================== -->
+  <!-- Merge preview into main (v1.1) -->
+  <line x1="480" y1="305" x2="520" y2="205" stroke="#8D99AE" stroke-width="1.5" stroke-dasharray="6,4" stroke-opacity="0.5"/>
+  <rect x="485" y="245" width="24" height="16" rx="3" fill="#F6621C" opacity="0.2"/>
+  <text x="497" y="256" text-anchor="middle" fill="#F6621C" font-size="8" font-weight="700">PR</text>
+
+  <!-- Merge preview into main (v1.2) -->
+  <line x1="800" y1="305" x2="830" y2="205" stroke="#8D99AE" stroke-width="1.5" stroke-dasharray="6,4" stroke-opacity="0.5"/>
+  <rect x="805" y="245" width="24" height="16" rx="3" fill="#F6621C" opacity="0.2"/>
+  <text x="817" y="256" text-anchor="middle" fill="#F6621C" font-size="8" font-weight="700">PR</text>
+
+  <!-- ==================== FLOW ANNOTATIONS ==================== -->
+  <!-- Bottom annotation -->
+  <g transform="translate(140, 478)">
+    <rect x="0" y="0" width="620" height="30" rx="6" fill="#0C1A2E" stroke="#1A2744" stroke-width="1"/>
+    <text x="310" y="19" text-anchor="middle" fill="#8D99AE" font-size="11">
+      feature/* → PR to preview (staging deploy) → PR to main (production deploy)
+    </text>
+  </g>
+</svg>
