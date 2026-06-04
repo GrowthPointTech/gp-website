@@ -440,8 +440,27 @@
 /* Testimonial */
 
 .testimonial {
-  background: var(--gp-white);
-  padding: var(--space-xl) 0;
+  background: var(--gp-light-gray);
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decal: GP >> mark on the right, large and semi-transparent */
+.testimonial::after {
+  content: '';
+  position: absolute;
+  right: -60px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 500px;
+  height: 500px;
+  background-image: url('../assets/logos/GP-Logo mark.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.08;
+  pointer-events: none;
 }
 
 .testimonial__quote {
