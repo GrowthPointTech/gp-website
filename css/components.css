@@ -437,55 +437,46 @@
   }
 }
 
-/* Testimonial — two-column flex matching live site structure */
+/* Testimonial */
 
 .testimonial {
   background: var(--gp-light-gray);
-  /* live: pt 100, pr 50, pb 100, pl 0 — content+left col = 238+40+952 = 1230px, +50 right = 1280 */
-  padding: 100px 50px 100px 0;
-  display: flex;
-  flex-direction: row;
-  gap: 40px;
-  overflow: hidden;
-}
-
-/* Left column: 238px — decorative shapes barely peek from left edge */
-.testimonial__left {
-  width: 238px;
-  flex-shrink: 0;
+  padding: 80px 0;
   position: relative;
   overflow: hidden;
 }
 
-.testimonial__left img {
+/* Pillar icons — tiny slivers peek at far left edge */
+.testimonial__decal {
   position: absolute;
-  width: 130px;
-  height: 130px;
-  opacity: 0.8;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
 }
 
-/* Only tiny slivers peek in from the far left edge, matching live site */
-.testimonial__left img:nth-child(1) { top: 12%;  left: -100px; }
-.testimonial__left img:nth-child(2) { top: 34%;  left: -108px; }
-.testimonial__left img:nth-child(3) { top: 56%;  left: -104px; }
-.testimonial__left img:nth-child(4) { top: 78%;  left: -110px; }
-
-/* Right column: 952px — all quote content */
-.testimonial__right {
-  width: 952px;
-  flex-shrink: 0;
+.testimonial__decal img {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  opacity: 0.7;
 }
+
+.testimonial__decal img:nth-child(1) { top: -180px; left: -95px; }
+.testimonial__decal img:nth-child(2) { top:  -60px; left: -100px; }
+.testimonial__decal img:nth-child(3) { top:   60px; left: -96px; }
+.testimonial__decal img:nth-child(4) { top:  180px; left: -102px; }
 
 .testimonial__quote {
   font-family: var(--font-body);
   font-size: 32px;
   font-weight: 300;
   font-style: italic;
-  line-height: 60px;
+  line-height: 52px;
   letter-spacing: 0.2px;
-  color: rgb(140, 148, 165); /* muted grey matching live site appearance */
+  color: var(--gp-rich-black);
   margin: 0 0 20px;
-  position: relative; /* anchors the absolute quote marks */
+  position: relative;
 }
 
 /* Floating opening " — positioned absolute 23px left of text, matching live */
@@ -527,7 +518,7 @@
   line-height: 26px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: rgb(100, 130, 185); /* muted blue matching live */
+  color: var(--gp-bright-blue);
   margin: 0;
 }
 
@@ -538,43 +529,14 @@
   line-height: 18px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: rgb(140, 148, 165); /* muted grey matching live */
+  color: var(--gp-rich-black);
   margin: 0;
 }
 
-@media (max-width: 1024px) {
-  .testimonial {
-    padding: 60px 40px 60px 40px;
-    gap: 20px;
-  }
-  .testimonial__left {
-    width: 120px;
-  }
-  .testimonial__right {
-    width: auto;
-    flex: 1;
-  }
-  .testimonial__quote {
-    font-size: 24px;
-    line-height: 40px;
-  }
-}
-
 @media (max-width: 767px) {
-  .testimonial {
-    flex-direction: column;
-    padding: 40px 24px;
-  }
-  .testimonial__left {
-    display: none;
-  }
-  .testimonial__right {
-    width: 100%;
-  }
-  .testimonial__quote {
-    font-size: 20px;
-    line-height: 34px;
-  }
+  .testimonial { padding: 40px 0; }
+  .testimonial__decal { display: none; }
+  .testimonial__quote { font-size: 22px; line-height: 36px; }
 }
 
 /* CTA Section */
