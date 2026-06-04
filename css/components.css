@@ -449,7 +449,7 @@
 /* Stretch right, preserve left margin */
 .testimonial .container {
   max-width: none;
-  margin-left: 40px;
+  margin-left: 120px;
   margin-right: 0;
   padding-right: 20px;
 }
