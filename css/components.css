@@ -446,11 +446,11 @@
   overflow: hidden;
 }
 
-/* Stretch quote to right screen edge */
+/* Full-width with left padding restored and minimal right padding */
 .testimonial .container {
   max-width: none;
   margin-right: 0;
-  padding-right: 0;
+  padding-right: 20px;
 }
 
 /* Pillar icons — tiny slivers peek at far left edge */
