@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QA Testing Instructions — GrowthPoint Website</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Rethink+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gp-rich-black: #080F1F;
+      --gp-bright-blue: #0C50D5;
+      --gp-med-blue: #3F8CFF;
+      --gp-white: #FFFFFF;
+      --gp-gray: #8D99AE;
+      --gp-light-gray: #EDF2F4;
+      --gp-lime: #A4E322;
+      --gp-orange: #F6621C;
+      --font-heading: 'Rethink Sans', system-ui, sans-serif;
+      --font-body: 'Onest', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--gp-rich-black);
+      background: var(--gp-white);
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    h1 { font-size: 38px; margin-bottom: 8px; color: var(--gp-bright-blue); }
+    h2 { font-size: 26px; margin-top: 48px; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--gp-light-gray); }
+    h3 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; }
+    h4 { font-size: 16px; margin-top: 20px; margin-bottom: 8px; color: var(--gp-gray); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    p { margin-bottom: 16px; }
+
+    a { color: var(--gp-bright-blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    code {
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 14px;
+      background: var(--gp-light-gray);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: var(--gp-rich-black);
+      color: #E0E0E0;
+      padding: 20px 24px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 16px 0 24px;
+      line-height: 1.5;
+      white-space: pre-wrap;
+    }
+
+    pre code { background: none; padding: 0; color: inherit; font-size: 14px; }
+
+    .callout {
+      border-left: 4px solid var(--gp-bright-blue);
+      background: #F0F5FF;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+
+    .callout--warning {
+      border-left-color: var(--gp-orange);
+      background: #FFF5F0;
+    }
+
+    .callout--success {
+      border-left-color: var(--gp-lime);
+      background: #F5FDE8;
+    }
+
+    .callout strong { display: block; margin-bottom: 4px; }
+
+    ol, ul { margin: 12px 0 20px 24px; }
+    li { margin-bottom: 8px; }
+
+    table { width: 100%; border-collapse: collapse; margin: 16px 0 24px; }
+    th, td { text-align: left; padding: 10px 14px; border-bottom: 1px solid var(--gp-light-gray); font-size: 14px; }
+    th { font-weight: 600; background: var(--gp-light-gray); }
+
+    hr { border: none; border-top: 1px solid var(--gp-light-gray); margin: 40px 0; }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge--maddox { background: #E8D5FF; color: #6B21A8; }
+    .badge--josh { background: #D5EEFF; color: #0C50D5; }
+    .badge--both { background: #F5FDE8; color: #3D6B00; }
+
+    .checklist { list-style: none; margin-left: 0; padding-left: 0; }
+    .checklist li {
+      padding: 8px 12px;
+      border: 1px solid var(--gp-light-gray);
+      border-radius: 6px;
+      margin-bottom: 6px;
+      font-size: 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .checklist li::before {
+      content: "\2610";
+      font-size: 16px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .page-section {
+      background: var(--gp-light-gray);
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+
+    .page-section h3 {
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .section-band {
+      background: var(--gp-white);
+      border: 1px solid #DDE3E9;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin: 8px 0;
+    }
+
+    .section-band strong { color: var(--gp-rich-black); }
+    .section-band .check-items { font-size: 13px; color: var(--gp-gray); margin-top: 4px; margin-bottom: 0; }
+
+    .phase {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 40px;
+      margin-bottom: 16px;
+    }
+
+    .phase-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: var(--gp-bright-blue);
+      color: var(--gp-white);
+      border-radius: 50%;
+      font-size: 18px;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .phase h2 { margin: 0; border: none; padding: 0; }
+
+    .timeline {
+      display: flex;
+      gap: 0;
+      margin: 24px 0;
+    }
+
+    .timeline-step {
+      flex: 1;
+      text-align: center;
+      padding: 16px 8px;
+      background: var(--gp-light-gray);
+      border-right: 2px solid var(--gp-white);
+      font-size: 13px;
+      position: relative;
+    }
+
+    .timeline-step:first-child { border-radius: 8px 0 0 8px; }
+    .timeline-step:last-child { border-radius: 0 8px 8px 0; border-right: none; }
+
+    .timeline-step strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 4px;
+      color: var(--gp-bright-blue);
+    }
+
+    .email-preview {
+      background: #FAFBFC;
+      border: 1px solid var(--gp-light-gray);
+      border-radius: 8px;
+      padding: 32px;
+      margin: 24px 0;
+    }
+
+    .email-preview .email-header {
+      border-bottom: 1px solid var(--gp-light-gray);
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      color: var(--gp-gray);
+    }
+
+    .email-preview .email-header strong { color: var(--gp-rich-black); }
+  </style>
+</head>
+<body>
+
+  <h1>QA Testing Plan</h1>
+  <p style="font-size: 18px; color: var(--gp-gray); margin-bottom: 40px;">Final comparison: preview site vs. live site &mdash; finding and fixing every difference</p>
+
+  <!-- ============================================================ -->
+  <h2>The Big Picture</h2>
+
+  <p>We're in the final stretch. The preview site at <a href="https://preview.gptechadvisors.com">preview.gptechadvisors.com</a> needs to match the live site at <a href="https://www.gptechadvisors.com">gptechadvisors.com</a> <strong>exactly</strong> &mdash; with one intentional exception.</p>
+
+  <div class="callout callout--warning">
+    <strong>The one intentional difference:</strong>
+    The <strong>Contact Us</strong> menu item, Contact button, and Contact page are intentionally removed from the preview site. Do NOT flag these as issues. Everything else should match.
+  </div>
+
+  <p>This exercise teaches a critical part of the software development lifecycle: <strong>Quality Assurance (QA)</strong>. In the real world, no code ships without testing. The goal is to catch every visual, layout, content, and behavioral difference before we promote preview to production.</p>
+
+  <div class="timeline">
+    <div class="timeline-step"><strong>Phase 1</strong>Discovery<br><em>Find differences</em></div>
+    <div class="timeline-step"><strong>Phase 2</strong>Triage<br><em>Prioritize &amp; assign</em></div>
+    <div class="timeline-step"><strong>Phase 3</strong>Fix<br><em>Branch, fix, PR</em></div>
+    <div class="timeline-step"><strong>Phase 4</strong>Verify<br><em>Re-test after merge</em></div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="phase">
+    <div class="phase-number">1</div>
+    <h2 id="phase1">Phase 1: Discovery</h2>
+  </div>
+
+  <p>Your job is to find <strong>every</strong> difference between the preview site and the live site. You'll use Claude as your QA assistant, but you'll also verify with your own eyes.</p>
+
+  <h3>Cross-Testing Assignments</h3>
+
+  <p>You test <em>the other person's</em> work. This is standard practice &mdash; the person who built it is too close to spot their own mistakes.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Tester</th>
+        <th>Pages to Test</th>
+        <th>Built By</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Josh</strong> <span class="badge badge--josh">TESTER</span></td>
+        <td>Home, Services, ISMS Wheel</td>
+        <td>Maddox</td>
+      </tr>
+      <tr>
+        <td><strong>Maddox</strong> <span class="badge badge--maddox">TESTER</span></td>
+        <td>About, Blog (listing + posts), Contact</td>
+        <td>Josh</td>
+      </tr>
+      <tr>
+        <td><strong>Both</strong> <span class="badge badge--both">SHARED</span></td>
+        <td>Nav, Footer, Privacy Policy</td>
+        <td>Both</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Step 1: Ask Claude to compare ONE page at a time</h3>
+
+  <p>Open Claude Code in the <code>gp-website</code> directory and run a comparison for <strong>one page per prompt</strong>. Don't ask Claude to compare multiple pages at once.</p>
+
+  <div class="callout">
+    <strong>Why one page at a time?</strong>
+    AI works best with focused tasks. When you ask Claude to compare 3 pages at once, it has to hold a lot of information in context and tends to rush through or miss details. One page at a time means Claude can go deep on each section, catch small differences, and give you more accurate results. This is a good general principle for working with AI: <strong>smaller, focused prompts get better results than big, vague ones.</strong>
+  </div>
+
+  <p>Here are example prompts for each page. Copy, paste, and run one at a time:</p>
+
+  <h4>Home Page</h4>
+  <pre><code>Compare ONLY the Home page on the preview site
+(https://preview.gptechadvisors.com) to the live site
+(https://www.gptechadvisors.com).
+
+Use Puppeteer to screenshot both at 1920px and 768px viewports.
+Go section by section from top to bottom:
+  - Nav (logo, links, positioning)
+  - Hero (background, eyebrow, H1, body text)
+  - Four Pillars (cards, slider, arrows)
+  - Services Overview (card grid)
+  - Blog Highlights (cards, scroll)
+  - Testimonial (quote, attribution)
+  - Footer (logo, links, social icons, copyright)
+
+For each section, check: background colors, fonts, spacing, text
+content, images, and layout. List every difference you find.
+
+Also check every link (a href) on the page:
+  - What does it link to?
+  - Does the link work (not broken)?
+  - Does it match the same link on the live site?
+  - Does it open in the same tab or a new tab?
+
+IGNORE the Contact Us button/menu — that is intentionally removed.</code></pre>
+
+  <h4>Services Page</h4>
+  <pre><code>Compare ONLY the Services page on the preview site
+(https://preview.gptechadvisors.com/services/) to the live site
+(https://www.gptechadvisors.com/services/).
+
+Use Puppeteer to screenshot both at 1920px and 768px viewports.
+Go section by section from top to bottom:
+  - Nav (logo, links, positioning)
+  - Hero (background image, eyebrow, H1, body text, padding)
+  - Intro + Service Cards (heading, body, card rows with icons)
+  - ISMS Wheel (heading, intro text, wheel graphic, click behavior)
+  - Risk-based Tailored Approach (text, image, 2-col layout)
+  - Service Articles Grid (4 cards with images)
+  - Leadership Experience (heading, body text)
+  - CTA section (heading, button)
+  - Footer (logo, links, social icons, copyright)
+
+For each section, check: background colors, fonts, spacing, text
+content, images, and layout. List every difference you find.
+
+Also check every link (a href) on the page:
+  - What does it link to?
+  - Does the link work (not broken)?
+  - Does it match the same link on the live site?
+  - Does it open in the same tab or a new tab?
+
+IGNORE the Contact Us button/menu — that is intentionally removed.</code></pre>
+
+  <h4>About Page</h4>
+  <pre><code>Compare ONLY the About page on the preview site
+(https://preview.gptechadvisors.com/about/) to the live site
+(https://www.gptechadvisors.com/about/).
+
+Use Puppeteer to screenshot both at 1920px and 768px viewports.
+Go section by section from top to bottom:
+  - Nav (logo, links, positioning)
+  - Hero (background, eyebrow, H1, body text)
+  - Our Mission (heading, body text)
+  - Our Team (heading, photo, name, title, bio, social links)
+  - Footer (logo, links, social icons, copyright)
+
+For each section, check: background colors, fonts, spacing, text
+content, images, and layout. List every difference you find.
+
+Also check every link (a href) on the page:
+  - What does it link to?
+  - Does the link work (not broken)?
+  - Does it match the same link on the live site?
+  - Does it open in the same tab or a new tab?
+
+IGNORE the Contact Us button/menu — that is intentionally removed.</code></pre>
+
+  <h4>Blog Listing</h4>
+  <pre><code>Compare ONLY the Blog listing page on the preview site
+(https://preview.gptechadvisors.com/blog/) to the live site
+(https://www.gptechadvisors.com/blog/).
+
+Use Puppeteer to screenshot both at 1920px and 768px viewports.
+Check:
+  - Nav (logo, links, positioning)
+  - Hero (eyebrow, H1, description)
+  - Filter dropdown (categories match)
+  - Blog card grid (number of cards, images, titles, dates, tags)
+  - Card hover states
+  - Grid layout at different widths
+  - Footer (logo, links, social icons, copyright)
+
+List every difference you find.
+
+Also check every link (a href) on the page:
+  - What does it link to?
+  - Does the link work (not broken)?
+  - Does it match the same link on the live site?
+  - Do blog card links go to the correct post?
+
+IGNORE the Contact Us button/menu — that is intentionally removed.</code></pre>
+
+  <h4>Privacy Policy</h4>
+  <pre><code>Compare ONLY the Privacy Policy page on the preview site
+(https://preview.gptechadvisors.com/privacy.html) to the live site
+(https://www.gptechadvisors.com/privacy-policy/).
+
+Use Puppeteer to screenshot both at 1920px and 768px viewports.
+Go section by section from top to bottom:
+  - Nav (logo, links, positioning, transparent overlay)
+  - Hero (background color, H1 text, font size)
+  - Content sections (all 7 headings, body text, lists, spacing)
+  - "Last updated" date and position
+  - Footer (logo, links, social icons, copyright)
+
+For each section, check: background colors, fonts, spacing, text
+content, and layout. List every difference you find.
+
+Also check every link (a href) on the page:
+  - Do the mailto: links work?
+  - Do they match the live site?
+
+IGNORE the Contact Us button/menu — that is intentionally removed.</code></pre>
+
+  <h4>Contact Page</h4>
+  <pre><code>Compare ONLY the Contact page on the preview site
+(https://preview.gptechadvisors.com/contact.html) to the live site
+(https://www.gptechadvisors.com/contact/).
+
+Use Puppeteer to screenshot both at 1920px and 768px viewports.
+Check:
+  - Nav (logo, links, positioning)
+  - Hero (H1 text, background, subtext)
+  - Calendly embed (does it load and display?)
+  - Email fallback section (text, email link, "What to Expect" list)
+  - Footer (logo, links, social icons, copyright)
+
+For each section, check: background colors, fonts, spacing, text
+content, and layout. List every difference you find.
+
+Also check every link (a href) on the page:
+  - Does the mailto: link work?
+  - Does the Calendly embed load?
+
+IGNORE the Contact Us nav menu item — that is intentionally removed.
+The Contact PAGE itself should still exist and work.</code></pre>
+
+  <h3>Step 2: Verify with your own eyes</h3>
+
+  <p>Open both sites side-by-side in your browser (use two windows). Go through every section in the checklist below and visually confirm. Claude catches a lot, but human eyes catch what AI misses &mdash; especially subtle spacing, color temperature, and "feel."</p>
+
+  <div class="callout callout--success">
+    <strong>Pro tip: Use your browser's responsive mode</strong>
+    Right-click &rarr; Inspect &rarr; Toggle Device Toolbar (or Cmd+Shift+M) to test at different viewport widths. See the <a href="#responsive-explainer">What is Responsive Design?</a> section below for more on this.
+  </div>
+
+  <h3>Step 3: Log every finding</h3>
+
+  <p>For each difference you find, create a row in the findings table (a shared Google Sheet, or use the template below). Include:</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Page</th>
+        <th>Section</th>
+        <th>Issue</th>
+        <th>Viewport</th>
+        <th>Severity</th>
+        <th>Screenshot</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><em>Services</em></td>
+        <td><em>Hero</em></td>
+        <td><em>Background pattern slightly different shade of blue</em></td>
+        <td><em>1920px</em></td>
+        <td><em>Medium</em></td>
+        <td><em>(link)</em></td>
+      </tr>
+      <tr>
+        <td><em>Home</em></td>
+        <td><em>Pillars</em></td>
+        <td><em>Text "Streamline" missing period at end</em></td>
+        <td><em>All</em></td>
+        <td><em>Low</em></td>
+        <td><em>(link)</em></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p><strong>Severity guide:</strong></p>
+  <ul>
+    <li><strong>High</strong> &mdash; Broken layout, missing section, wrong content, non-functional element</li>
+    <li><strong>Medium</strong> &mdash; Noticeable style difference (wrong color, spacing off by 10px+, font mismatch)</li>
+    <li><strong>Low</strong> &mdash; Minor difference (1-2px spacing, font fallback, subtle color shade)</li>
+  </ul>
+
+  <!-- ============================================================ -->
+  <h2>Page-by-Page Checklist</h2>
+
+  <p>Go through each section below, comparing the preview site to the live site. For each item, check: <strong>content</strong> (text matches), <strong>style</strong> (fonts, colors, spacing), and <strong>layout</strong> (positioning, responsiveness).</p>
+
+  <!-- ==================== SHARED COMPONENTS ==================== -->
+  <div class="page-section">
+    <h3><span class="badge badge--both">BOTH</span> Shared Components (all pages)</h3>
+
+    <div class="section-band">
+      <strong>Navigation Bar</strong>
+      <p class="check-items">Logo image + size &bull; Link text + order &bull; Font + color + hover state &bull; Sticky/transparent behavior &bull; Horizontal positioning at wide viewport &bull; Mobile hamburger menu &bull; Active page indicator</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Footer</strong>
+      <p class="check-items">Logo (KO version) &bull; Social icons (LinkedIn, X) + links work &bull; Nav links text + order &bull; Copyright text + year &bull; Privacy Policy link &bull; Layout (2 columns) &bull; Background color &bull; Spacing</p>
+    </div>
+  </div>
+
+  <!-- ==================== HOME PAGE ==================== -->
+  <div class="page-section">
+    <h3><span class="badge badge--josh">JOSH TESTS</span> Home Page <code>/</code></h3>
+
+    <div class="section-band">
+      <strong>Hero</strong>
+      <p class="check-items">Background image (arrows + cubes) &bull; Eyebrow text + color (lime) &bull; H1 text + font size &bull; Body text &bull; Overall height + vertical spacing &bull; Text alignment (left) &bull; Responsive collapse</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Four Pillars Section</strong>
+      <p class="check-items">Section heading &bull; 4 pillar cards (Structure, Strengthen, Streamline, Scale) &bull; Icons &bull; Slider/carousel behavior &bull; Arrow navigation &bull; Pillar description text &bull; Background color &bull; Card spacing</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Services Overview</strong>
+      <p class="check-items">Section heading &bull; 2-card grid (CISO, Compliance) &bull; Card icons &bull; Card titles + descriptions &bull; Background color &bull; Card shadows + borders &bull; Responsive (2-col &rarr; 1-col)</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Blog Highlights</strong>
+      <p class="check-items">Section heading &bull; Blog post cards (images, titles, dates, categories) &bull; Horizontal scroll behavior &bull; "See All" link &bull; Card styling matches live blog section</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Testimonial</strong>
+      <p class="check-items">Quote text &bull; Attribution (name, title, company) &bull; Background color/style &bull; Quote marks styling &bull; Font sizes + line height</p>
+    </div>
+  </div>
+
+  <!-- ==================== SERVICES PAGE ==================== -->
+  <div class="page-section">
+    <h3><span class="badge badge--josh">JOSH TESTS</span> Services Page <code>/services/</code></h3>
+
+    <div class="section-band">
+      <strong>Hero</strong>
+      <p class="check-items">Background image (blue arrows SVG) &bull; Eyebrow text "STRUCTURE, STRENGTHEN, STREAMLINE, SCALE" + lime color &bull; H1 "Cybersecurity Services" + font size 95px &bull; Body text &bull; Padding (150px top, 100px bottom) &bull; Centered layout</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Intro + Service Cards</strong>
+      <p class="check-items">H2 heading &bull; Body paragraph &bull; 2-column grid layout &bull; Fractional CISO card (icon + label + description) &bull; Compliance card (icon + label + description) &bull; Card row divider lines &bull; Responsive collapse</p>
+    </div>
+
+    <div class="section-band">
+      <strong>ISMS Wheel</strong>
+      <p class="check-items">Section heading "ISMS Program" &bull; Intro paragraph &bull; Wheel graphic renders &bull; All 9 segments labeled + clickable &bull; Detail panel populates on click &bull; Correct descriptions for each segment &bull; Colors match &bull; Responsive behavior</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Risk-based Tailored Approach</strong>
+      <p class="check-items">H2 heading &bull; Body text &bull; Image (man with tablet) &bull; 2-column layout (text left, image right) &bull; Image border radius &bull; Responsive (image stacks above text)</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Service Articles Grid (2&times;2)</strong>
+      <p class="check-items">4 article cards &bull; Each: image + H3 + description &bull; Images load + correct aspect ratio &bull; Grid layout (2&times;2 &rarr; 1-col on mobile) &bull; Consistent card spacing</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Leadership Experience</strong>
+      <p class="check-items">H2 heading centered &bull; Body text centered &bull; Max-width on text &bull; Background color</p>
+    </div>
+
+    <div class="section-band">
+      <strong>CTA Section</strong>
+      <p class="check-items">H2 "Have questions?" &bull; Body text &bull; Button text + style + link</p>
+    </div>
+  </div>
+
+  <!-- ==================== ABOUT PAGE ==================== -->
+  <div class="page-section">
+    <h3><span class="badge badge--maddox">MADDOX TESTS</span> About Page <code>/about/</code></h3>
+
+    <div class="section-band">
+      <strong>Hero</strong>
+      <p class="check-items">Background style &bull; Eyebrow text + color &bull; H1 "About Us" &bull; Body text &bull; Text alignment &bull; Transparent nav overlay</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Our Mission</strong>
+      <p class="check-items">H2 "Our Mission" &bull; Mission statement text &bull; Layout + spacing &bull; Background color</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Our Team</strong>
+      <p class="check-items">H2 "Our Team" &bull; Stacey's photo &bull; Name + title text &bull; Bio text (expandable accordion) &bull; Social links (LinkedIn, X) &bull; Card layout + styling &bull; Expand/collapse animation</p>
+    </div>
+  </div>
+
+  <!-- ==================== BLOG PAGE ==================== -->
+  <div class="page-section">
+    <h3><span class="badge badge--maddox">MADDOX TESTS</span> Blog Listing <code>/blog/</code></h3>
+
+    <div class="section-band">
+      <strong>Hero</strong>
+      <p class="check-items">Eyebrow text &bull; H1 "GrowthPoint Blog" &bull; Description text &bull; Background style &bull; Layout</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Filter + Card Grid</strong>
+      <p class="check-items">Category filter dropdown &bull; Filter works (shows/hides cards) &bull; Correct number of blog cards &bull; Each card: image, category tag, title, date &bull; Card hover state &bull; Grid layout (3-col &rarr; 2-col &rarr; 1-col) &bull; All cards link to correct post</p>
+    </div>
+  </div>
+
+  <!-- ==================== BLOG POSTS ==================== -->
+  <div class="page-section">
+    <h3><span class="badge badge--maddox">MADDOX TESTS</span> Blog Posts <code>/blog/posts/*</code></h3>
+
+    <div class="section-band">
+      <strong>All 8 Blog Post Pages</strong>
+      <p class="check-items">Page loads without error &bull; Category eyebrow tag &bull; H1 title matches listing &bull; Content present (or placeholder consistent with live) &bull; Nav + footer render &bull; Back link to blog listing</p>
+    </div>
+  </div>
+
+  <!-- ==================== CONTACT PAGE ==================== -->
+  <div class="page-section">
+    <h3><span class="badge badge--maddox">MADDOX TESTS</span> Contact Page <code>/contact/</code></h3>
+
+    <div class="section-band">
+      <strong>Hero</strong>
+      <p class="check-items">H1 text &bull; Background (dark) &bull; Subtext</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Calendly Embed</strong>
+      <p class="check-items">Embed loads &bull; Intro text &bull; Layout (centered or 2-col)</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Email Fallback</strong>
+      <p class="check-items">Fallback text &bull; Email link works &bull; "What to Expect" checklist</p>
+    </div>
+  </div>
+
+  <!-- ==================== PRIVACY PAGE ==================== -->
+  <div class="page-section">
+    <h3><span class="badge badge--both">BOTH</span> Privacy Policy <code>/privacy/</code></h3>
+
+    <div class="section-band">
+      <strong>Hero</strong>
+      <p class="check-items">Background color (orange + arrows) &bull; H1 "Privacy Policy" &bull; Transparent nav &bull; Font size + line breaks</p>
+    </div>
+
+    <div class="section-band">
+      <strong>Content Sections</strong>
+      <p class="check-items">All 7 section headings present &bull; Body text matches live &bull; Lists render correctly &bull; Links (mailto) work &bull; "Last updated" date + position &bull; H2/H3 font sizes &bull; Spacing between sections</p>
+    </div>
+  </div>
+
+  <!-- ==================== RESPONSIVE EXPLAINER ==================== -->
+  <div class="page-section" id="responsive-explainer">
+    <h3><span class="badge badge--both">BOTH</span> Responsive Design (all pages)</h3>
+
+    <h4 style="margin-top:12px; color: var(--gp-rich-black); text-transform: none; letter-spacing: 0;">What is "responsive" design?</h4>
+
+    <p style="margin-top:8px;">People visit websites on all kinds of screens &mdash; wide desktop monitors, laptops, tablets, and phones. A <strong>responsive</strong> website automatically adjusts its layout to look good at any screen width. Text reflows, images resize, and multi-column layouts stack into single columns on smaller screens.</p>
+
+    <p>You've probably noticed this yourself: a website that shows 3 cards side-by-side on your laptop shows them stacked vertically on your phone. That's responsive design.</p>
+
+    <h4 style="color: var(--gp-rich-black); text-transform: none; letter-spacing: 0;">How to test it</h4>
+
+    <p style="margin-top:8px;">You don't need a phone and a tablet to test. Your browser can simulate any screen width:</p>
+
+    <ol>
+      <li><strong>Open the page</strong> in Chrome</li>
+      <li><strong>Right-click</strong> anywhere on the page and choose <strong>"Inspect"</strong></li>
+      <li>Click the <strong>device toolbar icon</strong> (looks like a phone/tablet) at the top of the Inspector panel &mdash; or press <strong>Cmd+Shift+M</strong></li>
+      <li>At the top of the page, you'll see a <strong>width dropdown</strong>. You can type in any width or drag the edge of the viewport to resize.</li>
+    </ol>
+
+    <h4 style="color: var(--gp-rich-black); text-transform: none; letter-spacing: 0;">Widths to test</h4>
+
+    <table style="margin-top:8px;">
+      <thead>
+        <tr>
+          <th>Width</th>
+          <th>What it simulates</th>
+          <th>What to look for</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>1920px</strong></td>
+          <td>Wide desktop monitor</td>
+          <td>Content stays centered, doesn't stretch to edges. Nav logo/links aren't pushed to far corners.</td>
+        </tr>
+        <tr>
+          <td><strong>1400px</strong></td>
+          <td>Standard laptop</td>
+          <td>This is our "baseline" &mdash; everything should look great here.</td>
+        </tr>
+        <tr>
+          <td><strong>1024px</strong></td>
+          <td>Tablet (landscape)</td>
+          <td>2-column layouts may start stacking. Font sizes may shrink. Check nothing overlaps.</td>
+        </tr>
+        <tr>
+          <td><strong>768px</strong></td>
+          <td>Tablet (portrait)</td>
+          <td>Most multi-column sections should stack to 1 column. Nav may switch to hamburger menu.</td>
+        </tr>
+        <tr>
+          <td><strong>375px</strong></td>
+          <td>iPhone / small phone</td>
+          <td>Everything single-column. Text readable without zooming. No content cut off or hidden. No horizontal scrollbar.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 style="color: var(--gp-rich-black); text-transform: none; letter-spacing: 0;">What to check at each width</h4>
+
+    <ul>
+      <li><strong>No horizontal scrollbar</strong> &mdash; if you see one, something is wider than the screen</li>
+      <li><strong>Text doesn't overflow</strong> &mdash; no text running off the right edge or getting cut off</li>
+      <li><strong>Images scale down</strong> &mdash; images should shrink to fit, not stay full-size and break the layout</li>
+      <li><strong>Columns stack properly</strong> &mdash; a 2-column layout on desktop should become 1 column on mobile</li>
+      <li><strong>Buttons/links are tappable</strong> &mdash; on mobile widths, buttons should be big enough to tap (at least 44px tall)</li>
+      <li><strong>Text is readable</strong> &mdash; font sizes shouldn't be too small on mobile</li>
+    </ul>
+
+    <div class="callout" style="margin-top:12px;">
+      <strong>Ask Claude to check responsive behavior:</strong>
+      <pre style="margin:8px 0 0; background: var(--gp-white); color: var(--gp-rich-black); border: 1px solid #DDE3E9;"><code>Use Puppeteer to screenshot the Services page on our preview site
+(https://preview.gptechadvisors.com/services/) at these widths:
+1920px, 1400px, 1024px, 768px, and 375px.
+
+For each width, check:
+- Does anything overflow or get cut off?
+- Do multi-column layouts stack properly?
+- Is the nav usable (hamburger menu on mobile)?
+- Are fonts readable?
+
+Then do the same for the live site and compare.</code></pre>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="phase">
+    <div class="phase-number">2</div>
+    <h2 id="phase2">Phase 2: Triage</h2>
+  </div>
+
+  <p>Once both of you have completed your findings lists, meet (or Slack) to:</p>
+
+  <ol>
+    <li><strong>Combine your findings</strong> into a single master list</li>
+    <li><strong>Remove false positives</strong> &mdash; anything that's intentionally different (Contact Us removal) or acceptable (font-family fallback differences like <code>system-ui</code>)</li>
+    <li><strong>Prioritize</strong> &mdash; High severity first, then Medium, then Low</li>
+    <li><strong>Create GitHub Issues</strong> for each finding (or group related findings into one issue)</li>
+  </ol>
+
+  <div class="callout">
+    <strong>Ask Claude to help:</strong>
+    <pre style="margin:8px 0 0; background: var(--gp-white); color: var(--gp-rich-black); border: 1px solid #DDE3E9;"><code>Here is our QA findings list: [paste your combined list]
+
+Help me organize these into GitHub issues. Group related findings
+together (e.g., all spacing issues on the services page = one issue).
+Write a clear title and description for each issue.</code></pre>
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="phase">
+    <div class="phase-number">3</div>
+    <h2 id="phase3">Phase 3: Fix</h2>
+  </div>
+
+  <p>For each issue, follow the git workflow you know:</p>
+
+  <ol>
+    <li>Pull latest <code>preview</code></li>
+    <li>Create a feature branch: <code>feature/fix-{page}-{description}</code></li>
+    <li>Make the fix (use Claude to help: <em>"Fix the spacing on the services hero to match the live site"</em>)</li>
+    <li>Use Puppeteer / <code>compare-styles</code> to verify your fix matches</li>
+    <li>Commit, push, create a PR targeting <code>preview</code></li>
+  </ol>
+
+  <div class="callout callout--success">
+    <strong>The person who found the bug should NOT be the one to fix it.</strong>
+    Josh found issues on Maddox's pages &rarr; Maddox fixes them (and vice versa). The tester re-verifies after the fix is merged. This is how real QA works: separation between testing and development.
+  </div>
+
+  <!-- ============================================================ -->
+  <div class="phase">
+    <div class="phase-number">4</div>
+    <h2 id="phase4">Phase 4: Verify</h2>
+  </div>
+
+  <p>After each PR is merged to <code>preview</code>:</p>
+
+  <ol>
+    <li><strong>Wait for the deploy</strong> &mdash; preview.gptechadvisors.com auto-deploys on merge</li>
+    <li><strong>Re-test the specific section</strong> that was fixed</li>
+    <li><strong>Close the GitHub Issue</strong> if the fix looks correct</li>
+    <li>If it's not right, reopen the issue with a comment explaining what's still off</li>
+  </ol>
+
+  <p>When all issues are closed: <strong>do a full final pass</strong> across all pages. This is the last gate before we promote preview to production.</p>
+
+  <!-- ============================================================ -->
+  <h2>What "Done" Looks Like</h2>
+
+  <ul>
+    <li>Every page on preview.gptechadvisors.com visually matches gptechadvisors.com</li>
+    <li>The only differences are the intentional Contact Us removal</li>
+    <li>All GitHub Issues are closed</li>
+    <li>Final pass confirms no remaining differences at 1920px, 1400px, and 768px</li>
+    <li>Both of you sign off: "Looks good to me"</li>
+  </ul>
+
+  <p>At that point, Stacey will create the final PR from <code>preview</code> to <code>main</code> and we go live.</p>
+
+  <!-- ============================================================ -->
+  <h2>Why This Matters</h2>
+
+  <p>This isn't busywork. This is how professional software teams ship quality product:</p>
+
+  <ul>
+    <li><strong>Cross-testing</strong> catches blind spots. The builder always thinks it looks right.</li>
+    <li><strong>Structured checklists</strong> prevent the "looks good to me" syndrome where everyone assumes someone else checked the details.</li>
+    <li><strong>Using AI as a QA tool</strong> is a real-world skill. Companies are using exactly this approach to automate visual regression testing.</li>
+    <li><strong>The SDLC loop</strong> (build &rarr; test &rarr; find bugs &rarr; fix &rarr; re-test &rarr; ship) is the foundation of every engineering team. You're doing the real thing.</li>
+  </ul>
+
+  <hr>
+
+  <p style="color: var(--gp-gray); font-size: 14px; text-align: center;">
+    GrowthPoint Technology Advisors &mdash; Internal Documentation<br>
+    Last updated: June 3, 2026
+  </p>
+
+</body>
+</html>
