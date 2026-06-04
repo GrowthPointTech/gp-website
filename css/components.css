@@ -659,7 +659,7 @@
 .footer {
   background: var(--gp-rich-black);
   color: var(--gp-white);
-  padding: 50px 0 0;
+  padding: 30px 0 0;
 }
 
 .footer .container {
@@ -743,7 +743,7 @@
 }
 
 .footer__bottom {
-  padding: 5px 0 50px;
+  padding: 5px 0 24px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
