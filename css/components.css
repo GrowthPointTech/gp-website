@@ -457,7 +457,7 @@
 /* Quote decorative image in the left grey space */
 .testimonial__quote-image {
   position: absolute;
-  left: 20px;
+  left: 0;
   top: 50%;
   transform: translateY(-50%);
   width: 380px;
