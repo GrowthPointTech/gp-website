@@ -269,6 +269,9 @@
 .hero__content {
   padding-top: 80px; /* clear the transparent nav */
   max-width: 800px; /* live site H1 bounding width is 768px */
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* live: 20px gap between eyebrow, h1, body */
 }
 
 /* Eyebrow: computed from live site via Puppeteer */
@@ -303,7 +306,7 @@
   line-height: 26px;
   color: var(--gp-white); /* live: rgb(255,255,255) */
   max-width: 467px; /* live: 466.766px bounding width */
-  margin-bottom: 14.4px; /* live: 14.4px computed */
+  margin-bottom: 0;
 }
 
 @media (max-width: 1024px) {

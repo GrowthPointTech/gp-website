@@ -81,7 +81,7 @@
   letter-spacing: 0.3px;
   color: var(--gp-rich-black);
   text-align: center;
-  margin-bottom: 0;
+  margin-bottom: 20px;
 }
 
 /* Intro: Onest 18px/400, line-height 26px (computed) */
@@ -304,6 +304,9 @@
 
 .services-overview__content {
   padding-right: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .services-overview__eyebrow {
@@ -320,7 +323,7 @@
   font-size: 60px;
   line-height: 55px;
   letter-spacing: 0.3px;
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
 }
 
 .services-overview__photo img {
