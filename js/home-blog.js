@@ -12,7 +12,7 @@
     card.innerHTML =
       img +
       '<div class="card__body blog-card__category">' +
-        '<span class="card__tag">' + post.category + '</span>' +
+        '<span class="card__tag">' + (post.category || 'INSIGHTS') + '</span>' +
       '</div>' +
       '<div class="blog-card__excerpt">' +
         '<h3 class="card__title"><a href="' + url + '">' + post.title + '</a></h3>' +

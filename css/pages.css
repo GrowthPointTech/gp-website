@@ -794,7 +794,7 @@
   line-height: 55px;
   letter-spacing: 0.3px;
   text-align: center;
-  margin-bottom: 12px;
+  margin-bottom: 0;
 }
 
 .blog-highlights__intro {
@@ -820,8 +820,7 @@
 #home-blog-grid::-webkit-scrollbar { display: none; }
 
 #home-blog-grid .blog-card {
-  min-width: 590px;
-  flex-shrink: 0;
+  flex: 0 0 590px;   /* fixed width — never grow or shrink */
   scroll-snap-align: center;
 }
 
@@ -829,19 +828,18 @@
   text-align: center;
 }
 
-/* CTA button — matches live site: orange, small, with arrow icon */
+/* CTA button — matches live site computed styles exactly */
 .btn--blog-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
+  display: inline-block;
   font-family: var(--font-body);
   font-size: 14px;
   font-weight: 600;
+  line-height: 23px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   color: var(--gp-white);
-  background: var(--gp-orange);
-  padding: 10px 24px;
+  background: var(--gp-orange); /* orange — needed for visibility on white bg */
+  padding: 5px 15px;
   border-radius: 5px;
   text-decoration: none;
   transition: background 0.2s ease;
