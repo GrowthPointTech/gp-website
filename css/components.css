@@ -441,34 +441,36 @@
 
 .testimonial {
   background: var(--gp-light-gray);
-  padding: 100px 0;
+  padding: 60px 0;
   position: relative;
   overflow: hidden;
 }
 
-/* Decal: GP >> mark on the right, large and semi-transparent */
-.testimonial::after {
-  content: '';
+/* Pillar icons — decorative stack on the left, partially clipped */
+.testimonial__pillars {
   position: absolute;
-  right: -60px;
+  left: -40px;
   top: 50%;
   transform: translateY(-50%);
-  width: 500px;
-  height: 500px;
-  background-image: url('../assets/logos/GP-Logo mark.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  opacity: 0.08;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
   pointer-events: none;
+}
+
+.testimonial__pillars img {
+  width: 80px;
+  height: 80px;
+  display: block;
+  opacity: 0.5;
 }
 
 .testimonial__quote {
   font-family: var(--font-body);
-  font-size: 32px;
+  font-size: 38px;
   font-weight: 300;
   font-style: italic;
-  line-height: 60px;
+  line-height: 66px;
   color: var(--gp-rich-black);
   max-width: 952px;
   margin: 0 auto 20px;
