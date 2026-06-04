@@ -22,13 +22,13 @@
   function applyAppearance(idx) {
     var light  = !darkText[idx];
     var fg     = light ? '#ffffff' : '#080F1F';
-    var dotOff = light ? 'rgba(255,255,255,0.35)' : 'rgba(8,15,31,0.25)';
+    var dotOff = 'rgba(0,0,0,0.3)';
 
     if (prevBtn) prevBtn.style.color = fg;
     if (nextBtn) nextBtn.style.color = fg;
 
     dots.forEach(function (d, i) {
-      d.style.backgroundColor = (i === idx) ? fg : dotOff;
+      d.style.backgroundColor = (i === idx) ? '#080F1F' : dotOff;
       if (i === idx) d.classList.add('pillar-slider__dot--active');
       else           d.classList.remove('pillar-slider__dot--active');
     });

@@ -282,14 +282,14 @@
   height: 10px;
   border-radius: 50%;
   border: none;
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(0, 0, 0, 0.3);
   cursor: pointer;
   padding: 0;
   transition: background 0.2s, width 0.2s;
 }
 
 .pillar-slider__dot--active {
-  background: var(--gp-white);
+  background: var(--gp-rich-black);
   width: 24px;
   border-radius: 5px;
 }
