@@ -3,23 +3,28 @@
   if (!grid) return;
 
   blogPosts.slice(0, 3).forEach(function (post) {
-    var url = 'blog/posts/' + post.slug + '.html';
+    var url      = 'blog/posts/' + post.slug + '.html';
+    var category = (post.categories && post.categories[0]) || 'INSIGHTS';
+    var desc     = post.description || '';
+
     var card = document.createElement('article');
-    card.className = 'blog-card card';
-    var img = post.image
-      ? '<a class="blog-card__image-link" href="' + url + '"><img class="card__image" src="' + post.image + '" alt="' + post.title + '" loading="lazy"></a>'
-      : '';
+    card.className = 'blog-card';
+
+    var imgHtml = post.image
+      ? '<a class="blog-card__img-wrap" href="' + url + '" tabindex="-1">' +
+          '<img class="blog-card__img" src="' + post.image + '" alt="' + post.title + '" loading="lazy">' +
+        '</a>'
+      : '<div class="blog-card__img-wrap blog-card__img-wrap--empty"></div>';
+
     card.innerHTML =
-      img +
-      '<div class="card__body blog-card__category">' +
-        '<span class="card__tag">' + (post.category || 'INSIGHTS') + '</span>' +
-      '</div>' +
-      '<div class="blog-card__excerpt">' +
-        '<h3 class="card__title"><a href="' + url + '">' + post.title + '</a></h3>' +
-      '</div>' +
-      '<div class="blog-card__bottom">' +
-        '<a href="' + url + '" class="card__link">View More</a>' +
+      imgHtml +
+      '<div class="blog-card__body">' +
+        '<span class="blog-card__tag">' + category + '</span>' +
+        '<h3 class="blog-card__title"><a href="' + url + '">' + post.title + '</a></h3>' +
+        (desc ? '<p class="blog-card__desc">' + desc + '</p>' : '') +
+        '<a href="' + url + '" class="blog-card__link">Read More &#8250;</a>' +
       '</div>';
+
     grid.appendChild(card);
   });
 })();
