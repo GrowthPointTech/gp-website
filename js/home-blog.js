@@ -2,7 +2,7 @@
   var grid = document.getElementById('home-blog-grid');
   if (!grid) return;
 
-  blogPosts.slice(0, 3).forEach(function (post) {
+  blogPosts.forEach(function (post) {
     var url      = 'blog/posts/' + post.slug + '.html';
     var category = (post.categories && post.categories[0]) || 'INSIGHTS';
     var desc     = post.description || '';
