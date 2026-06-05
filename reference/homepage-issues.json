@@ -1,0 +1,653 @@
+{
+  "live": [
+    {
+      "label": "animate-elements",
+      "data": [
+        {
+          "tag": "DIV",
+          "classes": "elementor-element elementor-element-6801208 e-flex e-con-boxed e-con e-parent e-lazyloaded animated fadeIn",
+          "dataAos": null
+        },
+        {
+          "tag": "DIV",
+          "classes": "elementor-element elementor-element-670c781 elementor-widget elementor-widget-heading animated fadeInLeft",
+          "dataAos": null
+        },
+        {
+          "tag": "DIV",
+          "classes": "elementor-element elementor-element-77ea049 elementor-widget elementor-widget-heading animated fadeInLeft",
+          "dataAos": null
+        },
+        {
+          "tag": "DIV",
+          "classes": "elementor-element elementor-element-9b64576 elementor-widget elementor-widget-text-editor animated fadeInLeft",
+          "dataAos": null
+        }
+      ]
+    },
+    {
+      "label": "scripts",
+      "data": [
+        "https://cdn-cookieyes.com/client_data/2b081d8d647e18d96494621c/script.js",
+        "https://cdn-cookieyes.com/client_data/2b081d8d647e18d96494621c/banner.js",
+        "https://www.googletagmanager.com/gtag/js?id=G-DE870QV50R",
+        "https://gptechadvisors.com/wp-content/plugins/google-analytics-for-wordpress/assets/js/frontend-gtag.min.js?ver=10.2.2",
+        "https://gptechadvisors.com/wp-includes/js/jquery/jquery.min.js?ver=3.7.1",
+        "https://gptechadvisors.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1",
+        "https://gptechadvisors.com/wp-includes/js/wp-emoji-release.min.js?ver=6.9.4",
+        "https://gptechadvisors.com/wp-content/themes/hello-elementor-child/js/scripts.js?ver=1.0.0",
+        "https://gptechadvisors.com/wp-content/themes/hello-elementor/assets/js/hello-frontend.min.js?ver=3.3.0",
+        "https://gptechadvisors.com/wp-content/plugins/elementor/assets/js/webpack.runtime.min.js?ver=4.1.1",
+        "https://gptechadvisors.com/wp-content/plugins/elementor/assets/js/frontend-modules.min.js?ver=4.1.1",
+        "https://gptechadvisors.com/wp-includes/js/jquery/ui/core.min.js?ver=1.13.3",
+        "https://gptechadvisors.com/wp-content/plugins/elementor/assets/js/frontend.min.js?ver=4.1.1",
+        "https://gptechadvisors.com/wp-content/plugins/elementor-pro/assets/lib/smartmenus/jquery.smartmenus.min.js?ver=1.2.1",
+        "https://gptechadvisors.com/wp-includes/js/imagesloaded.min.js?ver=5.0.0",
+        "https://gptechadvisors.com/wp-content/plugins/elementor/assets/lib/swiper/v8/swiper.min.js?ver=8.4.5",
+        "https://gptechadvisors.com/wp-content/plugins/elementor-pro/assets/js/webpack-pro.runtime.min.js?ver=4.1.0",
+        "https://gptechadvisors.com/wp-includes/js/dist/hooks.min.js?ver=dd5603f07f9220ed27f1",
+        "https://gptechadvisors.com/wp-includes/js/dist/i18n.min.js?ver=c26c3dc7bed366793375",
+        "https://gptechadvisors.com/wp-content/plugins/elementor-pro/assets/js/frontend.min.js?ver=4.1.0",
+        "https://gptechadvisors.com/wp-content/plugins/elementor-pro/assets/js/elements-handlers.min.js?ver=4.1.0"
+      ]
+    },
+    {
+      "label": "home-blog-card",
+      "note": "No blog cards found in grid"
+    }
+  ],
+  "local": [
+    {
+      "label": "hero-section",
+      "selector": ".hero--home",
+      "styles": {
+        "padding-top": "0px",
+        "padding-bottom": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "none",
+        "width": "1280px",
+        "display": "block",
+        "gap": "normal",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "background-image": "url(\"http://localhost:8765/assets/images/banner-arrows-shape-charts.svg\")",
+        "animation": "none",
+        "animation-name": "none",
+        "animation-duration": "0s",
+        "animation-delay": "0s",
+        "transition": "all",
+        "opacity": "1",
+        "transform": "none",
+        "_width": 1280,
+        "_height": 750,
+        "_top": 0
+      }
+    },
+    {
+      "label": "hero-content",
+      "selector": ".hero__content",
+      "styles": {
+        "padding-top": "80px",
+        "padding-bottom": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "800px",
+        "width": "768px",
+        "display": "block",
+        "gap": "normal",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "background-image": "none",
+        "animation": "none",
+        "animation-name": "none",
+        "animation-duration": "0s",
+        "animation-delay": "0s",
+        "transition": "all",
+        "opacity": "1",
+        "transform": "none",
+        "_width": 768,
+        "_height": 421.390625,
+        "_top": 164.296875
+      }
+    },
+    {
+      "label": "hero-eyebrow",
+      "selector": ".hero__eyebrow",
+      "styles": {
+        "font-size": "23px",
+        "font-weight": "600",
+        "font-family": "Onest, system-ui, sans-serif",
+        "line-height": "23px",
+        "letter-spacing": "0.5px",
+        "color": "rgb(228, 253, 178)",
+        "text-align": "left",
+        "text-transform": "uppercase",
+        "animation": "none",
+        "animation-name": "none",
+        "animation-duration": "0s",
+        "animation-delay": "0s",
+        "transition": "all",
+        "opacity": "1",
+        "transform": "none",
+        "_width": 768,
+        "_height": 23,
+        "_top": 244.296875
+      }
+    },
+    {
+      "label": "hero-h1",
+      "selector": ".hero--home h1",
+      "styles": {
+        "font-size": "110px",
+        "font-weight": "400",
+        "font-family": "\"Rethink Sans\", system-ui, sans-serif",
+        "line-height": "100px",
+        "letter-spacing": "0.3px",
+        "color": "rgb(255, 255, 255)",
+        "text-align": "left",
+        "text-transform": "none",
+        "animation": "none",
+        "animation-name": "none",
+        "animation-duration": "0s",
+        "animation-delay": "0s",
+        "transition": "all",
+        "opacity": "1",
+        "transform": "none",
+        "_width": 768,
+        "_height": 200,
+        "_top": 267.296875
+      }
+    },
+    {
+      "label": "hero-body",
+      "selector": ".hero__content p",
+      "styles": {
+        "font-size": "18px",
+        "font-weight": "400",
+        "font-family": "Onest, system-ui, sans-serif",
+        "line-height": "26px",
+        "letter-spacing": "normal",
+        "color": "rgb(255, 255, 255)",
+        "text-align": "left",
+        "text-transform": "none",
+        "animation": "none",
+        "animation-name": "none",
+        "animation-duration": "0s",
+        "animation-delay": "0s",
+        "transition": "all",
+        "opacity": "1",
+        "transform": "none",
+        "_width": 467,
+        "_height": 104,
+        "_top": 467.296875
+      }
+    },
+    {
+      "label": "animate-elements",
+      "data": []
+    },
+    {
+      "label": "scripts",
+      "data": [
+        "http://localhost:8765/js/blog-data.js",
+        "http://localhost:8765/js/home-blog.js",
+        "http://localhost:8765/js/nav.js",
+        "http://localhost:8765/js/pillar-slider.js"
+      ]
+    },
+    {
+      "label": "pillars-section",
+      "selector": ".pillars-section",
+      "styles": {
+        "padding-top": "96px",
+        "padding-bottom": "96px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "none",
+        "width": "1280px",
+        "display": "block",
+        "gap": "normal",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgb(255, 255, 255)",
+        "background-image": "none",
+        "_width": 1280,
+        "_height": 988.359375,
+        "_top": 750
+      }
+    },
+    {
+      "label": "services-overview",
+      "selector": ".services-overview",
+      "styles": {
+        "padding-top": "96px",
+        "padding-bottom": "96px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "none",
+        "width": "1280px",
+        "display": "block",
+        "gap": "normal",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgb(255, 255, 255)",
+        "background-image": "none",
+        "_width": 1280,
+        "_height": 714.53125,
+        "_top": 1738.359375
+      }
+    },
+    {
+      "label": "blog-highlights",
+      "selector": ".blog-highlights",
+      "styles": {
+        "padding-top": "96px",
+        "padding-bottom": "96px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "none",
+        "width": "1280px",
+        "display": "block",
+        "gap": "normal",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgb(237, 242, 244)",
+        "background-image": "none",
+        "_width": 1280,
+        "_height": 744.140625,
+        "_top": 2452.890625
+      }
+    },
+    {
+      "label": "testimonial-section",
+      "selector": ".testimonial",
+      "styles": {
+        "padding-top": "64px",
+        "padding-bottom": "64px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "none",
+        "width": "1280px",
+        "display": "block",
+        "gap": "normal",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgb(237, 242, 244)",
+        "background-image": "none",
+        "_width": 1280,
+        "_height": 545.484375,
+        "_top": 3197.03125
+      }
+    },
+    {
+      "label": "footer",
+      "selector": ".footer",
+      "styles": {
+        "padding-top": "50px",
+        "padding-bottom": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "none",
+        "width": "1280px",
+        "display": "block",
+        "gap": "normal",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgb(8, 15, 31)",
+        "background-image": "none",
+        "_width": 1280,
+        "_height": 266.1875,
+        "_top": 3742.515625
+      }
+    },
+    {
+      "label": "services-h2",
+      "selector": ".services-overview h2",
+      "styles": {
+        "font-size": "42px",
+        "font-weight": "400",
+        "font-family": "\"Rethink Sans\", system-ui, sans-serif",
+        "line-height": "46.2px",
+        "letter-spacing": "-0.84px",
+        "color": "rgb(8, 15, 31)",
+        "text-align": "start",
+        "text-transform": "none",
+        "_width": 1120,
+        "_height": 46.1875,
+        "_top": 1834.359375
+      }
+    },
+    {
+      "label": "services-card-grid",
+      "selector": ".services-overview .card-grid",
+      "styles": {
+        "padding-top": "0px",
+        "padding-bottom": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "none",
+        "width": "1120px",
+        "display": "grid",
+        "gap": "24px",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "background-image": "none",
+        "_width": 1120,
+        "_height": 412.34375,
+        "_top": 1944.546875
+      }
+    },
+    {
+      "label": "services-card",
+      "selector": ".services-overview .card",
+      "styles": {
+        "padding-top": "0px",
+        "padding-bottom": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "none",
+        "width": "357.328px",
+        "display": "block",
+        "gap": "normal",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgb(255, 255, 255)",
+        "background-image": "none",
+        "border-radius": "8px",
+        "box-shadow": "rgba(0, 0, 0, 0.1) 0px 2px 8px 0px",
+        "_width": 357.328125,
+        "_height": 412.34375,
+        "_top": 1944.546875
+      }
+    },
+    {
+      "label": "services-card-icon",
+      "selector": ".card__icon",
+      "styles": {
+        "width": "48px",
+        "height": "48px",
+        "margin-bottom": "16px",
+        "_width": 48,
+        "_height": 48,
+        "_top": 1968.546875
+      }
+    },
+    {
+      "label": "services-card-title",
+      "selector": ".card__title",
+      "styles": {
+        "font-size": "22px",
+        "font-weight": "500",
+        "font-family": "\"Rethink Sans\", system-ui, sans-serif",
+        "line-height": "28.6px",
+        "letter-spacing": "-0.22px",
+        "color": "rgb(8, 15, 31)",
+        "text-align": "start",
+        "text-transform": "none",
+        "_width": 309.328125,
+        "_height": 28.59375,
+        "_top": 2032.546875
+      }
+    },
+    {
+      "label": "services-card-text",
+      "selector": ".card__text",
+      "styles": {
+        "font-size": "16px",
+        "font-weight": "400",
+        "font-family": "Onest, system-ui, sans-serif",
+        "line-height": "25.6px",
+        "letter-spacing": "normal",
+        "color": "rgb(141, 153, 174)",
+        "text-align": "start",
+        "text-transform": "none",
+        "_width": 309.328125,
+        "_height": 127.96875,
+        "_top": 2077.140625
+      }
+    },
+    {
+      "label": "services-card-link",
+      "selector": ".card__link",
+      "styles": {
+        "font-size": "14px",
+        "font-weight": "600",
+        "font-family": "Onest, system-ui, sans-serif",
+        "line-height": "22.4px",
+        "letter-spacing": "normal",
+        "color": "rgb(63, 140, 255)",
+        "text-align": "start",
+        "text-transform": "none",
+        "text-decoration": "none",
+        "border": "0px none rgb(63, 140, 255)",
+        "padding": "0px",
+        "_width": 76.03125,
+        "_height": 18,
+        "_top": 2229.109375
+      }
+    },
+    {
+      "label": "blog-highlights-h2",
+      "selector": ".blog-highlights h2",
+      "styles": {
+        "font-size": "42px",
+        "font-weight": "400",
+        "font-family": "\"Rethink Sans\", system-ui, sans-serif",
+        "line-height": "46.2px",
+        "letter-spacing": "-0.84px",
+        "color": "rgb(8, 15, 31)",
+        "text-align": "start",
+        "text-transform": "none",
+        "_width": 1120,
+        "_height": 46.1875,
+        "_top": 2548.890625
+      }
+    },
+    {
+      "label": "blog-highlights-intro",
+      "selector": ".blog-highlights__intro",
+      "styles": {
+        "font-size": "18px",
+        "font-weight": "400",
+        "font-family": "Onest, system-ui, sans-serif",
+        "line-height": "28.8px",
+        "letter-spacing": "normal",
+        "color": "rgb(141, 153, 174)",
+        "text-align": "start",
+        "text-transform": "none",
+        "_width": 1120,
+        "_height": 28.796875,
+        "_top": 2611.078125
+      }
+    },
+    {
+      "label": "blog-card-grid",
+      "selector": ".blog-highlights .card-grid",
+      "styles": {
+        "padding-top": "0px",
+        "padding-bottom": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "none",
+        "width": "1120px",
+        "display": "grid",
+        "gap": "24px",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "background-image": "none",
+        "_width": 1120,
+        "_height": 303.5625,
+        "_top": 2703.875
+      }
+    },
+    {
+      "label": "home-blog-card",
+      "selector": ".blog-highlights .blog-card, .blog-highlights .card, #home-blog-grid > *",
+      "styles": {
+        "padding-top": "0px",
+        "padding-bottom": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "0px",
+        "max-width": "none",
+        "width": "357.328px",
+        "display": "block",
+        "gap": "normal",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgb(255, 255, 255)",
+        "background-image": "none",
+        "border-radius": "8px",
+        "box-shadow": "rgba(0, 0, 0, 0.1) 0px 2px 8px 0px",
+        "overflow": "hidden",
+        "_width": 357.328125,
+        "_height": 303.5625,
+        "_top": 2703.875
+      }
+    },
+    {
+      "label": "testimonial-blockquote",
+      "selector": ".testimonial__quote, .testimonial blockquote",
+      "styles": {
+        "font-size": "28px",
+        "font-weight": "400",
+        "font-family": "\"Rethink Sans\", system-ui, sans-serif",
+        "line-height": "39.2px",
+        "letter-spacing": "normal",
+        "color": "rgb(8, 15, 31)",
+        "text-align": "center",
+        "text-transform": "none",
+        "padding-top": "0px",
+        "padding-bottom": "0px",
+        "padding-left": "0px",
+        "padding-right": "0px",
+        "margin-top": "0px",
+        "margin-bottom": "24px",
+        "max-width": "800px",
+        "width": "800px",
+        "display": "block",
+        "gap": "normal",
+        "flex-direction": "row",
+        "align-items": "normal",
+        "justify-content": "normal",
+        "background-color": "rgba(0, 0, 0, 0)",
+        "background-image": "none",
+        "border-left": "0px none rgb(8, 15, 31)",
+        "border-top": "0px none rgb(8, 15, 31)",
+        "quotes": "auto",
+        "_width": 800,
+        "_height": 313.5,
+        "_top": 3261.03125
+      }
+    },
+    {
+      "label": "testimonial-author",
+      "selector": ".testimonial__author",
+      "styles": {
+        "font-size": "16px",
+        "font-weight": "600",
+        "font-family": "Onest, system-ui, sans-serif",
+        "line-height": "25.6px",
+        "letter-spacing": "normal",
+        "color": "rgb(12, 80, 213)",
+        "text-align": "center",
+        "text-transform": "none",
+        "_width": 1120,
+        "_height": 25.59375,
+        "_top": 3598.53125
+      }
+    },
+    {
+      "label": "testimonial-role",
+      "selector": ".testimonial__role",
+      "styles": {
+        "font-size": "14px",
+        "font-weight": "400",
+        "font-family": "Onest, system-ui, sans-serif",
+        "line-height": "22.4px",
+        "letter-spacing": "normal",
+        "color": "rgb(141, 153, 174)",
+        "text-align": "center",
+        "text-transform": "none",
+        "_width": 1120,
+        "_height": 22.390625,
+        "_top": 3640.125
+      }
+    },
+    {
+      "label": "footer-social-icon",
+      "selector": ".footer__social-icon",
+      "styles": {
+        "width": "21px",
+        "height": "21px",
+        "border-radius": "50%",
+        "background-color": "rgb(63, 140, 255)",
+        "display": "flex",
+        "align-items": "center",
+        "justify-content": "center",
+        "padding": "3px",
+        "font-size": "20px",
+        "font-weight": "400",
+        "font-family": "Onest, system-ui, sans-serif",
+        "line-height": "32px",
+        "letter-spacing": "normal",
+        "color": "rgb(63, 140, 255)",
+        "text-align": "start",
+        "text-transform": "none",
+        "_width": 21,
+        "_height": 21,
+        "_top": 3863.515625
+      }
+    },
+    {
+      "label": "footer-social-svg",
+      "selector": ".footer__social-icon svg",
+      "styles": {
+        "width": "13px",
+        "height": "13px",
+        "fill": "rgb(8, 15, 31)",
+        "color": "rgb(63, 140, 255)",
+        "_width": 13,
+        "_height": 13,
+        "_top": 3867.515625
+      }
+    }
+  ]
+}
