@@ -1490,7 +1490,7 @@
   margin-left: 0;
   margin-right: 0;
   max-width: none;
-  text-align: left;
+  text-align: center;
 }
 
 .hero--about h1 {
@@ -1541,7 +1541,8 @@
   line-height: 26px;
   color: var(--gp-rich-black);
   max-width: 800px;
-  margin: 0 0 14.4px;
+  margin: 0 auto 14.4px;
+  text-align: center;
 }
 
 /* About Page — Team */
