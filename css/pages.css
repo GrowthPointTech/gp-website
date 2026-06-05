@@ -1108,11 +1108,37 @@
 
 /* Services Page — Risk-based Tailored Approach */
 
+/* Split background: light gray left, dark navy right */
+.service-tailored-section {
+  background: var(--gp-light-gray);
+  padding: 0 !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-tailored-section::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 50%;
+  background: var(--gp-rich-black) url('../assets/images/background-dark-blue-arrows.svg') center / cover no-repeat;
+  z-index: 0;
+}
+
 .service-tailored {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  gap: 0;
   align-items: center;
+  position: relative;
+  z-index: 1;
+  min-height: 430px;
+}
+
+.service-tailored__content {
+  padding: var(--space-xl) var(--space-lg);
 }
 
 .service-tailored__content p {
@@ -1123,10 +1149,20 @@
   margin-bottom: 14.4px;
 }
 
+.service-tailored__image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: var(--space-md);
+}
+
 .service-tailored__image img {
   width: 100%;
-  border-radius: var(--radius-lg);
+  max-width: 460px;
+  border-radius: 0;
   display: block;
+  object-fit: cover;
 }
 
 /* Services Page — Service Articles Grid (2×2) */
@@ -1490,7 +1526,7 @@
   margin-left: 0;
   margin-right: 0;
   max-width: none;
-  text-align: left;
+  text-align: center;
 }
 
 .hero--about h1 {
@@ -1512,7 +1548,8 @@
   line-height: 26px;
   color: var(--gp-white);
   max-width: 520px;
-  margin: 0 0 14.4px;
+  margin: 0 auto 14.4px;
+  text-align: center;
 }
 
 /* About Page — Mission */
@@ -1540,7 +1577,8 @@
   line-height: 26px;
   color: var(--gp-rich-black);
   max-width: 800px;
-  margin: 0 0 14.4px;
+  margin: 0 auto 14.4px;
+  text-align: center;
 }
 
 /* About Page — Team */
