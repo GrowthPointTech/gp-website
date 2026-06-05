@@ -8,23 +8,24 @@
 
   function renderCard(post) {
     const card = document.createElement('article');
-    card.className = 'card blog-card';
+    card.className = 'blog-card';
     const url = postUrl(post.slug);
+    const imgWrapClass = post.image ? 'blog-card__img-wrap' : 'blog-card__img-wrap blog-card__img-wrap--empty';
     card.innerHTML =
-      '<a href="' + url + '" class="blog-card__image-link" tabindex="-1" aria-hidden="true">' +
-        '<img class="card__image" src="' + post.image + '" alt="' + post.title + '" loading="lazy">' +
-      '</a>' +
-      '<div class="card__body">' +
-        '<div class="blog-card__category">' +
-          post.categories.map(function(c) { return '<span class="card__tag" data-cat="' + c.toLowerCase().replace(/ /g,'-') + '">' + c + '</span>'; }).join('') +
+      '<div class="' + imgWrapClass + '">' +
+        (post.image ? '<img class="blog-card__img" src="' + post.image + '" alt="' + post.title + '" loading="lazy">' : '') +
+      '</div>' +
+      '<div class="blog-card__body">' +
+        '<div class="blog-card__tags">' +
+          post.categories.map(function(c) {
+            return '<span class="blog-card__tag" data-cat="' + c.toLowerCase().replace(/ /g, '-') + '">' + c + '</span>';
+          }).join('') +
         '</div>' +
-        '<h3 class="card__title">' +
+        '<h3 class="blog-card__title">' +
           '<a href="' + url + '">' + post.title + '</a>' +
         '</h3>' +
-        (post.description ? '<p class="blog-card__excerpt">' + post.description + '</p>' : '') +
-      '</div>' +
-      '<div class="blog-card__bottom">' +
-        '<a href="' + url + '" class="card__link">View More</a>' +
+        (post.description ? '<p class="blog-card__desc">' + post.description + '</p>' : '') +
+        '<a href="' + url + '" class="blog-card__link">View More</a>' +
       '</div>';
     return card;
   }

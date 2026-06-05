@@ -27,7 +27,7 @@ const blogPosts = [
     title: "HIPAA's Proposed Security Rule Update: What You Need to Know",
     slug: "hipaa-proposed-security-rule-updates",
     categories: ["CISO", "HIPAA"],
-    description: "",
+    description: "The proposed HIPAA Security Rule updates mark the most significant change in healthcare data compliance in over a decade.",
     date: "2025-04-25",
     image: "https://gptechadvisors.com/wp-content/uploads/2025/04/ChatGPT-Image-May-13-2025-10_45_26-AM.png"
   },
@@ -35,7 +35,7 @@ const blogPosts = [
     title: "The Critical Role of Risk Analysis in HIPAA Compliance",
     slug: "the-critical-role-of-risk-analysis-in-hipaa-compliance",
     categories: ["Article", "Blog Post", "CISO", "HIPAA"],
-    description: "",
+    description: "As a cybersecurity professional, I've seen firsthand how vital risk analysis is for safeguarding sensitive data. For healthcare organizations, it's not just best practice, it is a key component of HIPAA compliance.",
     date: "2025-04-20",
     image: "https://gptechadvisors.com/wp-content/uploads/2025/04/iStock-2169837693-scaled.jpg"
   },
@@ -43,7 +43,7 @@ const blogPosts = [
     title: "Why Growing Companies Choose Fractional CISOs: Strategy, Compliance & Scale",
     slug: "why-choose-fractional-ciso",
     categories: ["CISO"],
-    description: "",
+    description: "Growing companies face increasing pressure to prove cybersecurity maturity—to win deals, attract investment, and pass audits. But most can't justify the cost of a full-time Chief Information Security Officer.",
     date: "2025-04-15",
     image: "https://gptechadvisors.com/wp-content/uploads/2025/04/person-on-hud-from-laptop.webp"
   },
@@ -51,7 +51,7 @@ const blogPosts = [
     title: "Just Getting Started?",
     slug: "just-getting-started-with-cybersecurity",
     categories: ["CISO"],
-    description: "",
+    description: "How should you approach cybersecurity as a startup company. Simple yet effective tips to get started on the right track with very low overhead.",
     date: "2025-04-10",
     image: "https://gptechadvisors.com/wp-content/uploads/2025/04/two-people-at-desk-laughing-licensed.webp"
   },
@@ -59,7 +59,7 @@ const blogPosts = [
     title: "Top 10 Generative AI Risks",
     slug: "top-10-generative-ai-risks",
     categories: ["Blog Post", "CISO", "Gen AI"],
-    description: "",
+    description: "What risks should you consider when building out Generative AI platforms and products. Invest in governance up front to reduce risks.",
     date: "2025-04-05",
     image: "https://gptechadvisors.com/wp-content/uploads/2025/04/man-on-laptop-in-server-room.webp"
   }
