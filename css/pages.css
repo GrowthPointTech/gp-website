@@ -1241,12 +1241,28 @@
 /* Services Page — Risk-based Tailored Approach */
 
 .service-tailored-section {
-  background: var(--gp-light-gray);
+  background: var(--gp-light-gray) url('../assets/images/background-gray-blue-arrows.svg') center center / cover no-repeat;
   padding: 0;
   margin-top: 70px;
   position: relative;
   overflow: visible;
   min-height: 560px;
+}
+
+/* GP logo mark watermark on dark right half, behind the man */
+.service-tailored-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  right: 0;
+  bottom: 0;
+  background-image: url('../assets/logos/GP-Logo mark-KO.svg');
+  background-repeat: no-repeat;
+  background-size: 90%;
+  background-position: 65% 45%;
+  opacity: 0.35;
+  pointer-events: none;
 }
 
 .service-tailored__content {
