@@ -1104,12 +1104,16 @@
 .isms-section.isms-section--services {
   background: var(--gp-white);
   color: var(--gp-rich-black);
+  padding: 50px 0;
 }
 
 .isms-section__heading {
   max-width: 850px;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .isms-section.isms-section--services h2 {
@@ -1119,10 +1123,12 @@
 }
 
 .isms-section--services .isms-section__intro {
-  color: var(--gp-gray);
+  color: var(--gp-rich-black);
   text-align: center;
-  max-width: 780px;
-  margin: 0 auto var(--space-lg);
+  max-width: 850px;
+  font-size: 18px;
+  line-height: 26px;
+  margin: 0;
 }
 
 .isms-section--services .eyebrow {
@@ -1134,7 +1140,7 @@
 .isms-wheel-center {
   display: flex;
   justify-content: center;
-  margin-bottom: var(--space-lg);
+  margin-bottom: 20px;
 }
 
 .isms-wheel-center .isms-wheel {
