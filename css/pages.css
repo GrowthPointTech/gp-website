@@ -1101,7 +1101,7 @@
 
 /* Services Page — ISMS light-theme override (live site: white background) */
 
-.isms-section--services {
+.isms-section.isms-section--services {
   background: var(--gp-white);
   color: var(--gp-rich-black);
 }
