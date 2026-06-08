@@ -1135,17 +1135,14 @@
   color: var(--gp-bright-blue);
 }
 
-/* ISMS wheel centered layout for services page */
+/* ISMS static wheel image for services page */
 
-.isms-wheel-center {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.isms-wheel-center .isms-wheel {
+.isms-wheel-image {
+  display: block;
   width: 100%;
-  max-width: 640px;
+  max-width: 1280px;
+  height: auto;
+  margin: 20px auto 0;
 }
 
 /* Light-theme detail card */
