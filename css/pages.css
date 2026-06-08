@@ -1240,15 +1240,18 @@
 
 /* Services Page — Risk-based Tailored Approach */
 
-.service-tailored {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: center;
+.service-tailored-section {
+  background: var(--gp-light-gray);
+  padding: 0;
+  margin-top: 70px;
+  position: relative;
+  overflow: visible;
+  min-height: 560px;
 }
 
 .service-tailored__content {
-  padding: 60px 100px 60px 0;
+  max-width: 540px;
+  padding: 80px 0 60px;
 }
 
 .service-tailored__content p {
@@ -1259,9 +1262,13 @@
   margin-bottom: 14.4px;
 }
 
-.service-tailored__image img {
-  width: 100%;
-  border-radius: var(--radius-lg);
+/* Man photo: absolutely positioned, overflows 87px above section top */
+.service-tailored__photo {
+  position: absolute;
+  top: -87px;
+  left: calc(50% - 60px);
+  width: 538px;
+  height: auto;
   display: block;
 }
 
