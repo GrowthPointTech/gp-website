@@ -588,7 +588,8 @@
 }
 
 .blog-listing .card-grid {
-  gap: 12px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .blog-filter__dropdown-row {
@@ -671,27 +672,30 @@
   background-position: center;
 }
 
-/* Blog card — horizontal: image left, content right */
+/* Blog listing page cards — scoped to .blog-listing to avoid
+   bleeding into the home page carousel (.blog-carousel) */
 
-/* Blog listing cards — vertical layout matching live site */
-.blog-card {
+.blog-listing .blog-card {
   display: flex;
   flex-direction: column;
   background: var(--gp-rich-black);
-  border-radius: 12px;
+  border-radius: 0;
   overflow: hidden;
-  height: 100%;
+  height: 706px;
 }
 
-/* Image link wrapper (top of card) */
-.blog-card__image-link {
+.blog-listing .blog-card__img-wrap {
   display: block;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  height: 260px;
   flex-shrink: 0;
 }
 
-.blog-card .card__image {
+.blog-listing .blog-card__img-wrap--empty {
+  background: #1a2030;
+}
+
+.blog-listing .blog-card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -700,109 +704,103 @@
   transition: transform 0.4s ease;
 }
 
-.blog-card:hover .card__image {
+.blog-listing .blog-card:hover .blog-card__img {
   transform: scale(1.04);
 }
 
-/* Card body (content area) */
-.blog-card .card__body {
+.blog-listing .blog-card__body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  padding: 20px 24px 12px;
-  gap: 12px;
-  background: var(--gp-rich-black);
+  padding: 10px 30px 30px;
+  gap: 20px;
 }
 
-/* Category tags row */
-.blog-card .blog-card__category {
+.blog-listing .blog-card__tags {
   display: flex;
   flex-wrap: wrap;
   gap: 6px;
-  padding: 0;
 }
 
-/* Tag pills */
-.blog-card .card__tag {
+.blog-listing .blog-card__tag {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: 11px;
-  font-weight: 700;
+  font-size: 14px;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 4px 10px;
+  line-height: 18px;
+  padding: 5px 12px;
   border-radius: 30px;
+  color: var(--gp-light-blue);
+  background: transparent;
+}
+
+.blog-listing .blog-card__tag[data-cat="ciso"] {
   color: var(--gp-rich-black);
   background: var(--gp-lime);
-  margin-bottom: 0;
 }
 
-.blog-card .card__tag[data-cat="article"],
-.blog-card .card__tag[data-cat="blog-post"] {
-  background: #525762;
+.blog-listing .blog-card__tag[data-cat="article"],
+.blog-listing .blog-card__tag[data-cat="blog-post"] {
   color: var(--gp-light-blue);
+  background: var(--gp-dark-gray);
 }
 
-.blog-card .card__tag[data-cat="hipaa"],
-.blog-card .card__tag[data-cat="gen-ai"] {
+.blog-listing .blog-card__tag[data-cat="hipaa"],
+.blog-listing .blog-card__tag[data-cat="gen-ai"] {
+  color: var(--gp-light-blue);
   background: transparent;
-  color: var(--gp-light-blue);
-  border: 1px solid rgba(162, 200, 243, 0.4);
+  padding-left: 0;
+  padding-right: 0;
 }
 
-/* Card title */
-.blog-card .card__title {
+.blog-listing .blog-card__title {
   font-family: var(--font-heading);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: 400;
   line-height: 1.3;
   color: var(--gp-white);
   margin: 0;
 }
 
-.blog-card .card__title a {
+.blog-listing .blog-card__title a {
   color: var(--gp-white);
   text-decoration: none;
 }
 
-.blog-card .card__title a:hover {
+.blog-listing .blog-card__title a:hover {
   color: var(--gp-light-lime);
 }
 
-/* Excerpt */
-.blog-card .blog-card__excerpt {
+.blog-listing .blog-card__desc {
   font-family: var(--font-body);
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 400;
-  line-height: 1.5;
+  line-height: 1.6;
   color: rgba(255, 255, 255, 0.7);
   margin: 0;
   flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
-/* Bottom row (View More link) */
-.blog-card__bottom {
-  padding: 12px 24px 20px;
-}
-
-.blog-card .card__link {
+.blog-listing .blog-card__link {
   font-family: var(--font-body);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  color: var(--gp-light-blue);
+  color: var(--gp-bright-blue);
   text-decoration: none;
+  margin-top: auto;
+  padding-top: 8px;
 }
 
-.blog-card .card__link:hover {
-  color: var(--gp-white);
-}
-
-@media (max-width: 768px) {
-  .blog-card__image-link {
-    aspect-ratio: 16 / 9;
-  }
+.blog-listing .blog-card__link:hover {
+  color: var(--gp-med-blue);
 }
 
 @media (max-width: 1024px) {
@@ -878,10 +876,107 @@
   transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-/* Cards: 65% of viewport width, taller */
+/* Home carousel cards: 65vw wide, horizontal — image left, content right */
 .blog-carousel__track .blog-card {
   flex: 0 0 65vw;
   max-width: 65vw;
+  height: 360px;
+  display: flex;
+  flex-direction: row;
+  background: var(--gp-rich-black);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Left: image takes 45% of card width */
+.blog-carousel__track .blog-card__img-wrap {
+  flex: 0 0 45%;
+  display: block;
+  overflow: hidden;
+}
+
+.blog-carousel__track .blog-card__img-wrap--empty {
+  background: #1a2030;
+}
+
+.blog-carousel__track .blog-card__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.blog-carousel__track .blog-card:hover .blog-card__img {
+  transform: scale(1.04);
+}
+
+/* Right: content */
+.blog-carousel__track .blog-card__body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 36px 44px;
+  gap: 18px;
+}
+
+.blog-carousel__track .blog-card__title {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--gp-white);
+  margin: 0;
+}
+
+.blog-carousel__track .blog-card__title a {
+  color: var(--gp-white);
+  text-decoration: none;
+}
+
+.blog-carousel__track .blog-card__title a:hover {
+  color: var(--gp-light-lime);
+}
+
+.blog-carousel__track .blog-card__desc {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.blog-carousel__track .blog-card__link {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--gp-bright-blue);
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.blog-carousel__track .blog-card__link:hover {
+  color: var(--gp-med-blue);
+}
+
+@media (max-width: 767px) {
+  .blog-carousel__track .blog-card {
+    flex-direction: column;
+    height: auto;
+  }
+  .blog-carousel__track .blog-card__img-wrap {
+    flex: 0 0 220px;
+    height: 220px;
+  }
 }
 
 /* Arrows: row below the cards */
@@ -918,6 +1013,7 @@
 @media (max-width: 767px) {
   .blog-carousel__track .blog-card { flex: 0 0 90vw; max-width: 90vw; }
 }
+
 
 .blog-highlights__cta {
   text-align: center;
@@ -980,7 +1076,7 @@
 }
 
 .service-section--alt {
-  background: var(--gp-light-gray);
+  background: var(--gp-white);
 }
 
 /* Services Page — h2/h3 typography matching live computed values */
@@ -1005,39 +1101,48 @@
 
 /* Services Page — ISMS light-theme override (live site: white background) */
 
-.isms-section--services {
+.isms-section.isms-section--services {
   background: var(--gp-white);
   color: var(--gp-rich-black);
+  padding: 50px 0;
+}
+
+.isms-section__heading {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .isms-section.isms-section--services h2 {
   color: var(--gp-rich-black);
   text-align: center;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0;
 }
 
 .isms-section--services .isms-section__intro {
-  color: var(--gp-gray);
+  color: var(--gp-rich-black);
   text-align: center;
-  max-width: 780px;
-  margin: 0 auto var(--space-lg);
+  max-width: 850px;
+  font-size: 18px;
+  line-height: 26px;
+  margin: 0;
 }
 
 .isms-section--services .eyebrow {
   color: var(--gp-bright-blue);
 }
 
-/* ISMS wheel centered layout for services page */
+/* ISMS static wheel image for services page */
 
-.isms-wheel-center {
-  display: flex;
-  justify-content: center;
-  margin-bottom: var(--space-lg);
-}
-
-.isms-wheel-center .isms-wheel {
+.isms-wheel-image {
+  display: block;
   width: 100%;
-  max-width: 640px;
+  max-width: 1280px;
+  height: auto;
+  margin: 20px auto 0;
 }
 
 /* Light-theme detail card */
@@ -1066,12 +1171,18 @@
   margin-bottom: 0;
 }
 
+/* Services page — all sections use 1280px content width (matching live site) */
+.service-section .container,
+.isms-section--services .container {
+  max-width: 1360px;
+}
+
 /* Services Page — Intro (two-column: H2 left, body right) */
 
 .service-intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  gap: 30px;
   align-items: start;
   margin-bottom: var(--space-xl);
 }
@@ -1088,13 +1199,13 @@
 
 .service-card-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  grid-template-columns: 1fr 2.033fr;
+  gap: 40px;
   align-items: start;
   background: rgba(12, 80, 213, 0.04);
   border: 1px solid rgba(12, 80, 213, 0.12);
   border-radius: var(--radius-md);
-  padding: var(--space-md);
+  padding: 35px 30px 30px;
   margin-bottom: var(--space-md);
 }
 
@@ -1129,37 +1240,19 @@
 
 /* Services Page — Risk-based Tailored Approach */
 
-/* Split background: light gray left, dark navy right */
 .service-tailored-section {
-  background: var(--gp-light-gray);
-  padding: 0 !important;
-  overflow: hidden;
+  background: var(--gp-light-gray) url('../assets/images/background-gray-blue-arrows.svg') center center / cover no-repeat;
+  padding: 0;
+  margin-top: 70px;
   position: relative;
+  overflow: visible;
+  min-height: 560px;
 }
 
-.service-tailored-section::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 50%;
-  background: var(--gp-rich-black) url('../assets/images/background-dark-blue-arrows.svg') center / cover no-repeat;
-  z-index: 0;
-}
-
-.service-tailored {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0;
-  align-items: center;
-  position: relative;
-  z-index: 1;
-  min-height: 430px;
-}
 
 .service-tailored__content {
-  padding: var(--space-xl) var(--space-lg);
+  max-width: 540px;
+  padding: 80px 0 60px;
 }
 
 .service-tailored__content p {
@@ -1170,20 +1263,14 @@
   margin-bottom: 14.4px;
 }
 
-.service-tailored__image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: var(--space-md);
-}
-
-.service-tailored__image img {
-  width: 100%;
-  max-width: 460px;
-  border-radius: 0;
+/* Man photo: absolutely positioned, overflows 87px above section top */
+.service-tailored__photo {
+  position: absolute;
+  top: -87px;
+  left: calc(50% - 60px);
+  width: 538px;
+  height: auto;
   display: block;
-  object-fit: cover;
 }
 
 /* Services Page — Service Articles Grid (2×2) */
@@ -1191,7 +1278,8 @@
 .service-articles {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  column-gap: 100px;
+  row-gap: 20px;
 }
 
 .service-article img {
@@ -1217,6 +1305,18 @@
 
 .service-leadership {
   text-align: center;
+  background: var(--gp-light-gray);
+  padding: 0;
+}
+
+.service-leadership .container {
+  max-width: 780px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.service-leadership h2 {
+  margin-bottom: 40px;
 }
 
 .service-leadership p {
@@ -1224,8 +1324,7 @@
   font-weight: 400;
   line-height: 26px;
   color: var(--gp-rich-black);
-  max-width: 700px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 @media (max-width: 1024px) {
@@ -1547,7 +1646,7 @@
   margin-left: 0;
   margin-right: 0;
   max-width: none;
-  text-align: center;
+  text-align: left;
 }
 
 .hero--about h1 {
@@ -1569,8 +1668,7 @@
   line-height: 26px;
   color: var(--gp-white);
   max-width: 520px;
-  margin: 0 auto 14.4px;
-  text-align: center;
+  margin: 0 0 14.4px;
 }
 
 /* About Page — Mission */
@@ -1598,8 +1696,7 @@
   line-height: 26px;
   color: var(--gp-rich-black);
   max-width: 800px;
-  margin: 0 auto 14.4px;
-  text-align: center;
+  margin: 0 0 14.4px;
 }
 
 /* About Page — Team */
