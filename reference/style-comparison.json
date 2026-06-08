@@ -9,6 +9,11 @@
           "local": "Onest, system-ui, sans-serif"
         },
         {
+          "property": "min-height",
+          "live": "0px",
+          "local": "auto"
+        },
+        {
           "property": "text-align",
           "live": "start",
           "local": "left"
@@ -27,6 +32,11 @@
           "property": "font-family",
           "live": "\"Rethink Sans\", sans-serif",
           "local": "\"Rethink Sans\", system-ui, sans-serif"
+        },
+        {
+          "property": "min-height",
+          "live": "0px",
+          "local": "auto"
         },
         {
           "property": "text-align",
@@ -49,6 +59,16 @@
           "local": "Onest, system-ui, sans-serif"
         },
         {
+          "property": "margin-bottom",
+          "live": "14.4px",
+          "local": "0px"
+        },
+        {
+          "property": "min-height",
+          "live": "0px",
+          "local": "auto"
+        },
+        {
           "property": "text-align",
           "live": "start",
           "local": "left"
@@ -56,7 +76,7 @@
         {
           "property": "opacity",
           "live": "1",
-          "local": "0.987916"
+          "local": "0.988205"
         }
       ],
       "textMatch": true,
@@ -92,6 +112,16 @@
           "property": "font-family",
           "live": "\"Rethink Sans\", sans-serif",
           "local": "\"Rethink Sans\", system-ui, sans-serif"
+        },
+        {
+          "property": "margin-bottom",
+          "live": "0px",
+          "local": "20px"
+        },
+        {
+          "property": "opacity",
+          "live": "1",
+          "local": "0"
         }
       ],
       "textMatch": true,
@@ -112,6 +142,11 @@
           "property": "text-align",
           "live": "start",
           "local": "left"
+        },
+        {
+          "property": "opacity",
+          "live": "1",
+          "local": "0"
         }
       ],
       "textMatch": true,
@@ -148,7 +183,7 @@
       "liveText": "STRUCTURE",
       "localText": "STRUCTURE",
       "liveSize": "779px x 35px",
-      "localSize": "928px x 35px"
+      "localSize": "1008px x 35px"
     },
     {
       "label": "pillar-slide-desc",
@@ -157,6 +192,16 @@
           "property": "font-family",
           "live": "Onest, sans-serif",
           "local": "Onest, system-ui, sans-serif"
+        },
+        {
+          "property": "margin-right",
+          "live": "0px",
+          "local": "114px"
+        },
+        {
+          "property": "margin-left",
+          "live": "0px",
+          "local": "114px"
         }
       ],
       "textMatch": true,
@@ -231,41 +276,6 @@
       "localText": "See our guidance and recommendations for structuring and str",
       "liveSize": "580px x 78px",
       "localSize": "580px x 78px"
-    },
-    {
-      "label": "blog-card-category",
-      "diffs": [
-        {
-          "property": "font-family",
-          "live": "Onest, sans-serif",
-          "local": "Onest, system-ui, sans-serif"
-        }
-      ],
-      "textMatch": true,
-      "liveText": "CISO",
-      "localText": "CISO",
-      "liveSize": "65px x 18px",
-      "localSize": "36px x 18px"
-    },
-    {
-      "label": "blog-card-title",
-      "diffs": [
-        {
-          "property": "font-family",
-          "live": "\"Rethink Sans\", sans-serif",
-          "local": "\"Rethink Sans\", system-ui, sans-serif"
-        },
-        {
-          "property": "min-height",
-          "live": "0px",
-          "local": "auto"
-        }
-      ],
-      "textMatch": true,
-      "liveText": "5 Cybersecurity Landmines Startups Step Into—And How to Avoi",
-      "localText": "5 Cybersecurity Landmines Startups Step Into—And How to Avoi",
-      "liveSize": "347px x 128px",
-      "localSize": "405px x 128px"
     }
   ],
   "/services/": [
@@ -285,7 +295,7 @@
       ],
       "textMatch": false,
       "liveText": "STRUCTURE, STRENGTHEN, STREAMLINE,  SCALE",
-      "localText": "Structure, Strengthen, Streamline,  Scale",
+      "localText": "STRUCTURE, STRENGTHEN, STREAMLINE,  SCALE",
       "liveSize": "1400px x 18px",
       "localSize": "1360px x 18px"
     },
@@ -307,7 +317,7 @@
       "liveText": "Structure, Strengthen, Streamline, Scale",
       "localText": "Structure, Strengthen, Streamline, Scale",
       "liveSize": "625px x 110px",
-      "localSize": "528px x 165px"
+      "localSize": "625px x 110px"
     },
     {
       "label": "services-intro-body",
@@ -327,7 +337,7 @@
       "liveText": "GrowthPoint can help you build and scale your cybersecurity ",
       "localText": "GrowthPoint can help you build and scale your cybersecurity ",
       "liveSize": "625px x 130px",
-      "localSize": "528px x 130px"
+      "localSize": "625px x 130px"
     },
     {
       "label": "services-ciso-label",
@@ -342,7 +352,7 @@
       "liveText": "Fractional CISO Services",
       "localText": "Fractional CISO Services",
       "liveSize": "314px x 80px",
-      "localSize": "427px x 80px"
+      "localSize": "312px x 80px"
     },
     {
       "label": "services-ciso-body",
@@ -362,7 +372,7 @@
       "liveText": "GrowthPoint provides fractional CISO services to lead and bu",
       "localText": "GrowthPoint provides fractional CISO services to lead and bu",
       "liveSize": "791px x 104px",
-      "localSize": "503px x 182px"
+      "localSize": "790px x 104px"
     },
     {
       "label": "services-isms-h2",
@@ -371,18 +381,13 @@
           "property": "font-family",
           "live": "\"Rethink Sans\", sans-serif",
           "local": "\"Rethink Sans\", system-ui, sans-serif"
-        },
-        {
-          "property": "margin-bottom",
-          "live": "0px",
-          "local": "16px"
         }
       ],
       "textMatch": true,
       "liveText": "ISMS Program",
       "localText": "ISMS Program",
       "liveSize": "850px x 55px",
-      "localSize": "1120px x 55px"
+      "localSize": "850px x 55px"
     },
     {
       "label": "services-tailored-h2",
@@ -397,7 +402,7 @@
       "liveText": "Risk-based  Tailored Approach",
       "localText": "Risk-based  Tailored Approach",
       "liveSize": "540px x 110px",
-      "localSize": "528px x 110px"
+      "localSize": "540px x 110px"
     },
     {
       "label": "services-article-h3",
@@ -412,7 +417,7 @@
       "liveText": "Audits & Certifications",
       "localText": "Audits & Certifications",
       "liveSize": "590px x 50px",
-      "localSize": "528px x 50px"
+      "localSize": "590px x 50px"
     },
     {
       "label": "services-leadership-h2",
@@ -427,7 +432,7 @@
       "liveText": "Leadership Experience",
       "localText": "Leadership Experience",
       "liveSize": "639px x 55px",
-      "localSize": "1120px x 55px"
+      "localSize": "639px x 55px"
     }
   ],
   "/privacy-policy/": [
