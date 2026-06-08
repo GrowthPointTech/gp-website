@@ -1106,10 +1106,16 @@
   color: var(--gp-rich-black);
 }
 
+.isms-section__heading {
+  max-width: 850px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .isms-section.isms-section--services h2 {
   color: var(--gp-rich-black);
   text-align: center;
-  margin-bottom: var(--space-sm);
+  margin-bottom: 0;
 }
 
 .isms-section--services .isms-section__intro {
@@ -1162,12 +1168,18 @@
   margin-bottom: 0;
 }
 
+/* Services page — all sections use 1280px content width (matching live site) */
+.service-section .container,
+.isms-section--services .container {
+  max-width: 1360px;
+}
+
 /* Services Page — Intro (two-column: H2 left, body right) */
 
 .service-intro {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  gap: 30px;
   align-items: start;
   margin-bottom: var(--space-xl);
 }
@@ -1184,13 +1196,13 @@
 
 .service-card-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  grid-template-columns: 1fr 2.033fr;
+  gap: 40px;
   align-items: start;
   background: rgba(12, 80, 213, 0.04);
   border: 1px solid rgba(12, 80, 213, 0.12);
   border-radius: var(--radius-md);
-  padding: var(--space-md);
+  padding: 35px 30px 30px;
   margin-bottom: var(--space-md);
 }
 
@@ -1228,8 +1240,12 @@
 .service-tailored {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  gap: 0;
   align-items: center;
+}
+
+.service-tailored__content {
+  padding: 60px 100px 60px 0;
 }
 
 .service-tailored__content p {
@@ -1251,7 +1267,8 @@
 .service-articles {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--space-xl);
+  column-gap: 100px;
+  row-gap: 20px;
 }
 
 .service-article img {
@@ -1279,12 +1296,16 @@
   text-align: center;
 }
 
+.service-leadership .container {
+  max-width: 719px;
+}
+
 .service-leadership p {
   font-size: 18px;
   font-weight: 400;
   line-height: 26px;
   color: var(--gp-rich-black);
-  max-width: 700px;
+  max-width: 639px;
   margin: 0 auto;
 }
 
