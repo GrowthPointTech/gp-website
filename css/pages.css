@@ -537,6 +537,23 @@
   }
 }
 
+@media (max-width: 767px) {
+  /* Full-width content column — removes the 50% desktop constraint */
+  .services-overview__content {
+    width: 100%;
+    padding-right: 0;
+    margin-left: 0;
+  }
+
+  /* Smaller h2 so "Our Services" fits on one line */
+  .services-overview h2 {
+    font-size: 42px !important;
+    line-height: 46px !important;
+    letter-spacing: normal !important;
+  }
+
+}
+
 .card__icon {
   width: 48px;
   height: 48px;
@@ -857,6 +874,11 @@
   .blog-hero h1 {
     font-size: 48px;
     line-height: 54px;
+  }
+
+  /* Center eyebrow on mobile to match rest of hero content */
+  .blog-hero__eyebrow {
+    text-align: center;
   }
 }
 
@@ -1380,6 +1402,31 @@
 @media (max-width: 767px) {
   .service-articles {
     grid-template-columns: 1fr;
+  }
+
+  /* Tailored section: hide photo + dark overlay, single-column text */
+  .service-tailored__photo {
+    display: none;
+  }
+
+  .service-tailored-section::after {
+    display: none;
+  }
+
+  .service-tailored-section {
+    background: var(--gp-light-gray) !important;
+    overflow: hidden;
+  }
+
+  .service-tailored__content {
+    max-width: 100%;
+    padding: 40px 0;
+  }
+
+  .service-tailored__content h2 {
+    font-size: 40px !important;
+    line-height: 44px !important;
+    letter-spacing: normal !important;
   }
 }
 

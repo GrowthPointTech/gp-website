@@ -1,3 +1,17 @@
+// Services accordion: open on mobile, closed on desktop
+(function () {
+  function syncAccordion() {
+    var items = document.querySelectorAll('.services-accordion__item');
+    var mobile = window.innerWidth <= 767;
+    items.forEach(function (item) {
+      if (mobile) { item.setAttribute('open', ''); }
+      else { item.removeAttribute('open'); }
+    });
+  }
+  document.addEventListener('DOMContentLoaded', syncAccordion);
+  window.addEventListener('resize', syncAccordion);
+})();
+
 // Hero load-in animations — mirrors Elementor's fadeIn/fadeInLeft (1.25s)
 document.addEventListener('DOMContentLoaded', function () {
   var eyebrow = document.querySelector('.hero--home .hero__eyebrow');
