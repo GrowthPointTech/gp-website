@@ -326,8 +326,29 @@
     height: 100px;
   }
 
+  /* Mobile: remove fixed height so full text is visible */
   .pillar-slider {
-    padding: var(--space-lg) var(--space-md);
+    height: auto;
+    overflow: visible;
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .pillar-slider__track {
+    height: auto;
+    overflow: visible;
+    padding: 0;
+  }
+
+  /* Active slide: position relative so container expands to text height */
+  .pillar-slider__slide--active {
+    position: relative;
+    inset: auto;
+    padding: 30px 20px 60px;
+    display: flex;
+    opacity: 1;
+    transform: none;
   }
 
   .pillar-slider__heading {
@@ -343,6 +364,14 @@
   .pillar-slider__arrow {
     font-size: 32px;
     padding: 0 var(--space-xs);
+  }
+
+  /* Keep dots visible below the text */
+  .pillar-slider__dots {
+    position: static;
+    transform: none;
+    margin-top: 16px;
+    justify-content: center;
   }
 }
 
