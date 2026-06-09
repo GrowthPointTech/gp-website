@@ -107,6 +107,23 @@
 .nav__contact-mobile { display: none; }
 
 @media (max-width: 767px) {
+  /* Transparent nav reverts to opaque dark on mobile */
+  .nav--transparent {
+    position: sticky;
+    background: var(--gp-rich-black) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  }
+
+  /* Services hero: reduce h1 size and padding to fit mobile viewport */
+  .hero--services {
+    padding: var(--space-xl) 0 var(--space-lg) !important;
+  }
+
+  .hero--services h1 {
+    font-size: 48px !important;
+    line-height: 1.1 !important;
+  }
+
   .nav__links { display: none; }
   .nav__toggle { display: block; color: var(--gp-white); font-size: 24px; }
 
