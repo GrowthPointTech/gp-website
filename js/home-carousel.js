@@ -80,6 +80,9 @@
   }
 
   function init() {
+    // On mobile, skip carousel — CSS stacks cards in a single column
+    if (window.innerWidth <= 767) return;
+
     var cards = track.querySelectorAll('.blog-card');
     if (cards.length === 0) { setTimeout(init, 50); return; }
 

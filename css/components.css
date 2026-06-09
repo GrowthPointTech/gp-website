@@ -684,7 +684,28 @@
 @media (max-width: 767px) {
   .testimonial { padding: 40px 0; }
   .testimonial__decal { display: none; }
-  .testimonial__quote { font-size: 22px; line-height: 36px; }
+
+  /* Hide the large quote-image (cubes) — it has a 380px left offset that
+     pushes all content off-screen on mobile */
+  .testimonial__quote-image-wrap { display: none; }
+
+  /* Reset the 380px desktop left margin so text fills the viewport */
+  .testimonial .container {
+    margin-left: 0;
+    padding: 0 20px;
+  }
+
+  /* Large italic quote matching live site mobile (Images #41-42) */
+  .testimonial__quote {
+    font-size: 38px;
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+
+  .testimonial__photo {
+    width: 70px;
+    height: 70px;
+  }
 }
 
 /* CTA Section */

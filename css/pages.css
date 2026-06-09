@@ -609,6 +609,13 @@
   gap: 24px;
 }
 
+@media (max-width: 767px) {
+  .blog-listing .card-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
 .blog-filter__dropdown-row {
   margin-bottom: 60px;
 }
@@ -991,13 +998,33 @@
 }
 
 @media (max-width: 767px) {
+  /* Stack cards vertically on mobile — no horizontal carousel */
+  .blog-carousel {
+    overflow: visible;
+  }
+
+  .blog-carousel__track {
+    flex-direction: column;
+    transform: none !important;
+    transition: none;
+    gap: 16px;
+  }
+
   .blog-carousel__track .blog-card {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
     flex-direction: column;
     height: auto;
   }
+
   .blog-carousel__track .blog-card__img-wrap {
-    flex: 0 0 220px;
+    flex: none;
     height: 220px;
+  }
+
+  .blog-carousel__controls {
+    display: none;
   }
 }
 
