@@ -1743,7 +1743,8 @@
   line-height: 26px;
   color: var(--gp-white);
   max-width: 520px;
-  margin: 0 0 14.4px;
+  margin: 0 auto 14.4px;
+  text-align: center;
 }
 
 /* About Page — Mission */
@@ -1771,7 +1772,8 @@
   line-height: 26px;
   color: var(--gp-rich-black);
   max-width: 800px;
-  margin: 0 0 14.4px;
+  margin: 0 auto 14.4px;
+  text-align: center;
 }
 
 /* About Page — Team */
