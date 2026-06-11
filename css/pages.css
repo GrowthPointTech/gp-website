@@ -725,6 +725,24 @@
   background-position: center;
 }
 
+@media (max-width: 767px) {
+  .blog-filter__dropdown-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .blog-filter__select-wrap {
+    width: 100%;
+  }
+
+  .blog-filter__select {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
 /* Blog listing page cards — scoped to .blog-listing to avoid
    bleeding into the home page carousel (.blog-carousel) */
 
