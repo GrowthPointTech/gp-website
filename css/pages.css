@@ -2011,12 +2011,8 @@
   .hero--about h1 {
     font-size: 48px;
     line-height: 52px;
-    text-align: left;
   }
 
-  .hero--about p:not(.hero--about__eyebrow) {
-    text-align: left;
-  }
 
   .about-mission h2,
   .about-team h2 {
