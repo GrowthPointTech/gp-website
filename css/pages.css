@@ -1027,33 +1027,37 @@
 }
 
 @media (max-width: 767px) {
-  /* Stack cards vertically on mobile — no horizontal carousel */
+  /* Single-card carousel on mobile — one tall vertical card at a time */
   .blog-carousel {
-    overflow: visible;
+    overflow: hidden;
   }
 
   .blog-carousel__track {
-    flex-direction: column;
-    transform: none !important;
-    transition: none;
+    flex-direction: row;
     gap: 16px;
   }
 
   .blog-carousel__track .blog-card {
-    flex: 0 0 100%;
-    width: 100%;
-    max-width: 100%;
+    flex: 0 0 calc(100vw - 48px);
+    max-width: calc(100vw - 48px);
     flex-direction: column;
     height: auto;
+    min-height: 480px;
   }
 
   .blog-carousel__track .blog-card__img-wrap {
     flex: none;
+    width: 100%;
     height: 220px;
   }
 
+  .blog-carousel__track .blog-card__body {
+    flex: 1;
+    padding: 20px;
+  }
+
   .blog-carousel__controls {
-    display: none;
+    display: flex;
   }
 }
 
