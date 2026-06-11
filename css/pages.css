@@ -1776,8 +1776,8 @@
   font-weight: 400;
   line-height: 26px;
   color: var(--gp-white);
-  max-width: none;
-  margin-bottom: 14.4px;
+  max-width: 520px;
+  margin: 0 auto 14.4px;
   text-align: center;
 }
 
