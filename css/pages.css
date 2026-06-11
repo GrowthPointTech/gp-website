@@ -1230,6 +1230,18 @@
 
 /* Light-theme detail card */
 
+/* ISMS wheel centered layout for services page */
+.isms-wheel-center {
+  display: flex;
+  justify-content: center;
+  margin: var(--space-xl) 0 var(--space-lg);
+}
+
+.isms-wheel-center .isms-wheel {
+  width: 100%;
+  max-width: 600px;
+}
+
 .isms-detail--light {
   background: var(--gp-light-gray);
   border: 1px solid rgba(0, 0, 0, 0.08);
@@ -1252,6 +1264,106 @@
   color: var(--gp-gray);
   line-height: 1.6;
   margin-bottom: 0;
+}
+
+/* ISMS Wheel — Modal Popup (matches live site off-canvas panel) */
+
+.isms-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.isms-modal-overlay--open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+body.isms-modal-open {
+  overflow: hidden;
+}
+
+.isms-modal-panel {
+  background: #F4F6F8;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 420px;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+  transform: translateY(20px);
+  transition: transform 0.2s ease;
+}
+
+.isms-modal-overlay--open .isms-modal-panel {
+  transform: translateY(0);
+}
+
+.isms-modal-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 24px 24px 16px;
+  gap: 12px;
+}
+
+.isms-modal-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.3;
+  color: var(--gp-rich-black);
+  margin: 0;
+}
+
+.isms-modal-close {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gp-gray);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gp-gray);
+  transition: border-color 0.15s, color 0.15s;
+  margin-top: 2px;
+}
+
+.isms-modal-close:hover {
+  border-color: var(--gp-rich-black);
+  color: var(--gp-rich-black);
+}
+
+.isms-modal-list {
+  list-style: none;
+  padding: 0 0 8px;
+  margin: 0;
+}
+
+.isms-modal-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--gp-rich-black);
+  line-height: 1.4;
+}
+
+.isms-modal-check {
+  flex-shrink: 0;
 }
 
 /* Services page — all sections use 1280px content width (matching live site) */
@@ -2617,3 +2729,25 @@
   .blog-post-hero h1 { font-size: clamp(32px, 7vw, 52px); }
   .blog-post-article__body .callout { padding: 32px 24px; }
 }
+
+/* ============================================================
+   Fractional CTO Service Page (services/cto.html)
+   Placeholder styles — Task 1.5
+   Note: ../css/ paths resolve correctly from services/ subdirectory
+   ============================================================ */
+
+/* Hero inherits .hero--services from components.css */
+/* [PLACEHOLDER — Add CTO-specific hero overrides here if needed] */
+
+/* [PLACEHOLDER — Add CTO page section styles here when content is provided] */
+
+
+/* ============================================================
+   Fractional CHRO Service Page (services/chro.html)
+   Placeholder styles — Task 1.5
+   ============================================================ */
+
+/* Hero inherits .hero--services from components.css */
+/* [PLACEHOLDER — Add CHRO-specific hero overrides here if needed] */
+
+/* [PLACEHOLDER — Add CHRO page section styles here when content is provided] */

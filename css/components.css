@@ -928,3 +928,114 @@
     text-align: center;
   }
 }
+
+/* ============================================================
+   Services Dropdown Nav — added for Task 1.5
+   HTML structure (Task 1.2 will implement):
+   <li class="nav__item nav__item--dropdown">
+     <a class="nav__dropdown-toggle">Services</a>
+     <ul class="nav__dropdown-menu">
+       <li><a href="services/ciso.html">Fractional CISO</a></li>
+       <li><a href="services/cto.html">Agentic AI / Fractional CTO</a></li>
+       <li><a href="services/chro.html">Fractional CHRO</a></li>
+     </ul>
+   </li>
+   ============================================================ */
+
+/* Parent item — position anchor for the dropdown */
+.nav__item--dropdown {
+  position: relative;
+}
+
+/* Dropdown toggle arrow indicator */
+.nav__dropdown-toggle::after {
+  content: ' ▾';
+  font-size: 10px;
+  opacity: 0.7;
+}
+
+/* Dropdown menu — hidden by default */
+.nav__dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 240px;
+  background: var(--gp-rich-black);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-md);
+  list-style: none;
+  padding: var(--space-xs) 0;
+  z-index: 200;
+  box-shadow: var(--shadow-deep);
+}
+
+/* Show on hover (desktop) */
+.nav__item--dropdown:hover .nav__dropdown-menu,
+.nav__item--dropdown:focus-within .nav__dropdown-menu {
+  display: block;
+}
+
+/* Dropdown links */
+.nav__dropdown-menu a {
+  display: block;
+  padding: 10px 20px;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--gp-white);
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: normal;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav__dropdown-menu a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gp-lime);
+}
+
+/* On transparent nav — match parent link colour */
+.nav--transparent .nav__dropdown-menu {
+  background: rgba(8, 15, 31, 0.96);
+  backdrop-filter: blur(8px);
+}
+
+/* Mobile: dropdown expands inline (Task 1.2 JS will toggle .nav__item--open) */
+@media (max-width: 767px) {
+  .nav__item--dropdown .nav__dropdown-toggle::after {
+    content: ' ▾';
+  }
+
+  .nav__item--dropdown.nav__item--open .nav__dropdown-toggle::after {
+    content: ' ▴';
+  }
+
+  .nav__dropdown-menu {
+    position: static;
+    display: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.06);
+    padding: 0;
+    min-width: 0;
+    width: 100%;
+  }
+
+  .nav__item--dropdown.nav__item--open .nav__dropdown-menu {
+    display: block;
+  }
+
+  .nav__dropdown-menu a {
+    padding: 14px 28px 14px 40px;
+    font-size: 22px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--gp-light-gray);
+  }
+
+  .nav__dropdown-menu a:hover {
+    background: none;
+    color: var(--gp-white);
+  }
+}
