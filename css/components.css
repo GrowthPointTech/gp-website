@@ -695,11 +695,11 @@
     padding: 0 20px;
   }
 
-  /* Large italic quote matching live site mobile (Images #41-42) */
   .testimonial__quote {
-    font-size: 38px;
-    line-height: 1.25;
+    font-size: 22px;
+    line-height: 1.4;
     letter-spacing: 0;
+    color: rgb(20, 24, 35);
   }
 
   .testimonial__photo {
