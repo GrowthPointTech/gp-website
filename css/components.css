@@ -103,8 +103,6 @@
   padding: var(--space-xs);
 }
 
-/* Hide contact link from desktop nav */
-.nav__contact-mobile { display: none; }
 
 @media (max-width: 767px) {
   /* Transparent nav reverts to opaque dark on mobile */
@@ -199,23 +197,6 @@
     line-height: 1.2;
     text-decoration: none;
     text-align: left !important;
-  }
-
-  /* CONTACT item — full-width orange background */
-  .nav__contact-mobile { display: block; }
-
-  .nav__links.active .nav__contact-mobile {
-    border-bottom: none;
-    background: var(--gp-orange);
-  }
-
-  .nav__links.active .nav__contact-mobile a {
-    background: transparent;
-    color: var(--gp-white) !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    font-size: 20px !important;
-    letter-spacing: 0.5px !important;
   }
 
   /* Prevent body scroll while overlay open */
