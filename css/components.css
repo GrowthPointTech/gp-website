@@ -122,6 +122,7 @@
     line-height: 1.1 !important;
   }
 
+
   .nav__links { display: none; }
   .nav__toggle { display: block; color: var(--gp-white); font-size: 24px; }
 
@@ -432,8 +433,8 @@
 
 @media (max-width: 767px) {
   .hero--home .hero__eyebrow {
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 20px;
+    line-height: 20px;
   }
 
   .hero--home h1 {
@@ -449,7 +450,7 @@
 
 @media (max-width: 767px) {
   .hero h1 {
-    font-size: 32px;
+    font-size: 56px;
   }
 }
 
