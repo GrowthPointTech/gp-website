@@ -103,8 +103,6 @@
   padding: var(--space-xs);
 }
 
-/* Hide contact link from desktop nav */
-.nav__contact-mobile { display: none; }
 
 @media (max-width: 767px) {
   /* Transparent nav reverts to opaque dark on mobile */
@@ -123,6 +121,7 @@
     font-size: 48px !important;
     line-height: 1.1 !important;
   }
+
 
   .nav__links { display: none; }
   .nav__toggle { display: block; color: var(--gp-white); font-size: 24px; }
@@ -199,23 +198,6 @@
     line-height: 1.2;
     text-decoration: none;
     text-align: left !important;
-  }
-
-  /* CONTACT item — full-width orange background */
-  .nav__contact-mobile { display: block; }
-
-  .nav__links.active .nav__contact-mobile {
-    border-bottom: none;
-    background: var(--gp-orange);
-  }
-
-  .nav__links.active .nav__contact-mobile a {
-    background: transparent;
-    color: var(--gp-white) !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    font-size: 20px !important;
-    letter-spacing: 0.5px !important;
   }
 
   /* Prevent body scroll while overlay open */
@@ -451,8 +433,8 @@
 
 @media (max-width: 767px) {
   .hero--home .hero__eyebrow {
-    font-size: 16px;
-    line-height: 16px;
+    font-size: 20px;
+    line-height: 20px;
   }
 
   .hero--home h1 {
@@ -468,7 +450,7 @@
 
 @media (max-width: 767px) {
   .hero h1 {
-    font-size: 32px;
+    font-size: 56px;
   }
 }
 
@@ -695,11 +677,11 @@
     padding: 0 20px;
   }
 
-  /* Large italic quote matching live site mobile (Images #41-42) */
   .testimonial__quote {
-    font-size: 38px;
-    line-height: 1.25;
+    font-size: 22px;
+    line-height: 1.4;
     letter-spacing: 0;
+    color: rgb(20, 24, 35);
   }
 
   .testimonial__photo {
