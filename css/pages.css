@@ -1977,7 +1977,7 @@ body.isms-modal-open {
   max-width: 720px;
 }
 
-.about-team__social--header { display: block; }
+.about-team__social--header { display: block; margin-top: 4px; }
 .about-team__social--bio    { display: none; }
 
 .about-team__card.is-expanded .about-team__social--header { display: none; }
