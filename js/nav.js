@@ -32,4 +32,17 @@ document.addEventListener('DOMContentLoaded', function () {
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && links.classList.contains('active')) closeNav();
   });
+
+  // Services dropdown — mobile tap to expand sub-links
+  var dropdownItems = document.querySelectorAll('.nav__dropdown');
+  dropdownItems.forEach(function (item) {
+    var dropToggle = item.querySelector('.nav__dropdown-toggle');
+    if (!dropToggle) return;
+    dropToggle.addEventListener('click', function (e) {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        item.classList.toggle('nav__dropdown--open');
+      }
+    });
+  });
 });
