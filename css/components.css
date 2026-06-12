@@ -584,19 +584,39 @@
   text-align: center;
 }
 
-/* CHRO hero — lime background */
+/* CHRO hero — blue background (inherits hero--services) with logo watermarks */
 .hero--chro {
-  background: var(--gp-lime);
+  position: relative;
+  overflow: hidden;
 }
 
-.hero--chro h1,
-.hero--chro p:not(.hero__eyebrow) {
-  color: var(--gp-rich-black);
+.hero--chro::before,
+.hero--chro::after {
+  content: '';
+  position: absolute;
+  background: url('../assets/logos/GP-Logo%20mark-KO.svg') center / contain no-repeat;
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 0;
 }
 
-.hero--chro .hero__eyebrow {
-  color: var(--gp-rich-black);
-  opacity: 0.6;
+.hero--chro::before {
+  width: 420px;
+  height: 420px;
+  top: -60px;
+  right: -80px;
+}
+
+.hero--chro::after {
+  width: 260px;
+  height: 260px;
+  bottom: -40px;
+  left: -50px;
+}
+
+.hero--chro .container {
+  position: relative;
+  z-index: 1;
 }
 
 /* Pillars */
