@@ -19,7 +19,14 @@
     </a>
     <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <ul class="nav__links">
-      <li><a href="services.html">Services</a></li>
+      <li class="nav__dropdown">
+        <a href="services.html" class="nav__dropdown-toggle">Services</a>
+        <ul class="nav__dropdown-menu">
+          <li><a href="services/ciso.html">CISO</a></li>
+          <li><a href="services/cto.html">CTO</a></li>
+          <li><a href="services/chro.html">CHRO</a></li>
+        </ul>
+      </li>
       <li><a href="blog/">Blog</a></li>
       <li><a href="about.html">About</a></li>
     </ul>
@@ -51,13 +58,13 @@
       </div>
       <div class="about-team__card about-slide-up">
           <div class="about-team__photo">
-            <img src="assets/images/stacey-robinson.jpg" alt="Stacey Robinson, Managing Partner and Fractional CISO at GrowthPoint Technology Advisors">
+            <img src="assets/images/stacey-robinson.jpg" alt="Stacey Robinson, Managing Partner and CISO at GrowthPoint Technology Advisors">
           </div>
           <div class="about-team__card-body">
             <div class="about-team__card-header">
               <div class="about-team__info">
                 <h3 class="about-team__name">Stacey Robinson, CISSP, CHPS</h3>
-                <span class="about-team__title">Managing Partner, Fractional CISO</span>
+                <span class="about-team__title">Managing Partner, CISO</span>
 
                 <ul class="about-team__social about-team__social--header">
                   <li>

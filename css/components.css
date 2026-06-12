@@ -95,6 +95,56 @@
   color: var(--gp-bright-blue);
 }
 
+/* ===== Services dropdown ===== */
+.nav__dropdown {
+  position: relative;
+}
+
+.nav__dropdown-toggle::after {
+  content: ' ▾';
+  font-size: 11px;
+  vertical-align: middle;
+}
+
+.nav__dropdown-menu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  background: var(--gp-white);
+  border-top: 2px solid var(--gp-bright-blue);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  padding: 8px 0;
+  min-width: 200px;
+  z-index: 200;
+  white-space: nowrap;
+}
+
+.nav__dropdown:hover .nav__dropdown-menu {
+  display: block;
+}
+
+.nav__dropdown-menu a {
+  padding: 10px 24px;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  display: block;
+  color: var(--gp-rich-black);
+}
+
+.nav__dropdown-menu a:hover {
+  color: var(--gp-bright-blue);
+  background: var(--gp-off-white);
+}
+
+/* Transparent nav: keep dropdown white */
+.nav--transparent .nav__dropdown-menu a {
+  color: var(--gp-rich-black);
+}
+
 .nav__toggle {
   display: none;
   background: none;
@@ -202,6 +252,42 @@
 
   /* Prevent body scroll while overlay open */
   body.nav-open { overflow: hidden; }
+
+  /* Services dropdown — mobile overlay */
+  .nav__dropdown-toggle::after { display: none; }
+
+  .nav__dropdown-menu {
+    position: static;
+    display: none;
+    box-shadow: none;
+    border-top: none;
+    border-left: 3px solid var(--gp-bright-blue);
+    background: #f5f6f8;
+    padding: 4px 0;
+    min-width: 0;
+    white-space: normal;
+  }
+
+  .nav__dropdown--open .nav__dropdown-menu {
+    display: block;
+  }
+
+  .nav__dropdown-menu li {
+    border-bottom: none !important;
+  }
+
+  .nav__dropdown-menu a {
+    padding: 14px 28px 14px 40px !important;
+    font-size: 20px !important;
+    font-weight: 400 !important;
+    text-transform: none !important;
+    letter-spacing: normal !important;
+    color: var(--gp-rich-black) !important;
+  }
+
+  .nav__dropdown--open > .nav__dropdown-toggle {
+    color: var(--gp-bright-blue) !important;
+  }
 }
 
 /* Buttons */
