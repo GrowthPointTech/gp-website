@@ -584,6 +584,21 @@
   text-align: center;
 }
 
+/* CHRO hero — lime background */
+.hero--chro {
+  background: var(--gp-lime);
+}
+
+.hero--chro h1,
+.hero--chro p:not(.hero__eyebrow) {
+  color: var(--gp-rich-black);
+}
+
+.hero--chro .hero__eyebrow {
+  color: var(--gp-rich-black);
+  opacity: 0.6;
+}
+
 /* Pillars */
 
 .pillars {
