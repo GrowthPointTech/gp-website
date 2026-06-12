@@ -951,7 +951,7 @@
 .footer__sublinks {
   display: none;
   position: absolute;
-  bottom: calc(100% + 8px);
+  bottom: 100%;
   left: 0;
   list-style: none;
   background: #0f1e3d;
