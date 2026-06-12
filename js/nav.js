@@ -45,4 +45,14 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
+
+  // Footer Services dropdown — mobile tap to expand
+  document.querySelectorAll('.footer__dropdown').forEach(function (item) {
+    item.querySelector('a').addEventListener('click', function (e) {
+      if (window.innerWidth < 768) {
+        e.preventDefault();
+        item.classList.toggle('footer__dropdown--open');
+      }
+    });
+  });
 });
