@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fractional CISO Services — GrowthPoint Technology Advisors</title>
-  <meta name="description" content="GrowthPoint fractional CISO services — cybersecurity program development, compliance, ISMS management, and risk governance.">
+  <meta name="description" content="GrowthPoint fractional CISO services — cybersecurity program development, compliance, ISMS management, audits, and data privacy governance.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/base.css">
@@ -14,13 +14,13 @@
 <body>
 
   <nav class="nav nav--transparent">
-    <a href="/" class="nav__logo">
+    <a href="../index.html" class="nav__logo">
       <img src="../assets/logos/GP-Logo-horiz-KO.svg" alt="GrowthPoint Technology Advisors">
     </a>
     <button class="nav__toggle" aria-label="Toggle navigation">&#9776;</button>
     <ul class="nav__links">
       <li class="nav__dropdown">
-        <a href="../services.html" class="nav__dropdown-toggle">Services</a>
+        <a href="../services/ciso.html" class="nav__dropdown-toggle">Services</a>
         <ul class="nav__dropdown-menu">
           <li><a href="../services/cto.html">CTO</a></li>
           <li><a href="../services/ciso.html">CISO</a></li>
@@ -76,7 +76,9 @@
           <h2 data-animate="fadeIn">ISMS Program</h2>
           <p class="isms-section__intro" data-animate="fadeIn" data-animate-delay="300">GrowthPoint takes a strategic view toward cybersecurity, governance, risk and compliance that is framework agnostic.&nbsp; We can work with the major frameworks such as SOC 2, ISO 27001, NIST CSF 2.0, and CIS Controls and help you determine which frameworks works best where you are on your cybersecurity journey.&nbsp; The interactive graphic below shows the high-level components of a mature Information Security Management System (ISMS) program.&nbsp; Click on each title in the graphic to see more details.</p>
         </div>
-        <img src="../assets/images/isms-program-wheel.png" alt="ISMS Program Framework wheel showing nine management areas: Leadership Scope &amp; Governance, Policy &amp; Documentation Governance, Risk &amp; Compliance Framework, Internal Security Controls, Incident Management &amp; Response, Communication Training &amp; Awareness, Availability &amp; Continuity, Audit &amp; Certifications, and Monitoring Measuring &amp; Continual Improvement" class="isms-wheel-image" width="1329" height="1080">
+        <div class="isms-wheel-center">
+          <div id="isms-wheel" class="isms-wheel" aria-label="ISMS management wheel"></div>
+        </div>
       </div>
     </section>
 
@@ -127,7 +129,6 @@
       </div>
     </section>
 
-
   </main>
 
   <footer class="footer">
@@ -146,13 +147,13 @@
         <nav class="footer__nav" aria-label="Footer navigation">
           <ul class="footer__links">
             <li class="footer__dropdown">
-            <a href="../services.html">Services</a>
-            <ul class="footer__sublinks">
-              <li><a href="../services/cto.html">CTO</a></li>
-              <li><a href="../services/ciso.html">CISO</a></li>
-              <li><a href="../services/chro.html">CHRO</a></li>
-            </ul>
-          </li>
+              <a href="../services/ciso.html">Services</a>
+              <ul class="footer__sublinks">
+                <li><a href="../services/cto.html">CTO</a></li>
+                <li><a href="../services/ciso.html">CISO</a></li>
+                <li><a href="../services/chro.html">CHRO</a></li>
+              </ul>
+            </li>
             <li><a href="../blog/">Blog</a></li>
             <li><a href="../about.html">About</a></li>
           </ul>
@@ -167,5 +168,6 @@
 
   <script src="../js/nav.js"></script>
   <script src="../js/animations.js"></script>
+  <script src="../js/isms-wheel.js"></script>
 </body>
 </html>
