@@ -103,7 +103,7 @@ changes can be validated automatically.
 | `css/base.css` | Reset, typography, layout primitives |
 | `css/components.css` | Reusable: nav, footer, cards, buttons, testimonials |
 | `css/pages.css` | Page-specific styles |
-| `js/` | Minimal JS: mobile nav toggle, contact page |
+| `js/` | Minimal JS: mobile nav toggle, blog, animations |
 | `assets/` | Images, logos, icons, favicons |
 | `reference/` | Reference files — not deployed |
 
@@ -121,11 +121,13 @@ changes can be validated automatically.
 | Page | File | Key Sections |
 |------|------|-------------|
 | Home | `index.html` | Hero, 4 pillars, services overview, blog highlights, testimonial, CTA |
-| Services | `services.html` | Fractional CISO, Compliance, ISMS wheel, Audits, Data Privacy |
-| About | `about.html` | Company story, mission, Stacey bio, social links |
-| Contact | `contact.html` | Calendly booking embed + mailto fallback |
-| Blog | `blog/index.html` | Card grid of posts |
+| CTO Services | `services/cto.html` | Fractional CTO, Agentic AI, org design, engineering processes |
+| CISO Services | `services/ciso.html` | Fractional CISO, compliance, ISMS wheel, audits, data privacy |
+| CHRO Services | `services/chro.html` | Fractional CHRO, leadership acceleration, talent architecture |
+| About | `about.html` | Mission, Stacey Robinson bio, Michelle Byrd Robinson bio |
+| Blog | `blog/index.html` | Card grid of posts, category filter |
 | Blog Post | `blog/posts/{slug}.html` | Article content |
+| Privacy Policy | `privacy.html` | Data collection, rights, contact |
 
 ## Blog
 - Maintain this as an array of Blog Posts so that we can dynamically list posts and add posts in the future
@@ -134,8 +136,8 @@ changes can be validated automatically.
 ## Shared Components
 
 Every page includes:
-1. **Nav** — Logo left, links right (Services, Blog, About, Contact). Sticky. Mobile hamburger.
-2. **Footer** — KO logo, nav links, social (LinkedIn, X), copyright, privacy policy link.
+1. **Nav** — Logo left, links right (Services dropdown → CTO/CISO/CHRO, Blog, About). Sticky. Mobile hamburger.
+2. **Footer** — KO logo, nav links, social (LinkedIn), copyright, privacy policy link.
 
 ## Security
 
@@ -153,6 +155,7 @@ Every page includes:
 
 | Person | Role |
 |--------|------|
-| Stacey Robinson | Project champion, final approver |
-| Maddox Strader | Intern — Home, Services, ISMS wheel, AWS |
-| Joshua Williams | Intern — About, Blog, Contact, Claude skills |
+| Stacey Robinson | Co-Founder, project champion, final approver |
+| Michelle Byrd Robinson | Co-Founder, content approver |
+| Maddox Strader | Intern — Home, CTO/CISO service pages, ISMS wheel, AWS |
+| Joshua Williams | Intern — About, Blog, CHRO service page, Claude skills |

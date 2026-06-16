@@ -1,0 +1,6 @@
+version: 1
+hosting:
+  redirectRules:
+    - source: /services.html
+      target: /services/ciso.html
+      status: '301'
