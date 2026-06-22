@@ -123,7 +123,7 @@
   font-weight: 400;
   line-height: 26px;
   color: var(--gp-rich-black);
-  text-align: left;
+  text-align: center;
   margin-bottom: 14.4px; /* live: 14.4px computed */
 }
 
