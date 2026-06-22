@@ -1946,6 +1946,15 @@ body.isms-modal-open {
   text-align: left;
 }
 
+.about-team__cofounder {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--gp-bright-blue);
+}
+
 .about-team__title {
   font-family: var(--font-body);
   font-size: 16px;
