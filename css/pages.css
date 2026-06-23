@@ -1195,6 +1195,11 @@
   margin-bottom: 0;
 }
 
+.service-tailored__content h2 {
+  font-size: 44px;
+  line-height: 48px;
+}
+
 .service-article h3 {
   font-size: 46px;
   font-weight: 400;
