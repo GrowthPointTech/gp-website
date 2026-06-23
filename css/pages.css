@@ -503,7 +503,7 @@
 
 .services-accordion__body p {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 18px;
   color: var(--gp-rich-black);
   line-height: 22px;
   margin-bottom: var(--space-sm);
