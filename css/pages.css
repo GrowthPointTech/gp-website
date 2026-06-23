@@ -1453,9 +1453,9 @@ body.isms-modal-open {
 }
 
 .service-card-row p {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 400;
-  line-height: 28px;
+  line-height: 32px;
   color: var(--gp-rich-black);
   margin-bottom: 14.4px;
 }
