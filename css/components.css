@@ -725,10 +725,10 @@
 
 .testimonial__quote {
   font-family: var(--font-body);
-  font-size: 32px;
+  font-size: 20px;
   font-weight: 300;
   font-style: italic;
-  line-height: 52px;
+  line-height: 34px;
   letter-spacing: 0.2px;
   color: rgb(60, 65, 80);
   margin: 0 0 20px;
@@ -804,8 +804,8 @@
   }
 
   .testimonial__quote {
-    font-size: 22px;
-    line-height: 1.4;
+    font-size: 18px;
+    line-height: 1.6;
     letter-spacing: 0;
     color: rgb(20, 24, 35);
   }
