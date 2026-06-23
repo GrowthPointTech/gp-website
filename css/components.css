@@ -101,9 +101,10 @@
 }
 
 .nav__dropdown-toggle::after {
-  content: ' ▾';
+  content: '▾';
   font-size: 32px;
   vertical-align: middle;
+  margin-left: 4px;
 }
 
 .nav__dropdown-menu {
@@ -982,9 +983,10 @@
 }
 
 .footer__dropdown > a::after {
-  content: ' ▾';
+  content: '▾';
   font-size: 32px;
   vertical-align: middle;
+  margin-left: 4px;
 }
 
 .footer__sublinks {
