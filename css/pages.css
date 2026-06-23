@@ -1973,6 +1973,11 @@ body.isms-modal-open {
   align-items: center;
 }
 
+.about-team__toggle svg {
+  width: 38px;
+  height: 38px;
+}
+
 .about-team__toggle-btn[aria-expanded="true"] .about-team__toggle {
   transform: rotate(180deg);
 }
