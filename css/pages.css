@@ -1799,7 +1799,7 @@ body.isms-modal-open {
   background: url('../assets/images/background-dark-blue-arrows.svg') center / cover no-repeat;
   background-color: var(--gp-rich-black);
   text-align: center;
-  padding: 130px 0 120px;
+  padding: 150px 0 100px;
   position: relative;
   overflow: hidden;
 }
@@ -2392,7 +2392,7 @@ body.isms-modal-open {
   background-size: cover !important;
   background-position: center !important;
   background-blend-mode: screen !important;
-  padding: 100px 0 !important;
+  padding: 150px 0 100px !important;
   text-align: center !important;
 }
 
@@ -2491,7 +2491,7 @@ body.isms-modal-open {
 /* Hero — same orange background image as the Blog index page */
 .blog-post-hero {
   background: url('../../assets/images/background-orange-arrows.svg') center / cover no-repeat;
-  padding: 80px 0 72px;
+  padding: 150px 0 100px;
   text-align: center;
 }
 
