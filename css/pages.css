@@ -1196,8 +1196,8 @@
 }
 
 .service-tailored__content h2 {
-  font-size: 32px;
-  line-height: 36px;
+  font-size: 38px;
+  line-height: 42px;
 }
 
 .service-article h3 {
@@ -1473,7 +1473,7 @@ body.isms-modal-open {
 
 
 .service-tailored__content {
-  max-width: 540px;
+  max-width: 860px;
   padding: 80px 0 60px;
 }
 
@@ -1489,8 +1489,9 @@ body.isms-modal-open {
 .service-tailored__photo {
   position: absolute;
   top: -87px;
-  left: calc(50% - 60px);
-  width: 538px;
+  right: 0;
+  left: auto;
+  width: 350px;
   height: auto;
   display: block;
 }
