@@ -983,7 +983,7 @@
 
 .footer__dropdown > a::after {
   content: ' ▾';
-  font-size: 16px;
+  font-size: 32px;
   vertical-align: middle;
 }
 
