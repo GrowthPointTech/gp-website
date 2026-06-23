@@ -102,7 +102,7 @@
 
 .nav__dropdown-toggle::after {
   content: ' ▾';
-  font-size: 16px;
+  font-size: 20px;
   vertical-align: middle;
 }
 
