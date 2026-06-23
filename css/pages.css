@@ -1205,7 +1205,7 @@
   font-weight: 400;
   line-height: 50px;
   letter-spacing: 0.3px;
-  margin-bottom: 0;
+  margin-bottom: var(--space-md);
 }
 
 /* Services Page — ISMS light-theme override (live site: white background) */
