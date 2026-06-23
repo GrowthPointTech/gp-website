@@ -1868,7 +1868,7 @@ body.isms-modal-open {
   line-height: 55px;
   letter-spacing: 0.3px;
   color: var(--gp-rich-black);
-  margin-bottom: 0;
+  margin-bottom: var(--space-lg);
 }
 
 .about-mission p {
