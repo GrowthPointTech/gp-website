@@ -1176,7 +1176,7 @@
 
 .service-section {
   background: var(--gp-white);
-  padding-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
 }
 
 .service-section--alt {
@@ -1209,7 +1209,7 @@
 .isms-section.isms-section--services {
   background: var(--gp-white);
   color: var(--gp-rich-black);
-  padding: 10px 0 50px;
+  padding: 0 0 50px;
 }
 
 .isms-section__heading {
