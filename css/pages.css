@@ -1439,18 +1439,18 @@ body.isms-modal-open {
 
 .service-card-row__label span {
   font-family: var(--font-heading);
-  font-size: 38px;
+  font-size: 30px;
   font-weight: 400;
-  line-height: 40px;
+  line-height: 34px;
   letter-spacing: 0.3px;
   padding-left: 5px;
   color: var(--gp-rich-black);
 }
 
 .service-card-row p {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 28px;
   color: var(--gp-rich-black);
   margin-bottom: 14.4px;
 }
@@ -1873,9 +1873,9 @@ body.isms-modal-open {
 
 .about-mission p {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 30px;
   color: var(--gp-rich-black);
   max-width: 800px;
   margin: 0 auto 14.4px;
@@ -1990,9 +1990,9 @@ body.isms-modal-open {
 
 .about-team__bio p {
   font-family: var(--font-body);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 22px;
+  line-height: 26px;
   color: var(--gp-rich-black);
   margin-bottom: 14px;
 }
