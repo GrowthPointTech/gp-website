@@ -1897,7 +1897,7 @@ body.isms-modal-open {
   line-height: 55px;
   letter-spacing: 0.3px;
   color: var(--gp-rich-black);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
 }
 
 .about-team__card {
