@@ -1839,9 +1839,9 @@ body.isms-modal-open {
 
 .hero--about h1 {
   font-family: var(--font-heading);
-  font-size: 140px;
+  font-size: 270px;
   font-weight: 400;
-  line-height: 140px;
+  line-height: 270px;
   letter-spacing: 0.3px;
   text-align: center;
   max-width: none;
