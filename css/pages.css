@@ -1851,11 +1851,11 @@ body.isms-modal-open {
 
 .hero--about p:not(.hero--about__eyebrow) {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 40px;
   color: var(--gp-white);
-  max-width: 520px;
+  max-width: 820px;
   margin: 0 auto 14.4px;
   text-align: center;
 }
