@@ -945,25 +945,30 @@
 .footer__social-icon {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
+  transition: opacity 0.2s ease;
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer__social-icon svg {
   width: 21px;
   height: 21px;
   background-color: var(--gp-med-blue);
   border-radius: 10%;
-  padding: 0;
-  transition: opacity 0.2s ease;
+  padding: 3px;
   flex-shrink: 0;
+  box-sizing: border-box;
 }
 
 .footer__social-icon:hover {
   opacity: 0.8;
 }
 
-.footer__social-icon svg {
-  width: 15px;
-  height: 15px;
+.footer__social-icon svg path {
   fill: var(--gp-rich-black);
-  display: block;
 }
 
 .footer__nav {
