@@ -1554,6 +1554,11 @@ body.isms-modal-open {
   margin: 0;
 }
 
+/* ── CTO PAGE ── */
+.page-cto h2 {
+  letter-spacing: 0.06em;
+}
+
 @media (max-width: 1024px) {
   .service-intro {
     grid-template-columns: 1fr;
