@@ -1198,6 +1198,7 @@
 .service-tailored__content h2 {
   font-size: 38px;
   line-height: 42px;
+  margin-bottom: var(--space-md);
 }
 
 .service-article h3 {
