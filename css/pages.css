@@ -1412,6 +1412,10 @@ body.isms-modal-open {
   margin-bottom: var(--space-xl);
 }
 
+.service-intro h2 {
+  letter-spacing: 0.06em;
+}
+
 .service-intro p {
   font-size: 18px;
   font-weight: 400;
