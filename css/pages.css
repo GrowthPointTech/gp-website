@@ -1413,8 +1413,8 @@ body.isms-modal-open {
 }
 
 .service-intro h2 {
-  font-size: 38px;
-  line-height: 46px;
+  font-size: 42px;
+  line-height: 1.1;
   letter-spacing: 0.06em;
 }
 
