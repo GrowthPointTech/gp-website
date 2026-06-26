@@ -558,13 +558,13 @@
   flex-direction: column;
   align-items: stretch;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
   padding: 0 20px;
 }
 
 .hero--services h1 {
-  font-size: 95px;
-  line-height: 95px;
+  font-size: 110px;
+  line-height: 100px;
   letter-spacing: 0.3px;
   max-width: none;
   margin-bottom: 0;
@@ -576,14 +576,14 @@
   font-size: 18px;
   line-height: 26px;
   text-align: center;
-  margin-bottom: 14.4px;
+  margin-bottom: 0;
 }
 
 .hero--services .hero__eyebrow {
-  font-size: 18px;
-  line-height: 18px;
+  font-size: 23px;
+  line-height: 23px;
   letter-spacing: 0.5px;
-  color: var(--gp-lime);
+  color: var(--gp-light-lime);
   margin-bottom: 0;
   max-width: none;
   text-align: center;
