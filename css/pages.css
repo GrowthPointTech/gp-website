@@ -611,7 +611,8 @@
   letter-spacing: 0.3px;
   color: var(--gp-white);
   margin: 0;
-  max-width: 800px;
+  max-width: none;
+  white-space: nowrap;
 }
 
 .blog-hero__desc {
