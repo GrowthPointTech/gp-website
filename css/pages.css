@@ -1404,19 +1404,19 @@ body.isms-modal-open {
   max-width: 1360px;
 }
 
-/* Services Page — Intro (h2 full-width, paragraph below) */
+/* Services Page — Intro (two-column: h2 left, body right) */
 
 .service-intro {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: var(--space-md);
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
   align-items: start;
   margin-bottom: var(--space-xl);
 }
 
 .service-intro h2 {
-  font-size: 110px;
-  line-height: 100px;
+  font-size: 60px;
+  line-height: 55px;
   letter-spacing: 0.3px;
 }
 
@@ -1565,9 +1565,13 @@ body.isms-modal-open {
 
 
 @media (max-width: 1024px) {
+  .service-intro {
+    grid-template-columns: 1fr;
+  }
+
   .service-intro h2 {
-    font-size: 72px;
-    line-height: 66px;
+    font-size: 48px;
+    line-height: 44px;
   }
 
   .service-card-row {
