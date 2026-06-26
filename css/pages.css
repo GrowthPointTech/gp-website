@@ -1830,18 +1830,18 @@ body.isms-modal-open {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 15px;
+  gap: 20px;
   padding: 0 20px;
 }
 
 .hero--about p.hero--about__eyebrow {
   font-family: var(--font-body);
-  font-size: 18px;
+  font-size: 23px;
   font-weight: 600;
-  line-height: 18px;
+  line-height: 23px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  color: var(--gp-lime);
+  color: var(--gp-light-lime);
   margin-bottom: 0;
   margin-left: 0;
   margin-right: 0;
@@ -1851,9 +1851,9 @@ body.isms-modal-open {
 
 .hero--about h1 {
   font-family: var(--font-heading);
-  font-size: 270px;
+  font-size: 110px;
   font-weight: 400;
-  line-height: 270px;
+  line-height: 100px;
   letter-spacing: 0.3px;
   text-align: center;
   max-width: none;
@@ -1863,12 +1863,12 @@ body.isms-modal-open {
 
 .hero--about p:not(.hero--about__eyebrow) {
   font-family: var(--font-body);
-  font-size: 11px;
+  font-size: 18px;
   font-weight: 400;
-  line-height: 18px;
+  line-height: 26px;
   color: var(--gp-white);
   max-width: 520px;
-  margin: 0 auto 14.4px;
+  margin: 0 auto;
   text-align: center;
 }
 
@@ -2422,11 +2422,11 @@ body.isms-modal-open {
 }
 
 .hero--privacy h1 {
-  font-size: 130px !important;
-  line-height: 1.0 !important;
+  font-size: 110px !important;
+  line-height: 100px !important;
   color: var(--gp-white) !important;
   letter-spacing: 0.3px !important;
-  max-width: 700px !important;
+  max-width: none !important;
   margin: 0 auto !important;
 }
 
