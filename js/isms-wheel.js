@@ -145,6 +145,20 @@
     '#96C83B',  // MMC
   ];
 
+  // Proportional angles (degrees) per segment, measured from production PNG, clockwise from 12 o'clock
+  var angles = [35, 30, 45, 60, 45, 45, 30, 30, 40];
+
+  // Precompute cumulative start angles (starting at -90° = 12 o'clock)
+  var startAngles = [];
+  (function () {
+    var cum = -90;
+    for (var k = 0; k < angles.length; k++) {
+      startAngles[k] = cum;
+      cum += angles[k];
+    }
+  })();
+
+  // Per-segment outer radii — varying depth creates the "jutting out" effect matching production
   var outerRadii = [258, 308, 296, 336, 330, 268, 256, 312, 348];
 
   var cx = 350, cy = 350;
@@ -156,9 +170,8 @@
 
   function segmentPath(i) {
     var oR = outerRadii[i];
-    var slice = 360 / count;
-    var startDeg = -90 + i * slice + gapDeg / 2;
-    var endDeg   = -90 + (i + 1) * slice - gapDeg / 2;
+    var startDeg = startAngles[i] + gapDeg / 2;
+    var endDeg   = startAngles[i] + angles[i] - gapDeg / 2;
     var s = toRad(startDeg), e = toRad(endDeg);
     var large = (endDeg - startDeg) > 180 ? 1 : 0;
     var x1 = cx + innerR * Math.cos(s), y1 = cy + innerR * Math.sin(s);
@@ -283,9 +296,8 @@
       segments.push(path);
 
       // Text label
-      var midDeg = -90 + (i + 0.5) * (360 / count);
-      var oR = outerRadii[i];
-      var textR = innerR + (oR - innerR) * 0.52;
+      var midDeg = startAngles[i] + angles[i] / 2;
+      var textR = innerR + (outerRadii[i] - innerR) * 0.52;
       var tx = cx + textR * Math.cos(toRad(midDeg));
       var ty = cy + textR * Math.sin(toRad(midDeg));
       var rot = midDeg + 90;
