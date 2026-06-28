@@ -1203,6 +1203,11 @@
   margin-bottom: 30px;
 }
 
+.page-chro .service-tailored__content h2 {
+  font-size: 36px;
+  line-height: 44px;
+}
+
 .service-article h3 {
   font-size: 46px;
   font-weight: 400;
@@ -1534,6 +1539,12 @@ body.isms-modal-open {
   width: 340px;
   height: auto;
   display: block;
+}
+
+/* CHRO page: shift man photo to left edge of dark panel */
+.page-chro .service-tailored__photo {
+  left: calc(50% - 60px);
+  right: auto;
 }
 
 /* Services Page — Service Articles Grid (2×2) */
