@@ -1541,10 +1541,11 @@ body.isms-modal-open {
   display: block;
 }
 
-/* CHRO page: shift man photo to left edge of dark panel */
+/* CHRO page: shift man photo to left edge of dark panel at full size */
 .page-chro .service-tailored__photo {
   left: calc(50% - 60px);
   right: auto;
+  width: 538px;
 }
 
 /* Services Page — Service Articles Grid (2×2) */
