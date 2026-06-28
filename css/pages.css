@@ -1274,11 +1274,27 @@
   max-width: 600px;
 }
 
-.isms-wheel-img {
+/* Aspect-ratio wrapper: maintains 1329:1080 ratio of the PNG */
+.isms-wheel-wrapper {
+  position: relative;
   width: 100%;
-  max-width: 600px;
-  height: auto;
+  max-width: 1200px;
+  padding-bottom: 81.26%; /* 1080/1329 * 100 */
+  height: 0;
+}
+
+.isms-wheel-img,
+.isms-wheel-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   display: block;
+}
+
+.isms-wheel-img {
+  object-fit: contain;
 }
 
 .isms-detail--light {

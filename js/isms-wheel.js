@@ -161,15 +161,18 @@
   // Per-segment outer radii — varying depth creates the "jutting out" effect matching production
   var outerRadii = [258, 308, 296, 336, 330, 268, 256, 312, 348];
 
-  var cx = 350, cy = 350;
-  var innerR = 132;
+  // PNG overlay coordinate space: 1329x1080, wheel centered at ~665,540, scale ~1.48 vs 700x700 SVG
+  var PNG_W = 1329, PNG_H = 1080;
+  var cx = 665, cy = 540;
+  var innerR = 195; // 132 * 1.48
+  var pngOuterRadii = outerRadii.map(function(r) { return Math.round(r * 1.48); });
   var count = areas.length;
   var gapDeg = 1.5;
 
   function toRad(deg) { return deg * Math.PI / 180; }
 
   function segmentPath(i) {
-    var oR = outerRadii[i];
+    var oR = pngOuterRadii[i];
     var startDeg = startAngles[i] + gapDeg / 2;
     var endDeg   = startAngles[i] + angles[i] - gapDeg / 2;
     var s = toRad(startDeg), e = toRad(endDeg);
@@ -258,6 +261,10 @@
     modal.overlay.setAttribute('aria-hidden', 'true');
     modal.overlay.classList.remove('isms-modal-overlay--open');
     document.body.classList.remove('isms-modal-open');
+    // Reset all segment highlights
+    document.querySelectorAll('#isms-wheel svg path').forEach(function(p) {
+      p.style.fillOpacity = '0';
+    });
   }
 
   // ── Wheel ──────────────────────────────────────────────────────────────────
@@ -266,15 +273,19 @@
     var wheelEl = document.getElementById('isms-wheel');
     if (!wheelEl) return;
 
+    // Overlay SVG matches the PNG coordinate space (1329x1080) so it scales with the image
     var svg = ns('svg');
-    svg.setAttribute('viewBox', '0 0 700 700');
+    svg.setAttribute('viewBox', '0 0 ' + PNG_W + ' ' + PNG_H);
+    svg.setAttribute('width', '100%');
+    svg.setAttribute('height', '100%');
     svg.setAttribute('aria-label', 'Interactive ISMS management wheel');
     svg.setAttribute('role', 'img');
+    svg.style.cursor = 'default';
     var segments = [];
 
     function activate(i) {
       segments.forEach(function (p, j) {
-        p.style.opacity = j === i ? '1' : '0.55';
+        p.style.fillOpacity = j === i ? '0.25' : '0';
       });
       openModal(areas[i]);
     }
@@ -282,59 +293,31 @@
     areas.forEach(function (area, i) {
       var path = ns('path');
       path.setAttribute('d', segmentPath(i));
+      // Transparent fill but responds to pointer events; highlight on click
       path.setAttribute('fill', colors[i]);
+      path.style.fillOpacity = '0';
+      path.style.transition = 'fill-opacity 0.2s ease';
       path.setAttribute('tabindex', '0');
       path.setAttribute('role', 'button');
       path.setAttribute('aria-label', area.name);
       path.style.cursor = 'pointer';
-      path.style.transition = 'opacity 0.2s ease';
       path.addEventListener('click', function () { activate(i); });
       path.addEventListener('keydown', function (e) {
         if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(i); }
       });
       svg.appendChild(path);
       segments.push(path);
-
-      // Text label
-      var midDeg = startAngles[i] + angles[i] / 2;
-      var textR = innerR + (outerRadii[i] - innerR) * 0.52;
-      var tx = cx + textR * Math.cos(toRad(midDeg));
-      var ty = cy + textR * Math.sin(toRad(midDeg));
-      var rot = midDeg + 90;
-      if (rot > 90 && rot <= 270) rot -= 180;
-
-      var g = ns('g');
-      g.setAttribute('transform', 'translate(' + tx + ',' + ty + ') rotate(' + rot + ')');
-      g.style.pointerEvents = 'none';
-
-      var fill = area.textDark ? '#1A1A2E' : '#ffffff';
-      var lines = area.lines;
-      var fontSize = 11.5, lineH = 14.5;
-      var totalH = lines.length * lineH;
-
-      lines.forEach(function (line, li) {
-        var t = ns('text');
-        t.setAttribute('x', 0);
-        t.setAttribute('y', li * lineH - totalH / 2 + lineH * 0.5);
-        t.setAttribute('text-anchor', 'middle');
-        t.setAttribute('dominant-baseline', 'middle');
-        t.setAttribute('fill', fill);
-        t.setAttribute('font-size', fontSize);
-        t.setAttribute('font-family', 'Onest, system-ui, sans-serif');
-        t.setAttribute('font-weight', '600');
-        t.textContent = line;
-        g.appendChild(t);
-      });
-      svg.appendChild(g);
     });
 
-    // Center circle
+    // Invisible center circle to block clicks on the white center area
     var circ = ns('circle');
     circ.setAttribute('cx', cx); circ.setAttribute('cy', cy);
-    circ.setAttribute('r', innerR - 6); circ.setAttribute('fill', '#ffffff');
+    circ.setAttribute('r', innerR);
+    circ.setAttribute('fill', 'transparent');
+    circ.style.cursor = 'default';
     svg.appendChild(circ);
 
-    // Center label
+    // Placeholder to satisfy original code reference (no-op)
     var centerLines = ['ISMS Program', 'Framework'];
     var cfs = 20, clh = 28;
     centerLines.forEach(function (line, li) {
@@ -343,7 +326,7 @@
       t.setAttribute('y', cy + (li - (centerLines.length - 1) / 2) * clh);
       t.setAttribute('text-anchor', 'middle');
       t.setAttribute('dominant-baseline', 'middle');
-      t.setAttribute('fill', '#080F1F');
+      t.setAttribute('fill', 'transparent');
       t.setAttribute('font-size', cfs);
       t.setAttribute('font-family', 'Rethink Sans, system-ui, sans-serif');
       t.setAttribute('font-weight', '700');
