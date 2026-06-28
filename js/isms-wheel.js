@@ -122,9 +122,9 @@
     { top: '27%', left: '68%' }, // PDG
     { top: '45%', left: '77%' }, // RCF
     { top: '65%', left: '78%' }, // ISC
-    { top: '83%', left: '64%' }, // IMR
-    { top: '87%', left: '46%' }, // CTA
-    { top: '72%', left: '30%' }, // AVC
+    { top: '76%', left: '64%' }, // IMR
+    { top: '80%', left: '46%' }, // CTA
+    { top: '65%', left: '30%' }, // AVC
     { top: '52%', left: '21%' }, // AUD
     { top: '31%', left: '30%' }, // MMC
   ];
