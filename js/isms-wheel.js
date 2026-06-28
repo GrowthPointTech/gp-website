@@ -2,8 +2,6 @@
   var areas = [
     {
       name: 'Leadership, Scope, & Governance (LSG)',
-      lines: ['Leadership, Scope,', '& Governance', '(LSG)'],
-      textDark: true,
       items: [
         'Establish Security Culture & Direction',
         'Align Security Objectives with Strategic Goals',
@@ -16,8 +14,6 @@
     },
     {
       name: 'Policy & Documentation Governance (PDG)',
-      lines: ['Policy &', 'Documentation', 'Governance', '(PDG)'],
-      textDark: true,
       items: [
         'Cyber Program Documented',
         'Policy Governance Framework',
@@ -27,8 +23,6 @@
     },
     {
       name: 'Risk & Compliance Framework (RCF)',
-      lines: ['Risk & Compliance', 'Framework', '(RCF)'],
-      textDark: true,
       items: [
         'Risk Assessment/Business Impact Analysis',
         'Legal & Regulatory Compliance',
@@ -41,8 +35,6 @@
     },
     {
       name: 'Internal Security Controls (ISC)',
-      lines: ['Internal Security', 'Controls', '(ISC)'],
-      textDark: false,
       items: [
         'Asset Lifecycle Management (Software & Hardware)',
         'Identity Account Management & JML Processes',
@@ -62,8 +54,6 @@
     },
     {
       name: 'Incident Management & Response (IMR)',
-      lines: ['Incident', 'Management &', 'Response', '(IMR)'],
-      textDark: false,
       items: [
         'Incident Response Plan Development',
         'Detection & Alert Procedures',
@@ -76,8 +66,6 @@
     },
     {
       name: 'Communication, Training, & Awareness (CTA)',
-      lines: ['Communication,', 'Training, &', 'Awareness', '(CTA)'],
-      textDark: false,
       items: [
         'Security Awareness Training Program',
         'Role-Based Security Training',
@@ -90,8 +78,6 @@
     },
     {
       name: 'Availability & Continuity (AVC)',
-      lines: ['Availability &', 'Continuity', '(AVC)'],
-      textDark: false,
       items: [
         'Business Continuity Planning',
         'Disaster Recovery Planning',
@@ -104,8 +90,6 @@
     },
     {
       name: 'Audit & Certifications (AUD)',
-      lines: ['Audit &', 'Certifications', '(AUD)'],
-      textDark: true,
       items: [
         'Gap Assessments (SOC 2, ISO 27001, HIPAA, CMMC)',
         'Audit Readiness Reviews',
@@ -118,8 +102,6 @@
     },
     {
       name: 'Monitoring, Measuring, & Continual Improvement (MMC)',
-      lines: ['Monitoring, Measuring,', 'and Continual', 'Improvement', '(MMC)'],
-      textDark: true,
       items: [
         'Security Metrics & KPI Tracking',
         'Continuous Monitoring Program',
@@ -132,61 +114,20 @@
     }
   ];
 
-  // Colors matching live site
-  var colors = [
-    '#8D9BAE',  // LSG
-    '#9DBFDA',  // PDG
-    '#D6A3A8',  // RCF
-    '#C96035',  // ISC
-    '#3B82F6',  // IMR
-    '#2356C8',  // CTA
-    '#1A2744',  // AVC
-    '#C4E83A',  // AUD
-    '#96C83B',  // MMC
+  // Hotspot positions copied from production site (gptechadvisors.com/services/)
+  // Measured via Puppeteer: computed top/left as % of the image container
+  // The container and PNG share the same 1329:1080 aspect ratio, so % values apply directly.
+  var hotspots = [
+    { top: '21%', left: '51%' }, // LSG
+    { top: '27%', left: '68%' }, // PDG
+    { top: '45%', left: '77%' }, // RCF
+    { top: '65%', left: '78%' }, // ISC
+    { top: '83%', left: '64%' }, // IMR
+    { top: '87%', left: '46%' }, // CTA
+    { top: '72%', left: '30%' }, // AVC
+    { top: '52%', left: '21%' }, // AUD
+    { top: '31%', left: '30%' }, // MMC
   ];
-
-  // Proportional angles (degrees) per segment, measured from production PNG, clockwise from 12 o'clock
-  var angles = [35, 30, 45, 60, 45, 45, 30, 30, 40];
-
-  // Precompute cumulative start angles (starting at -90° = 12 o'clock)
-  var startAngles = [];
-  (function () {
-    var cum = -90;
-    for (var k = 0; k < angles.length; k++) {
-      startAngles[k] = cum;
-      cum += angles[k];
-    }
-  })();
-
-  // Per-segment outer radii — varying depth creates the "jutting out" effect matching production
-  var outerRadii = [258, 308, 296, 336, 330, 268, 256, 312, 348];
-
-  // PNG overlay coordinate space: 1329x1080, wheel centered at ~665,540, scale ~1.48 vs 700x700 SVG
-  var PNG_W = 1329, PNG_H = 1080;
-  var cx = 665, cy = 540;
-  var innerR = 195; // 132 * 1.48
-  var pngOuterRadii = outerRadii.map(function(r) { return Math.round(r * 1.48); });
-  var count = areas.length;
-  var gapDeg = 1.5;
-
-  function toRad(deg) { return deg * Math.PI / 180; }
-
-  function segmentPath(i) {
-    var oR = pngOuterRadii[i];
-    var startDeg = startAngles[i] + gapDeg / 2;
-    var endDeg   = startAngles[i] + angles[i] - gapDeg / 2;
-    var s = toRad(startDeg), e = toRad(endDeg);
-    var large = (endDeg - startDeg) > 180 ? 1 : 0;
-    var x1 = cx + innerR * Math.cos(s), y1 = cy + innerR * Math.sin(s);
-    var x2 = cx + oR    * Math.cos(s), y2 = cy + oR    * Math.sin(s);
-    var x3 = cx + oR    * Math.cos(e), y3 = cy + oR    * Math.sin(e);
-    var x4 = cx + innerR * Math.cos(e), y4 = cy + innerR * Math.sin(e);
-    return ['M',x1,y1,'L',x2,y2,'A',oR,oR,0,large,1,x3,y3,'L',x4,y4,'A',innerR,innerR,0,large,0,x1,y1,'Z'].join(' ');
-  }
-
-  function ns(tag) {
-    return document.createElementNS('http://www.w3.org/2000/svg', tag);
-  }
 
   // ── Modal ──────────────────────────────────────────────────────────────────
 
@@ -261,10 +202,6 @@
     modal.overlay.setAttribute('aria-hidden', 'true');
     modal.overlay.classList.remove('isms-modal-overlay--open');
     document.body.classList.remove('isms-modal-open');
-    // Reset all segment highlights
-    document.querySelectorAll('#isms-wheel svg path').forEach(function(p) {
-      p.style.fillOpacity = '0';
-    });
   }
 
   // ── Wheel ──────────────────────────────────────────────────────────────────
@@ -273,68 +210,17 @@
     var wheelEl = document.getElementById('isms-wheel');
     if (!wheelEl) return;
 
-    // Overlay SVG matches the PNG coordinate space (1329x1080) so it scales with the image
-    var svg = ns('svg');
-    svg.setAttribute('viewBox', '0 0 ' + PNG_W + ' ' + PNG_H);
-    svg.setAttribute('width', '100%');
-    svg.setAttribute('height', '100%');
-    svg.setAttribute('aria-label', 'Interactive ISMS management wheel');
-    svg.setAttribute('role', 'img');
-    svg.style.cursor = 'default';
-    var segments = [];
-
-    function activate(i) {
-      segments.forEach(function (p, j) {
-        p.style.fillOpacity = j === i ? '0.25' : '0';
-      });
-      openModal(areas[i]);
-    }
-
     areas.forEach(function (area, i) {
-      var path = ns('path');
-      path.setAttribute('d', segmentPath(i));
-      // Transparent fill but responds to pointer events; highlight on click
-      path.setAttribute('fill', colors[i]);
-      path.style.fillOpacity = '0';
-      path.style.transition = 'fill-opacity 0.2s ease';
-      path.setAttribute('tabindex', '0');
-      path.setAttribute('role', 'button');
-      path.setAttribute('aria-label', area.name);
-      path.style.cursor = 'pointer';
-      path.addEventListener('click', function () { activate(i); });
-      path.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(i); }
+      var btn = document.createElement('button');
+      btn.className = 'isms-hotspot';
+      btn.setAttribute('aria-label', area.name);
+      btn.style.top = hotspots[i].top;
+      btn.style.left = hotspots[i].left;
+      btn.addEventListener('click', function () { openModal(area); });
+      btn.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(area); }
       });
-      svg.appendChild(path);
-      segments.push(path);
+      wheelEl.appendChild(btn);
     });
-
-    // Invisible center circle to block clicks on the white center area
-    var circ = ns('circle');
-    circ.setAttribute('cx', cx); circ.setAttribute('cy', cy);
-    circ.setAttribute('r', innerR);
-    circ.setAttribute('fill', 'transparent');
-    circ.style.cursor = 'default';
-    svg.appendChild(circ);
-
-    // Placeholder to satisfy original code reference (no-op)
-    var centerLines = ['ISMS Program', 'Framework'];
-    var cfs = 20, clh = 28;
-    centerLines.forEach(function (line, li) {
-      var t = ns('text');
-      t.setAttribute('x', cx);
-      t.setAttribute('y', cy + (li - (centerLines.length - 1) / 2) * clh);
-      t.setAttribute('text-anchor', 'middle');
-      t.setAttribute('dominant-baseline', 'middle');
-      t.setAttribute('fill', 'transparent');
-      t.setAttribute('font-size', cfs);
-      t.setAttribute('font-family', 'Rethink Sans, system-ui, sans-serif');
-      t.setAttribute('font-weight', '700');
-      t.setAttribute('pointer-events', 'none');
-      t.textContent = line;
-      svg.appendChild(t);
-    });
-
-    wheelEl.appendChild(svg);
   });
 })();
