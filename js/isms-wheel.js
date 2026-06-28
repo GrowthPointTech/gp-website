@@ -158,24 +158,27 @@
     }
   })();
 
+  // Per-segment outer radii — varying depth creates the "jutting out" effect matching production
+  var outerRadii = [258, 308, 296, 336, 330, 268, 256, 312, 348];
+
   var cx = 350, cy = 350;
   var innerR = 132;
-  var outerR = 300; // uniform ring depth matching production PNG
   var count = areas.length;
   var gapDeg = 1.5;
 
   function toRad(deg) { return deg * Math.PI / 180; }
 
   function segmentPath(i) {
+    var oR = outerRadii[i];
     var startDeg = startAngles[i] + gapDeg / 2;
     var endDeg   = startAngles[i] + angles[i] - gapDeg / 2;
     var s = toRad(startDeg), e = toRad(endDeg);
     var large = (endDeg - startDeg) > 180 ? 1 : 0;
     var x1 = cx + innerR * Math.cos(s), y1 = cy + innerR * Math.sin(s);
-    var x2 = cx + outerR * Math.cos(s), y2 = cy + outerR * Math.sin(s);
-    var x3 = cx + outerR * Math.cos(e), y3 = cy + outerR * Math.sin(e);
+    var x2 = cx + oR    * Math.cos(s), y2 = cy + oR    * Math.sin(s);
+    var x3 = cx + oR    * Math.cos(e), y3 = cy + oR    * Math.sin(e);
     var x4 = cx + innerR * Math.cos(e), y4 = cy + innerR * Math.sin(e);
-    return ['M',x1,y1,'L',x2,y2,'A',outerR,outerR,0,large,1,x3,y3,'L',x4,y4,'A',innerR,innerR,0,large,0,x1,y1,'Z'].join(' ');
+    return ['M',x1,y1,'L',x2,y2,'A',oR,oR,0,large,1,x3,y3,'L',x4,y4,'A',innerR,innerR,0,large,0,x1,y1,'Z'].join(' ');
   }
 
   function ns(tag) {
@@ -294,7 +297,7 @@
 
       // Text label
       var midDeg = startAngles[i] + angles[i] / 2;
-      var textR = innerR + (outerR - innerR) * 0.52;
+      var textR = innerR + (outerRadii[i] - innerR) * 0.52;
       var tx = cx + textR * Math.cos(toRad(midDeg));
       var ty = cy + textR * Math.sin(toRad(midDeg));
       var rot = midDeg + 90;
