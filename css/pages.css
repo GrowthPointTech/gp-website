@@ -1274,6 +1274,13 @@
   max-width: 600px;
 }
 
+.isms-wheel-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  display: block;
+}
+
 .isms-detail--light {
   background: var(--gp-light-gray);
   border: 1px solid rgba(0, 0, 0, 0.08);
