@@ -137,7 +137,7 @@
 
   // Outer radii measured via pixel scan at each segment's midpoint angle
   // Slight overreach (+15) ensures no gaps at segment edges
-  var segOuterRadii = [423, 538, 459, 580, 491, 459, 538, 582, 492];
+  var segOuterRadii = [423, 465, 459, 580, 491, 459, 538, 582, 492];
 
   function toRad(deg) { return deg * Math.PI / 180; }
 
@@ -234,7 +234,7 @@
     modal.overlay.setAttribute('aria-hidden', 'true');
     modal.overlay.classList.remove('isms-modal-overlay--open');
     document.body.classList.remove('isms-modal-open');
-    segments.forEach(function (p) { p.style.fillOpacity = '0.25'; });
+    segments.forEach(function (p) { p.style.fillOpacity = '0'; });
   }
 
   // ── Wheel ──────────────────────────────────────────────────────────────────
@@ -255,7 +255,7 @@
 
     function activate(i) {
       segments.forEach(function (p, j) {
-        p.style.fillOpacity = j === i ? '0.4' : '0.25';
+        p.style.fillOpacity = j === i ? '0.25' : '0';
       });
       openModal(areas[i]);
     }
@@ -264,7 +264,7 @@
       var path = ns('path');
       path.setAttribute('d', segmentPath(i));
       path.setAttribute('fill', colors[i]);
-      path.style.fillOpacity = '0.25';  // DEBUG: visible — change to '0' for production
+      path.style.fillOpacity = '0';
       path.style.transition = 'fill-opacity 0.2s ease';
       path.setAttribute('tabindex', '0');
       path.setAttribute('role', 'button');

@@ -1298,6 +1298,9 @@
 }
 
 /* SVG overlay sits on top of the PNG — see isms-wheel.js for geometry */
+#isms-wheel svg path:focus {
+  outline: none;
+}
 
 .isms-detail--light {
   background: var(--gp-light-gray);
