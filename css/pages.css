@@ -1297,17 +1297,7 @@
   object-fit: contain;
 }
 
-/* Hotspot click targets positioned over wheel segments (matches production) */
-.isms-hotspot {
-  position: absolute;
-  width: 11.5%;
-  height: 9.5%;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  transform: translate(-50%, -50%);
-  padding: 0;
-}
+/* SVG overlay sits on top of the PNG — see isms-wheel.js for geometry */
 
 .isms-detail--light {
   background: var(--gp-light-gray);

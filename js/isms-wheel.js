@@ -114,20 +114,52 @@
     }
   ];
 
-  // Hotspot positions copied from production site (gptechadvisors.com/services/)
-  // Measured via Puppeteer: computed top/left as % of the image container
-  // The container and PNG share the same 1329:1080 aspect ratio, so % values apply directly.
-  var hotspots = [
-    { top: '21%', left: '51%' }, // LSG
-    { top: '27%', left: '68%' }, // PDG
-    { top: '45%', left: '77%' }, // RCF
-    { top: '65%', left: '78%' }, // ISC
-    { top: '76%', left: '64%' }, // IMR
-    { top: '80%', left: '46%' }, // CTA
-    { top: '65%', left: '30%' }, // AVC
-    { top: '52%', left: '21%' }, // AUD
-    { top: '31%', left: '30%' }, // MMC
+  var colors = [
+    '#8D9BAE',  // LSG
+    '#9DBFDA',  // PDG
+    '#D6A3A8',  // RCF
+    '#C96035',  // ISC
+    '#3B82F6',  // IMR
+    '#2356C8',  // CTA
+    '#1A2744',  // AVC
+    '#C4E83A',  // AUD
+    '#96C83B',  // MMC
   ];
+
+  // Wheel geometry — measured from production PNG (1329×1080) via pixel scan + Puppeteer
+  var PNG_W = 1329, PNG_H = 1080;
+  var cx = 694, cy = 565;   // center of white inner circle
+  var innerR = 182;          // inner radius of colored ring
+
+  // Segment start angles (degrees, 0=right/3-o'clock, clockwise positive)
+  // Boundaries computed as midpoints between adjacent production hotspot angles
+  var segStartAngles = [-109.5, -58, -21, 10, 41.5, 75, 110.5, 151, 195.5];
+
+  // Outer radii measured via pixel scan at each segment's midpoint angle
+  // Slight overreach (+15) ensures no gaps at segment edges
+  var segOuterRadii = [423, 538, 459, 580, 491, 459, 538, 582, 492];
+
+  function toRad(deg) { return deg * Math.PI / 180; }
+
+  function segmentPath(i) {
+    var startDeg = segStartAngles[i];
+    var endDeg   = (i < segStartAngles.length - 1)
+      ? segStartAngles[i + 1]
+      : segStartAngles[0] + 360;
+    var oR   = segOuterRadii[i];
+    var s    = toRad(startDeg);
+    var e    = toRad(endDeg);
+    var large = (endDeg - startDeg) > 180 ? 1 : 0;
+
+    var x1 = cx + innerR * Math.cos(s), y1 = cy + innerR * Math.sin(s);
+    var x2 = cx + oR     * Math.cos(s), y2 = cy + oR     * Math.sin(s);
+    var x3 = cx + oR     * Math.cos(e), y3 = cy + oR     * Math.sin(e);
+    var x4 = cx + innerR * Math.cos(e), y4 = cy + innerR * Math.sin(e);
+
+    return ['M',x1,y1,'L',x2,y2,'A',oR,oR,0,large,1,x3,y3,'L',x4,y4,'A',innerR,innerR,0,large,0,x1,y1,'Z'].join(' ');
+  }
+
+  function ns(tag) { return document.createElementNS('http://www.w3.org/2000/svg', tag); }
 
   // ── Modal ──────────────────────────────────────────────────────────────────
 
@@ -202,6 +234,7 @@
     modal.overlay.setAttribute('aria-hidden', 'true');
     modal.overlay.classList.remove('isms-modal-overlay--open');
     document.body.classList.remove('isms-modal-open');
+    segments.forEach(function (p) { p.style.fillOpacity = '0.25'; });
   }
 
   // ── Wheel ──────────────────────────────────────────────────────────────────
@@ -210,17 +243,50 @@
     var wheelEl = document.getElementById('isms-wheel');
     if (!wheelEl) return;
 
-    areas.forEach(function (area, i) {
-      var btn = document.createElement('button');
-      btn.className = 'isms-hotspot';
-      btn.setAttribute('aria-label', area.name);
-      btn.style.top = hotspots[i].top;
-      btn.style.left = hotspots[i].left;
-      btn.addEventListener('click', function () { openModal(area); });
-      btn.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(area); }
+    var svg = ns('svg');
+    svg.setAttribute('viewBox', '0 0 ' + PNG_W + ' ' + PNG_H);
+    svg.setAttribute('width', '100%');
+    svg.setAttribute('height', '100%');
+    svg.setAttribute('aria-label', 'Interactive ISMS management wheel');
+    svg.setAttribute('role', 'img');
+    svg.style.cursor = 'default';
+
+    var segments = [];
+
+    function activate(i) {
+      segments.forEach(function (p, j) {
+        p.style.fillOpacity = j === i ? '0.4' : '0.25';
       });
-      wheelEl.appendChild(btn);
+      openModal(areas[i]);
+    }
+
+    areas.forEach(function (area, i) {
+      var path = ns('path');
+      path.setAttribute('d', segmentPath(i));
+      path.setAttribute('fill', colors[i]);
+      path.style.fillOpacity = '0.25';  // DEBUG: visible — change to '0' for production
+      path.style.transition = 'fill-opacity 0.2s ease';
+      path.setAttribute('tabindex', '0');
+      path.setAttribute('role', 'button');
+      path.setAttribute('aria-label', area.name);
+      path.style.cursor = 'pointer';
+      path.addEventListener('click', function () { activate(i); });
+      path.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); activate(i); }
+      });
+      svg.appendChild(path);
+      segments.push(path);
     });
+
+    // Block clicks on the white center circle
+    var circ = ns('circle');
+    circ.setAttribute('cx', cx);
+    circ.setAttribute('cy', cy);
+    circ.setAttribute('r', innerR);
+    circ.setAttribute('fill', 'transparent');
+    circ.style.cursor = 'default';
+    svg.appendChild(circ);
+
+    wheelEl.appendChild(svg);
   });
 })();
