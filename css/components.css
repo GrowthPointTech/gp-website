@@ -573,8 +573,8 @@
 .hero--services p:not(.hero__eyebrow) {
   color: var(--gp-white);
   max-width: none;
-  font-size: 18px;
-  line-height: 26px;
+  font-size: 21px;
+  line-height: 28px;
   text-align: center;
   margin-bottom: 0;
 }
