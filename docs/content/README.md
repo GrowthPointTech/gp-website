@@ -1,0 +1,1 @@
+This folder is established for a working folder for website content development.

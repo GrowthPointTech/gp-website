@@ -45,9 +45,12 @@ See `tools/extract-styles.js` and `tools/compare-styles.js` for implementation.
 ```
 gp-website/
 ├── index.html                 # Home page
-├── services.html              # Services page
 ├── about.html                 # About page
-├── contact.html               # Contact page
+├── privacy.html               # Privacy policy
+├── services/
+│   ├── cto.html               # Fractional CTO & Agentic AI
+│   ├── ciso.html              # Fractional CISO & Cybersecurity
+│   └── chro.html              # Fractional CHRO & People Leadership
 ├── blog/
 │   ├── index.html             # Blog listing
 │   └── posts/                 # Individual blog post pages
@@ -58,7 +61,9 @@ gp-website/
 │   └── pages.css              # Page-specific overrides
 ├── js/
 │   ├── nav.js                 # Mobile menu toggle
-│   └── contact.js             # Contact page interactions
+│   ├── blog.js                # Blog listing & filtering
+│   ├── blog-data.js           # Blog post data array
+│   └── animations.js          # Scroll animations
 ├── assets/
 │   ├── images/                # Optimized site images
 │   ├── logos/                 # SVG logos from brand package
@@ -148,19 +153,21 @@ Custom domain DNS (Route 53 — active):
 
 | Page | File | Status |
 |------|------|--------|
-| Home | `index.html` | Pending |
-| Services | `services.html` | Pending |
-| About | `about.html` | Pending |
-| Contact | `contact.html` | Pending |
-| Blog Listing | `blog/index.html` | Pending |
-| Blog Posts | `blog/posts/*.html` | Pending |
+| Home | `index.html` | In progress |
+| CTO Services | `services/cto.html` | Live |
+| CISO Services | `services/ciso.html` | Live |
+| CHRO Services | `services/chro.html` | Live |
+| About | `about.html` | Live |
+| Blog Listing | `blog/index.html` | Live |
+| Blog Posts | `blog/posts/*.html` | Live (8 posts) |
+| Privacy Policy | `privacy.html` | Live |
 
 ## Intern Assignment
 
 | Intern | Primary Focus |
 |--------|--------------|
-| **Maddox Strader** | Home page, Services page, ISMS wheel, AWS setup |
-| **Joshua Williams** | About page, Blog system, Contact page, Claude skills |
+| **Maddox Strader** | Home page, CTO/CISO service pages, ISMS wheel, AWS setup |
+| **Joshua Williams** | About page, Blog system, CHRO service page, Claude skills |
 
 Both collaborate on shared components (nav, footer, CSS variables) and review each other's PRs.
 

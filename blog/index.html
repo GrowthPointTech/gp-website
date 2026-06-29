@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — GrowthPoint Technology Advisors</title>
-  <meta name="description" content="Insights on cybersecurity, GRC, HIPAA compliance, and AI risk management from GrowthPoint Technology Advisors.">
+  <meta name="description" content="Insights on technology strategy, agentic AI, cybersecurity, compliance, people leadership, and HR from GrowthPoint Technology Advisors.">
   <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg">
   <link rel="stylesheet" href="../css/variables.css">
   <link rel="stylesheet" href="../css/base.css">
@@ -13,48 +13,99 @@
 </head>
 <body>
 
-  <nav class="nav">
+  <nav class="nav nav--transparent">
     <a href="/" class="nav__logo">
-      <img src="../assets/logos/GP-Logo-horiz.svg" alt="GrowthPoint Technology Advisors">
+      <img src="../assets/logos/GP-Logo-horiz-KO.svg" alt="GrowthPoint Technology Advisors">
     </a>
-    <button class="nav__toggle" aria-label="Toggle navigation">&#9776;</button>
+    <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <ul class="nav__links">
-      <li><a href="../services.html">Services</a></li>
+      <li class="nav__dropdown">
+        <a href="../services/ciso.html" class="nav__dropdown-toggle">Services</a>
+        <ul class="nav__dropdown-menu">
+          <li><a href="../services/cto.html">CTO Services</a></li>
+          <li><a href="../services/chro.html">CHRO Services</a></li>
+          <li><a href="../services/ciso.html">CISO Services</a></li>
+        </ul>
+      </li>
       <li><a href="../blog/">Blog</a></li>
       <li><a href="../about.html">About</a></li>
     </ul>
   </nav>
 
   <main>
-    <section class="container">
-      <div class="eyebrow">Blog</div>
-      <h1>Insights &amp; Resources</h1>
-      <!-- TODO: Blog card grid (8 articles) -->
-      <!-- TODO: Category tags (CISO, HIPAA, Gen AI) -->
-      <div class="card-grid">
-        <!-- Cards will be added here -->
+
+    <!-- Hero -->
+    <section class="blog-hero">
+      <p class="blog-hero__eyebrow blog-fade blog-fade--d1">STRUCTURE, STRENGTHEN, STREAMLINE,&nbsp;SCALE</p>
+      <h1 class="blog-fade blog-fade--d2">GrowthPoint Blog</h1>
+      <p class="blog-hero__desc blog-fade blog-fade--d3">Insights and guidance across technology strategy and agentic AI, cybersecurity and compliance, and people leadership and HR — from the GrowthPoint team.</p>
+    </section>
+
+    <!-- Cards -->
+    <section class="blog-listing">
+      <div class="container">
+        <div class="blog-filter__dropdown-row blog-fade blog-fade--d1">
+          <label class="blog-filter__label" for="taxonomy-dropdown">Filter by</label>
+          <div class="blog-filter__select-wrap">
+            <select class="blog-filter__select" id="taxonomy-dropdown">
+              <option value="all">All Categories</option>
+              <option value="Article">Article</option>
+              <option value="Blog Post">Blog Post</option>
+              <option value="CTO">CTO</option>
+              <option value="Agentic AI">Agentic AI</option>
+              <option value="CISO">CISO</option>
+              <option value="Gen AI">Gen AI</option>
+              <option value="HIPAA">HIPAA</option>
+              <option value="CHRO">CHRO</option>
+              <option value="HR">HR</option>
+              <option value="Leadership">Leadership</option>
+            </select>
+          </div>
+        </div>
+        <div class="card-grid" id="blog-card-grid"></div>
       </div>
     </section>
+
   </main>
 
   <footer class="footer">
     <div class="container">
-      <div class="footer__logo">
-        <img src="../assets/logos/GP-Logo-horiz-KO.svg" alt="GrowthPoint Technology Advisors">
+      <div class="footer__main">
+        <div class="footer__left">
+          <div class="footer__logo">
+            <a href="../index.html"><img src="../assets/logos/GP-Logo-horiz-KO.svg" alt="GrowthPoint Technology Advisors"></a>
+          </div>
+          <div class="footer__social">
+            <a href="https://www.linkedin.com/company/growthpoint-tech-advisors" class="footer__social-icon" target="_blank" rel="noopener noreferrer" aria-label="GrowthPoint on LinkedIn">
+              <svg aria-hidden="true" viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/svg"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"/></svg> Connect with us on LinkedIn
+            </a>
+          </div>
+        </div>
+        <nav class="footer__nav" aria-label="Footer navigation">
+          <ul class="footer__links">
+            <li class="footer__dropdown">
+            <a href="../services/ciso.html">Services</a>
+            <ul class="footer__sublinks">
+              <li><a href="../services/cto.html">CTO Services</a></li>
+              <li><a href="../services/chro.html">CHRO Services</a></li>
+              <li><a href="../services/ciso.html">CISO Services</a></li>
+            </ul>
+          </li>
+            <li><a href="../blog/">Blog</a></li>
+            <li><a href="../about.html">About</a></li>
+          </ul>
+        </nav>
       </div>
-      <ul class="footer__links">
-        <li><a href="../services.html">Services</a></li>
-        <li><a href="../blog/">Blog</a></li>
-        <li><a href="../about.html">About</a></li>
-        <li><a href="../contact.html">Contact</a></li>
-      </ul>
       <div class="footer__bottom">
-        <span>&copy; 2026 GrowthPoint Technology Advisors, LLC. All rights reserved.</span>
-        <a href="#">Privacy Policy</a>
+        <span>Copyright ©2026 GrowthPoint. All rights reserved.</span>
+        <a href="../privacy.html">Privacy Policy</a>
       </div>
     </div>
   </footer>
 
+  <script src="../js/blog-data.js"></script>
+  <script src="../js/blog.js"></script>
+  <script src="../js/blog-animations.js"></script>
   <script src="../js/nav.js"></script>
 </body>
 </html>

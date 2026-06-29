@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Git Workflow Guide — GrowthPoint Website</title>
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg">
+  <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Rethink+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gp-rich-black: #080F1F;
+      --gp-bright-blue: #0C50D5;
+      --gp-med-blue: #3F8CFF;
+      --gp-white: #FFFFFF;
+      --gp-gray: #8D99AE;
+      --gp-light-gray: #EDF2F4;
+      --gp-lime: #A4E322;
+      --gp-orange: #F6621C;
+      --font-heading: 'Rethink Sans', system-ui, sans-serif;
+      --font-body: 'Onest', system-ui, sans-serif;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--gp-rich-black);
+      background: var(--gp-white);
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    h1, h2, h3 {
+      font-family: var(--font-heading);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 8px;
+      color: var(--gp-bright-blue);
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: var(--gp-gray);
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 28px;
+      margin-top: 48px;
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--gp-light-gray);
+    }
+
+    h3 {
+      font-size: 20px;
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+
+    p { margin-bottom: 16px; }
+
+    a {
+      color: var(--gp-bright-blue);
+      text-decoration: none;
+    }
+    a:hover { text-decoration: underline; }
+
+    code {
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 14px;
+      background: var(--gp-light-gray);
+      padding: 2px 6px;
+      border-radius: 4px;
+    }
+
+    pre {
+      background: var(--gp-rich-black);
+      color: #E0E0E0;
+      padding: 20px 24px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 16px 0 24px;
+      line-height: 1.5;
+    }
+
+    pre code {
+      background: none;
+      padding: 0;
+      color: inherit;
+      font-size: 14px;
+    }
+
+    .comment { color: #6A9955; }
+    .cmd { color: #DCDCAA; }
+    .branch { color: #CE9178; }
+    .flag { color: #9CDCFE; }
+    .output { color: #6A9955; font-style: italic; }
+
+    .diagram-container {
+      margin: 32px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    .diagram-container img {
+      width: 100%;
+      display: block;
+    }
+
+    .callout {
+      border-left: 4px solid var(--gp-bright-blue);
+      background: #F0F5FF;
+      padding: 16px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 20px 0;
+    }
+
+    .callout--warning {
+      border-left-color: var(--gp-orange);
+      background: #FFF5F0;
+    }
+
+    .callout--success {
+      border-left-color: var(--gp-lime);
+      background: #F5FDE8;
+    }
+
+    .callout strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    ol, ul {
+      margin: 12px 0 20px 24px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--gp-light-gray);
+    }
+
+    th {
+      font-weight: 600;
+      background: var(--gp-light-gray);
+    }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: var(--gp-bright-blue);
+      color: var(--gp-white);
+      border-radius: 50%;
+      font-size: 14px;
+      font-weight: 700;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }
+
+    .toc {
+      background: var(--gp-light-gray);
+      padding: 24px 32px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+
+    .toc h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .toc ol {
+      margin: 0 0 0 20px;
+    }
+
+    .toc li {
+      margin-bottom: 4px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--gp-light-gray);
+      margin: 40px 0;
+    }
+
+    .claude-alt {
+      background: linear-gradient(135deg, #FDF0E6 0%, #FFF7F0 100%);
+      border: 1px solid #F6C89F;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 12px 0 28px;
+    }
+
+    .claude-alt__header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--gp-orange);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .claude-alt__header svg {
+      flex-shrink: 0;
+    }
+
+    .claude-alt__prompt {
+      background: var(--gp-white);
+      border: 1px solid #E8D5C4;
+      border-radius: 6px;
+      padding: 12px 16px;
+      font-family: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--gp-rich-black);
+      white-space: pre-wrap;
+    }
+
+    .claude-alt__note {
+      font-size: 13px;
+      color: var(--gp-gray);
+      margin-top: 8px;
+      margin-bottom: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Git Workflow Guide</h1>
+  <p class="subtitle">For the GrowthPoint Website team &mdash; Maddox, Josh, and Stacey</p>
+
+  <nav class="toc">
+    <h3>Contents</h3>
+    <ol>
+      <li><a href="#branching">Our Branching Strategy</a></li>
+      <li><a href="#setup">Initial Setup</a></li>
+      <li><a href="#daily">Daily Workflow</a></li>
+      <li><a href="#refresh">Refreshing from Remote</a></li>
+      <li><a href="#feature">Working on a Feature Branch</a></li>
+      <li><a href="#pull-requests">Creating a Pull Request</a></li>
+      <li><a href="#code-review">Code Review &amp; Merging</a></li>
+      <li><a href="#conflicts">Handling Merge Conflicts</a></li>
+      <li><a href="#rules">Golden Rules</a></li>
+      <li><a href="#commands">Quick Reference</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============================================================ -->
+  <h2 id="branching">1. Our Branching Strategy</h2>
+
+  <p>We use a three-tier branching model. All work flows in one direction: from feature branches, through staging, to production.</p>
+
+  <div class="diagram-container">
+    <img src="../assets/images/git-branching-diagram.svg" alt="GrowthPoint branching strategy diagram showing main, preview, and feature branches">
+  </div>
+
+  <h3>The Three Branch Types</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Branch</th>
+        <th>Purpose</th>
+        <th>Deploys To</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>main</code></td>
+        <td>Production-ready code. Only updated via PR from <code>preview</code>.</td>
+        <td><a href="https://gptechadvisors.com">gptechadvisors.com</a></td>
+      </tr>
+      <tr>
+        <td><code>preview</code></td>
+        <td>Staging/integration branch. All feature work merges here first.</td>
+        <td><a href="https://preview.gptechadvisors.com">preview.gptechadvisors.com</a></td>
+      </tr>
+      <tr>
+        <td><code>feature/*</code></td>
+        <td>Your working branch for a specific task. Created from <code>preview</code>.</td>
+        <td>Local only (until PR is merged)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <strong>The flow:</strong>
+    <code>feature/*</code> &rarr; PR to <code>preview</code> &rarr; verify on staging site &rarr; PR to <code>main</code> &rarr; live on production
+  </div>
+
+  <div class="callout callout--warning">
+    <strong>Never push directly to <code>main</code> or <code>preview</code>.</strong>
+    All changes go through pull requests. This protects the live site and gives the team a chance to review.
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="setup">2. Initial Setup</h2>
+
+  <p>If you haven't cloned the repo yet:</p>
+
+  <pre><code><span class="comment"># Clone the repository</span>
+<span class="cmd">git clone</span> https://github.com/GrowthPointTech/gp-website.git
+
+<span class="comment"># Move into the project directory</span>
+<span class="cmd">cd</span> gp-website
+
+<span class="comment"># Switch to the preview branch (our main working branch)</span>
+<span class="cmd">git checkout</span> <span class="branch">preview</span>
+
+<span class="comment"># Install dependencies (Puppeteer for style comparison tools)</span>
+<span class="cmd">npm install</span></code></pre>
+
+  <div class="claude-alt">
+    <div class="claude-alt__header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#F6621C"/><path d="M5.5 6.5L8 9L10.5 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ask Claude instead
+    </div>
+    <div class="claude-alt__prompt">Clone the gp-website repo from GrowthPointTech, switch to the preview branch, and install dependencies.</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="daily">3. Daily Workflow</h2>
+
+  <p>Every time you sit down to work, start with a fresh pull:</p>
+
+  <pre><code><span class="comment"># Make sure you're on preview</span>
+<span class="cmd">git checkout</span> <span class="branch">preview</span>
+
+<span class="comment"># Pull the latest changes from the remote</span>
+<span class="cmd">git pull</span> <span class="flag">origin</span> <span class="branch">preview</span>
+
+<span class="comment"># Now create your feature branch (or switch to an existing one)</span>
+<span class="cmd">git checkout</span> <span class="flag">-b</span> <span class="branch">feature/your-feature-name</span></code></pre>
+
+  <div class="claude-alt">
+    <div class="claude-alt__header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#F6621C"/><path d="M5.5 6.5L8 9L10.5 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ask Claude instead
+    </div>
+    <div class="claude-alt__prompt">Pull the latest preview branch and create a new feature branch called feature/your-feature-name</div>
+  </div>
+
+  <div class="callout callout--success">
+    <strong>Branch naming convention:</strong>
+    Use <code>feature/</code> followed by a short, descriptive name with hyphens. If there's a Jira ticket, prefix it.<br>
+    Examples: <code>feature/fix-services-hero</code>, <code>feature/blog-system</code>, <code>feature/JIRA-42-contact-form</code>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="refresh">4. Refreshing from Remote</h2>
+
+  <p>If your branch has fallen behind <code>preview</code> (for example, someone else's PR got merged while you were working), you need to pull in those changes.</p>
+
+  <h3>Option A: Merge preview into your branch (preferred)</h3>
+
+  <pre><code><span class="comment"># From your feature branch:</span>
+<span class="cmd">git fetch</span> <span class="flag">origin</span>
+<span class="cmd">git merge</span> <span class="flag">origin/preview</span>
+
+<span class="comment"># If there are conflicts, Git will tell you which files.</span>
+<span class="comment"># Fix them, then:</span>
+<span class="cmd">git add</span> .
+<span class="cmd">git commit</span></code></pre>
+
+  <div class="claude-alt">
+    <div class="claude-alt__header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#F6621C"/><path d="M5.5 6.5L8 9L10.5 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ask Claude instead
+    </div>
+    <div class="claude-alt__prompt">My feature branch is behind preview. Merge the latest preview into my current branch and resolve any conflicts.</div>
+  </div>
+
+  <h3>Option B: Rebase onto preview (cleaner history)</h3>
+
+  <pre><code><span class="comment"># From your feature branch:</span>
+<span class="cmd">git fetch</span> <span class="flag">origin</span>
+<span class="cmd">git rebase</span> <span class="flag">origin/preview</span>
+
+<span class="comment"># If there are conflicts, fix them, then:</span>
+<span class="cmd">git add</span> .
+<span class="cmd">git rebase</span> <span class="flag">--continue</span></code></pre>
+
+  <div class="claude-alt">
+    <div class="claude-alt__header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#F6621C"/><path d="M5.5 6.5L8 9L10.5 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ask Claude instead
+    </div>
+    <div class="claude-alt__prompt">Rebase my current feature branch onto the latest preview branch.</div>
+  </div>
+
+  <div class="callout">
+    <strong>When to refresh:</strong>
+    <ul style="margin-bottom:0">
+      <li>Before starting new work each day</li>
+      <li>Before creating a pull request</li>
+      <li>When GitHub tells you your PR has merge conflicts</li>
+    </ul>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="feature">5. Working on a Feature Branch</h2>
+
+  <p>Here's the full lifecycle of a feature branch:</p>
+
+  <p><span class="step-number">1</span> <strong>Create the branch</strong> from an up-to-date <code>preview</code>:</p>
+  <pre><code><span class="cmd">git checkout</span> <span class="branch">preview</span>
+<span class="cmd">git pull</span> <span class="flag">origin</span> <span class="branch">preview</span>
+<span class="cmd">git checkout</span> <span class="flag">-b</span> <span class="branch">feature/my-new-feature</span></code></pre>
+
+  <div class="claude-alt">
+    <div class="claude-alt__header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#F6621C"/><path d="M5.5 6.5L8 9L10.5 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ask Claude instead
+    </div>
+    <div class="claude-alt__prompt">Refresh preview from remote and create a new branch called feature/my-new-feature</div>
+  </div>
+
+  <p><span class="step-number">2</span> <strong>Make your changes.</strong> Commit often with clear messages:</p>
+  <pre><code><span class="comment"># Stage specific files (preferred over "git add .")</span>
+<span class="cmd">git add</span> css/pages.css services.html
+
+<span class="comment"># Commit with a descriptive message</span>
+<span class="cmd">git commit</span> <span class="flag">-m</span> <span class="branch">"fix: match services hero padding to live site"</span></code></pre>
+
+  <div class="claude-alt">
+    <div class="claude-alt__header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#F6621C"/><path d="M5.5 6.5L8 9L10.5 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ask Claude instead
+    </div>
+    <div class="claude-alt__prompt">Commit my changes to css/pages.css and services.html with the message "fix: match services hero padding to live site"</div>
+    <p class="claude-alt__note">Or simply: <strong>/commit</strong> &mdash; Claude will look at your changes and write an appropriate commit message.</p>
+  </div>
+
+  <p><span class="step-number">3</span> <strong>Push your branch</strong> to GitHub:</p>
+  <pre><code><span class="comment"># First push (sets up tracking)</span>
+<span class="cmd">git push</span> <span class="flag">-u origin</span> <span class="branch">feature/my-new-feature</span>
+
+<span class="comment"># Subsequent pushes</span>
+<span class="cmd">git push</span></code></pre>
+
+  <div class="claude-alt">
+    <div class="claude-alt__header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#F6621C"/><path d="M5.5 6.5L8 9L10.5 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ask Claude instead
+    </div>
+    <div class="claude-alt__prompt">Push my current branch to GitHub</div>
+  </div>
+
+  <p><span class="step-number">4</span> <strong>Create a Pull Request</strong> on GitHub (see next section).</p>
+
+  <p><span class="step-number">5</span> <strong>After the PR is merged,</strong> clean up:</p>
+  <pre><code><span class="cmd">git checkout</span> <span class="branch">preview</span>
+<span class="cmd">git pull</span> <span class="flag">origin</span> <span class="branch">preview</span>
+<span class="cmd">git branch</span> <span class="flag">-d</span> <span class="branch">feature/my-new-feature</span></code></pre>
+
+  <div class="claude-alt">
+    <div class="claude-alt__header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#F6621C"/><path d="M5.5 6.5L8 9L10.5 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ask Claude instead
+    </div>
+    <div class="claude-alt__prompt">Switch back to preview, pull the latest, and delete my old feature/my-new-feature branch</div>
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="pull-requests">6. Creating a Pull Request</h2>
+
+  <p>A Pull Request (PR) is how you propose merging your feature branch into <code>preview</code>. It gives the team a chance to review your changes before they go live on staging.</p>
+
+  <h3>Using the GitHub CLI (fastest)</h3>
+
+  <pre><code><span class="comment"># Make sure all your changes are committed and pushed</span>
+<span class="cmd">git push</span> <span class="flag">-u origin</span> <span class="branch">feature/my-new-feature</span>
+
+<span class="comment"># Create the PR targeting preview</span>
+<span class="cmd">gh pr create</span> <span class="flag">--base</span> <span class="branch">preview</span> \
+  <span class="flag">--title</span> <span class="branch">"feat: add blog filtering system"</span> \
+  <span class="flag">--body</span> <span class="branch">"Adds category filtering to the blog page with animated transitions."</span></code></pre>
+
+  <div class="claude-alt">
+    <div class="claude-alt__header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#F6621C"/><path d="M5.5 6.5L8 9L10.5 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ask Claude instead
+    </div>
+    <div class="claude-alt__prompt">Push my branch and create a pull request to merge into preview</div>
+    <p class="claude-alt__note">Claude will examine your commits, write a PR title and description, and create it for you.</p>
+  </div>
+
+  <h3>Using the GitHub Website</h3>
+
+  <ol>
+    <li>Go to <a href="https://github.com/GrowthPointTech/gp-website">github.com/GrowthPointTech/gp-website</a></li>
+    <li>Click <strong>"Compare &amp; pull request"</strong> (GitHub usually shows a banner after you push)</li>
+    <li>Set the <strong>base branch</strong> to <code>preview</code> (not <code>main</code>!)</li>
+    <li>Write a clear title and description of what you changed</li>
+    <li>Click <strong>"Create pull request"</strong></li>
+  </ol>
+
+  <div class="callout callout--warning">
+    <strong>Always target <code>preview</code>, not <code>main</code>.</strong>
+    Feature branches merge into <code>preview</code>. Only <code>preview</code> merges into <code>main</code> (Stacey handles this).
+  </div>
+
+  <h3>Writing a Good PR Description</h3>
+
+  <p>Include:</p>
+  <ul>
+    <li><strong>What</strong> you changed (a brief summary)</li>
+    <li><strong>Why</strong> (what problem does it solve or what does it add)</li>
+    <li><strong>How to test</strong> (what should the reviewer look at)</li>
+    <li>Screenshots if it's a visual change</li>
+  </ul>
+
+  <!-- ============================================================ -->
+  <h2 id="code-review">7. Code Review &amp; Merging</h2>
+
+  <p>Once a PR is created:</p>
+
+  <ol>
+    <li><strong>The team reviews</strong> the changes on GitHub. Reviewers can leave comments, request changes, or approve.</li>
+    <li><strong>Fix any feedback</strong> by making additional commits on the same branch and pushing. The PR updates automatically.</li>
+    <li><strong>Once approved,</strong> the PR gets merged into <code>preview</code>. This triggers an automatic deploy to <a href="https://preview.gptechadvisors.com">preview.gptechadvisors.com</a>.</li>
+    <li><strong>Verify on the staging site</strong> that everything looks correct.</li>
+    <li><strong>When ready for production,</strong> Stacey creates a PR from <code>preview</code> to <code>main</code>, which deploys to the live site.</li>
+  </ol>
+
+  <!-- ============================================================ -->
+  <h2 id="conflicts">8. Handling Merge Conflicts</h2>
+
+  <p>Merge conflicts happen when two people edit the same part of a file. Git can't decide which version to keep, so it asks you to resolve it manually.</p>
+
+  <h3>What Conflicts Look Like</h3>
+
+  <p>Git marks conflicts in the file like this:</p>
+
+  <pre><code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+  padding: 30px 60px;
+=======
+  padding: 16px 40px;
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; origin/preview</code></pre>
+
+  <ul>
+    <li>The code between <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code> and <code>=======</code> is <strong>your version</strong></li>
+    <li>The code between <code>=======</code> and <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code> is <strong>the incoming version</strong></li>
+  </ul>
+
+  <h3>How to Resolve</h3>
+
+  <ol>
+    <li>Open the conflicted file in your editor</li>
+    <li>Decide which version to keep (or combine both)</li>
+    <li>Delete the conflict markers (<code>&lt;&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt;</code>)</li>
+    <li>Stage and commit:</li>
+  </ol>
+
+  <pre><code><span class="cmd">git add</span> path/to/resolved-file.css
+<span class="cmd">git commit</span> <span class="flag">-m</span> <span class="branch">"fix: resolve merge conflicts with preview"</span></code></pre>
+
+  <div class="claude-alt">
+    <div class="claude-alt__header">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="8" fill="#F6621C"/><path d="M5.5 6.5L8 9L10.5 6.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Ask Claude instead
+    </div>
+    <div class="claude-alt__prompt">Resolve the merge conflicts on my current branch</div>
+    <p class="claude-alt__note">Claude will find all conflicted files, examine both sides, intelligently resolve each conflict, and commit the result. This is especially helpful for complex conflicts across multiple files.</p>
+  </div>
+
+  <div class="callout">
+    <strong>Tip:</strong> VS Code has a built-in merge conflict editor. When you open a conflicted file, it highlights both versions and gives you buttons to accept one, the other, or both.
+  </div>
+
+  <!-- ============================================================ -->
+  <h2 id="rules">9. Golden Rules</h2>
+
+  <ol>
+    <li><strong>Never push directly to <code>main</code> or <code>preview</code>.</strong> Always use a feature branch and a PR.</li>
+    <li><strong>Pull before you push.</strong> Always fetch/pull the latest before starting work or creating a PR.</li>
+    <li><strong>Commit often, push regularly.</strong> Small, frequent commits are easier to review and revert if needed.</li>
+    <li><strong>Write clear commit messages.</strong> Future-you will thank present-you.<br>
+      Good: <code>fix: match services hero padding to live site</code><br>
+      Bad: <code>fixed stuff</code>
+    </li>
+    <li><strong>Don't commit secrets.</strong> Never commit <code>.env</code> files, API keys, or credentials.</li>
+    <li><strong>Ask if you're unsure.</strong> It's always better to ask than to force-push and lose work.</li>
+  </ol>
+
+  <!-- ============================================================ -->
+  <h2 id="commands">10. Quick Reference</h2>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Task</th>
+        <th>Git Command</th>
+        <th>Claude Prompt</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>See current branch</td>
+        <td><code>git branch</code></td>
+        <td><em>"What branch am I on?"</em></td>
+      </tr>
+      <tr>
+        <td>See all branches</td>
+        <td><code>git branch -a</code></td>
+        <td><em>"Show me all branches including remote"</em></td>
+      </tr>
+      <tr>
+        <td>Switch to a branch</td>
+        <td><code>git checkout preview</code></td>
+        <td><em>"Switch to the preview branch"</em></td>
+      </tr>
+      <tr>
+        <td>Create a new branch</td>
+        <td><code>git checkout -b feature/my-feature</code></td>
+        <td><em>"Create a new branch called feature/my-feature"</em></td>
+      </tr>
+      <tr>
+        <td>Pull latest from remote</td>
+        <td><code>git pull origin preview</code></td>
+        <td><em>"Pull the latest preview from remote"</em></td>
+      </tr>
+      <tr>
+        <td>See what's changed</td>
+        <td><code>git status</code></td>
+        <td><em>"What files have I changed?"</em></td>
+      </tr>
+      <tr>
+        <td>See the diff</td>
+        <td><code>git diff</code></td>
+        <td><em>"Show me the changes I've made"</em></td>
+      </tr>
+      <tr>
+        <td>Stage &amp; commit</td>
+        <td><code>git add ... && git commit</code></td>
+        <td><em>/commit</em></td>
+      </tr>
+      <tr>
+        <td>Push to GitHub</td>
+        <td><code>git push -u origin feature/...</code></td>
+        <td><em>"Push my branch to GitHub"</em></td>
+      </tr>
+      <tr>
+        <td>Create a PR</td>
+        <td><code>gh pr create --base preview</code></td>
+        <td><em>"Create a PR to merge into preview"</em></td>
+      </tr>
+      <tr>
+        <td>View PR status</td>
+        <td><code>gh pr status</code></td>
+        <td><em>"What's the status of my open PRs?"</em></td>
+      </tr>
+      <tr>
+        <td>Resolve merge conflicts</td>
+        <td><em>(manual editing)</em></td>
+        <td><em>"Resolve the merge conflicts on this branch"</em></td>
+      </tr>
+      <tr>
+        <td>Delete merged branch</td>
+        <td><code>git branch -d feature/...</code></td>
+        <td><em>"Clean up my merged feature branch"</em></td>
+      </tr>
+      <tr>
+        <td>Undo uncommitted changes</td>
+        <td><code>git checkout -- file.css</code></td>
+        <td><em>"Undo my changes to file.css"</em></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+  <p style="color: var(--gp-gray); font-size: 14px; text-align: center;">
+    GrowthPoint Technology Advisors &mdash; Internal Documentation<br>
+    Last updated: June 3, 2026
+  </p>
+
+</body>
+</html>

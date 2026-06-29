@@ -91,6 +91,111 @@ const COMPARISONS = {
       }
     ]
   },
+  '/blog/': {  // blog listing page
+    localPath: '/blog/index.html',
+    elements: [
+      {
+        label: 'blog-hero-eyebrow',
+        live: '[data-id="61d7aebb"] .elementor-heading-title',
+        local: '.blog-hero__eyebrow'
+      },
+      {
+        label: 'blog-hero-h1',
+        live: '[data-id="71e193d8"] .elementor-heading-title',
+        local: '.blog-hero h1'
+      },
+      {
+        label: 'blog-hero-desc',
+        live: '[data-id="76ec358d"] .elementor-widget-container p',
+        local: '.blog-hero__desc'
+      },
+      {
+        label: 'blog-filter-btn',
+        live: '.e-filter-item',
+        local: '.blog-filter__btn'
+      },
+      {
+        label: 'blog-card-category',
+        live: '.e-loop-item .elementor-post-info__item',
+        local: '.blog-card .card__tag'
+      },
+      {
+        label: 'blog-card-title',
+        live: '.e-loop-item h3.elementor-heading-title',
+        local: '.blog-card .card__title'
+      }
+    ]
+  },
+  '/services/': {  // services page
+    localPath: '/services.html',
+    elements: [
+      {
+        label: 'services-hero-eyebrow',
+        live: '[data-id="e14a232"] .elementor-heading-title',
+        local: '.hero--services .hero__eyebrow, .hero .hero__eyebrow'
+      },
+      {
+        label: 'services-intro-h2',
+        live: '[data-id="644b81e"] .elementor-heading-title',
+        local: '.service-intro h2'
+      },
+      {
+        label: 'services-intro-body',
+        live: '[data-id="b08e0bf"] .elementor-widget-container p',
+        local: '.service-intro p'
+      },
+      {
+        label: 'services-ciso-label',
+        live: '[data-id="0040ec3"] .elementor-icon-list-text',
+        local: '.service-card-row__label span'
+      },
+      {
+        label: 'services-ciso-body',
+        live: '[data-id="92a3ece"] .elementor-widget-container p',
+        local: '.service-card-row p'
+      },
+      {
+        label: 'services-isms-h2',
+        live: '[data-id="8110f94"] .elementor-heading-title',
+        local: '.isms-section h2'
+      },
+      {
+        label: 'services-tailored-h2',
+        live: '[data-id="39ede071"] .elementor-heading-title',
+        local: '.service-tailored__content h2'
+      },
+      {
+        label: 'services-article-h3',
+        live: '[data-id="8d7bae2"] .elementor-heading-title',
+        local: '.service-article h3'
+      },
+      {
+        label: 'services-leadership-h2',
+        live: '[data-id="760baaf"] .elementor-heading-title',
+        local: '.service-leadership h2'
+      }
+    ]
+  },
+  '/privacy-policy/': {  // privacy policy page
+    localPath: '/privacy.html',
+    elements: [
+      {
+        label: 'privacy-h1',
+        live: '.elementor-widget-heading h1, h1.elementor-heading-title',
+        local: '.hero--privacy h1'
+      },
+      {
+        label: 'privacy-section-h2',
+        live: 'h2.elementor-heading-title',
+        local: '.privacy-section h2'
+      },
+      {
+        label: 'privacy-body',
+        live: '.elementor-widget-text-editor p',
+        local: '.privacy-section p'
+      }
+    ]
+  },
   '/about/': {  // about page
     localPath: '/about.html',
     elements: [
