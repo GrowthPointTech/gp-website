@@ -1946,6 +1946,23 @@ body.isms-modal-open {
   text-align: center;
 }
 
+.about-divider {
+  max-width: var(--wide-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  background: var(--gp-white);
+}
+
+.about-divider svg {
+  display: block;
+  width: 100%;
+  height: 40px;
+}
+
+.about-divider__path {
+  stroke: var(--gp-rich-black);
+}
+
 /* About Page — Team */
 
 .about-team {
@@ -2074,12 +2091,12 @@ body.isms-modal-open {
 
 .about-team__photo {
   flex-shrink: 0;
-  min-width: 112px;
+  min-width: 160px;
 }
 
 .about-team__photo img {
-  width: 112px;
-  height: 112px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
   object-position: top;
@@ -2094,9 +2111,9 @@ body.isms-modal-open {
 
 .about-team__name {
   font-family: var(--font-body);
-  font-size: 23px;
+  font-size: 27px;
   font-weight: 600;
-  line-height: 23px;
+  line-height: 29px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: var(--gp-bright-blue);
